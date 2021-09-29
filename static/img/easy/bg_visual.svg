@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1920" height="890" viewBox="0 0 1920 890">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="사각형_2094" data-name="사각형 2094" width="1920" height="890" fill="#fff" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+    <linearGradient id="linear-gradient" x1="0.286" y1="-0.032" x2="0.867" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#8e52fe"/>
+      <stop offset="1" stop-color="#7135f5"/>
+    </linearGradient>
+  </defs>
+  <g id="bg_visual" clip-path="url(#clip-path)">
+    <g id="bg_visual-2" data-name="bg_visual">
+      <path id="패스_662" data-name="패스 662" d="M0,0H1920V889.407H0Z" fill="url(#linear-gradient)"/>
+      <path id="패스_9830" data-name="패스 9830" d="M0,0H1920.932V883.746H0Z" fill="url(#linear-gradient)"/>
+      <circle id="타원_348" data-name="타원 348" cx="276" cy="276" r="276" transform="translate(-262 -229)" fill="#7032be" opacity="0.572"/>
+      <path id="패스_9731" data-name="패스 9731" d="M162.5,0A162.5,162.5,0,0,1,325,162.5c0,15.167-6.031,44.014-6.031,44.014S284.758,322.834,162.5,325a162.5,162.5,0,0,1,0-325Z" transform="translate(1484 -149)" fill="#a152fe"/>
+      <path id="교차_4" data-name="교차 4" d="M-1.616,198.376C-1.616,88.816,87.2,0,196.759,0S395.134,88.816,395.134,198.376,306.319,396.751,196.759,396.751-1.616,307.936-1.616,198.376Z" transform="translate(1442.406 595.568)" fill="#ffd71f" opacity="0.074"/>
+      <path id="패스_8578" data-name="패스 8578" d="M31.376,0A31.376,31.376,0,1,1,0,31.376,31.376,31.376,0,0,1,31.376,0Z" transform="translate(1831 580.986)" fill="#e452fe" opacity="0.486"/>
+    </g>
+  </g>
+</svg>

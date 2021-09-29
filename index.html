@@ -1,0 +1,1281 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>DAZUM 다줌</title>
+        <meta name="keyword" content="보험, 보상프로, 보험상담, 손해사정사" />
+        <meta name="description" content="보험이 필요할땐 - 다줌" />
+        <meta name="format-detection" content="address=no, email=no, telephone=no" />
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="DAZUM 다줌" />
+        <meta property="og:url" content="http://" />
+        <meta property="og:description" content="보험이 필요할땐 - 다줌" />
+        <meta property="og:image" content="social_card.png" />
+        <!-- [D]절대경로 -->
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="http://" />
+        <meta property="twitter:description" content="보험이 필요할땐 - 다줌" />
+        <meta property="twitter:image" content="social_card.png" />
+        <!-- [D]절대경로 -->
+
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="static/img/favicon.ico" type="image/x-icon" />
+
+        <!-- Style -->
+        <link rel="stylesheet" href="static/css/slick.css" />
+        <link rel="stylesheet" href="static/css/Chart.min.css" />
+        <link rel="stylesheet" href="static/css/aos.css" />
+        <link rel="stylesheet" href="static/css/main.css" />
+        <!-- 간편청구 210915 추가 -->
+        <link
+            rel="stylesheet"
+            href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"
+        />
+        <link rel="stylesheet" href="static/css/easy.css" />
+    </head>
+
+    <body>
+        <!--[if lt IE 10]>
+            <p
+                id="browser-upgrade"
+                style="
+                    position: relative;
+                    padding: 4px 1em;
+                    font-size: 12px;
+                    color: #000;
+                    letter-spacing: 0;
+                    background: #ffc;
+                    border-bottom: 2px outset #fff;
+                    margin: 0;
+                    text-align: left;
+                    z-index: 99;
+                "
+            >
+                사용하는 브라우저에서 사이트가 정상적으로 표시되지 않습니다. 최신 브라우저로
+                <a href="http://outdatedbrowser.com/ko" style="color: #00f; text-decoration: underline">업데이트</a> 하세요. Your browser is
+                out of date! Update your browser to view this website correctly.
+                <a href="http://outdatedbrowser.com/ko" style="padding: 0 4px; color: #00f; font-weight: bold; text-decoration: underline"
+                    >Update now</a
+                >
+            </p>
+        <![endif]-->
+
+        <a href="#content" class="skip">메뉴 건너띄기</a>
+
+        <header class="header is-transparent">
+            <div class="gnb-wrap">
+                <a href="#gnb" role="button" aria-expanded="false" class="btn-open-menu js-toggle-menu"
+                    ><span class="sr-text">메뉴열기</span></a
+                >
+                <div id="gnb" class="menu-wrap">
+                    <a href="#" role="button" aria-expanded="false" class="btn-close-menu js-toggle-menu"
+                        ><span class="sr-text">메뉴닫기</span></a
+                    >
+
+                    <!-- mobile only -->
+                    <div class="top-area">
+                        <a href="#" class="btn-notify">
+                            <span class="sr-text">알림</span>
+                            <!-- [D]새 알림이 있을때 표시 -->
+                            <span class="new-dot">New</span>
+                        </a>
+                        <a href="#" class="btn-setting"><span class="sr-text">설정</span></a>
+                        <div class="profile-wrap">
+                            <a href="#" class="profile-thumb"><img src="static/img/common/default_profile.png" alt="" /></a>
+                            <!-- 20210205 수정 -->
+                            <!-- 로그인전 -->
+                            <div class="no-name">
+                                <a href="#">로그인</a>
+                                <a href="#">회원가입</a>
+                            </div>
+                            <!-- 로그인후 -->
+                            <!-- <div class="profile-name">
+                    <p><em>홍길동</em> 님</p>
+                    <a href="#">마이페이지</a>
+                    <a href="#" class="btn-logout">로그아웃</a>
+                </div> -->
+                        </div>
+                        <div class="quick-menu-list">
+                            <ul>
+                                <li><a href="#">보상프로 찾기</a></li>
+                                <li><a href="#">보상청구</a></li>
+                                <li><a href="#">상담신청</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- gnb 메뉴 -->
+                    <nav>
+                        <ul class="top-menu">
+                            <li><a href="#">보상사례</a></li>
+                            <li><a href="#">상담사례</a></li>
+                            <li><a href="#">이용후기</a></li>
+                            <li><a href="#">고객센터</a></li>
+                        </ul>
+                        <!-- 20210205 수정 -->
+                        <ul class="bottom-menu">
+                            <li><a href="#">공지사항</a></li>
+                            <li><a href="#">자주 묻는 질문</a></li>
+                            <li><a href="#">이용약관</a></li>
+                            <li><a href="#">개인정보보호정책</a></li>
+                            <li><a href="#">회사소개</a></li>
+                        </ul>
+                    </nav>
+                    <!-- //gnb 메뉴 -->
+
+                    <!-- mobile only -->
+                    <div class="bottom-banner">
+                        <p class="headline">
+                            다줌과 함께할<br />
+                            보상프로를 찾습니다.
+                        </p>
+                        <a href="#" class="btn-benefit">다줌 보상프로가 되면 좋은점</a>
+                    </div>
+                </div>
+            </div>
+
+            <h1 class="top-logo">
+                <a href="#"><span class="sr-text">DAZUM</span></a>
+            </h1>
+
+            <div class="rt-menu">
+                <!-- <div class="total-search-wrap">
+                <a href="#totalSearchArea1" role="button" aria-expanded="false" class="btn-top-search js-toggle-total-search"><span class="sr-text">통합검색</span></a>
+                <div id="totalSearchArea1" class="total-search">
+                    <a href="#totalSearch1" role="button" aria-expanded="false" class="btn-close-top-search js-toggle-total-search"><span class="sr-text">통합검색 닫기</span></a>
+                    <div class="container">
+                        <form action="/" method="POST">
+                            <div class="total-search-form">
+                                <label>
+                                    <span class="sr-text">검색어 입력</span>
+                                    <input type="search" name="search" placeholder="검색어를 입력해주세요" class="form-text">
+                                </label>
+                                <button type="submit" class="btn-total-search"><span class="sr-text">검색하기</span></button>
+                            </div>
+                            <div class="recomm-keyword">
+                                <p class="title">추천 키워드로 찾으세요.</p>
+                                <div class="keyword-list">
+                                    <ul>
+                                        <li class="best"><a href="#">교통사고처리방법</a></li>
+                                        <li class="best"><a href="#">손해사정사의 보험금 상담</a></li>
+                                        <li class="best"><a href="#">보험사고 상담</a></li>
+                                        <li><a href="#">화재사고 상담</a></li>
+                                        <li><a href="#">보험가입담보설정 상담</a></li>
+                                    </ul>
+                                    <ul>
+                                        <li><a href="#">면부책</a></li>
+                                        <li><a href="#">뇌경색진단비 근재보험</a></li>
+                                        <li><a href="#">사망보험금</a></li>
+                                        <li><a href="#">후유장해</a></li>
+                                        <li><a href="#">암진단비</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div> -->
+
+                <!-- 20210205 수정 -->
+                <div class="member-menu">
+                    <!-- 로그인 전 -->
+                    <a href="easy-intro.html" class="btn- bg-white c-blue">간편청구하기</a>
+                    <a href="#">로그인</a>
+                    <a href="#">회원가입</a>
+                    <a href="#">고객센터</a>
+                    <!-- 로그인 후 -->
+                    <!-- <div class="dropdown-wrap info">
+                    <a href="#" class="profile-thumb">
+                        <img src="static/img/common/default_profile.png" alt="">
+                    </a>
+                    <button type="button" class="btn js-toggle-dropdown">User ID</button>
+                    <div class="dropdown">
+                        <ul>
+                            <li><a href="#">마이페이지</a></li>
+                            <li><a href="#">로그아웃</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <a href="#">고객센터</a> -->
+                </div>
+                <!-- //20210205 수정 -->
+            </div>
+        </header>
+
+        <!-- Content -->
+        <div id="content">
+            <div class="main-wrap">
+                <div class="main-visual-wrap">
+                    <div class="main-visual js-visual-slider">
+                        <div class="visual-item">
+                            <div class="visual-img">
+                                <div class="widescreen-block">
+                                    <img src="static/img/main/visual1_2.png" alt="" />
+                                    <img src="static/img/main/visual1_1.png" alt="" />
+                                </div>
+                                <div class="mobile-block">
+                                    <img src="static/img/main/visual1_mo.png" alt="" />
+                                </div>
+                            </div>
+                            <div class="content-wrap">
+                                <div class="container">
+                                    <p class="headline">청구에서부터 보상까지!</p>
+                                    <p class="secondary">
+                                        어렵고 번거로운 보험 서비스<br />
+                                        다줌 보상프로가 해결해드립니다.
+                                    </p>
+                                    <div class="btn-wrap">
+                                        <a href="#" target="_blank" class="btn-line">
+                                            <span class="ico"><img src="static/img/main/ic_gstore.png" alt="" /></span>
+                                            <span>Google Play</span>
+                                        </a>
+                                        <a href="#" target="_blank" class="btn-line">
+                                            <span class="ico"><img src="static/img/main/ic_astore.png" alt="" /></span>
+                                            <span>App Store</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="visual-item">
+                            <div class="visual-img">
+                                <div class="widescreen-block">
+                                    <img src="static/img/main/visual2.png" alt="" />
+                                </div>
+                                <div class="mobile-block">
+                                    <img src="static/img/main/visual1_mo.png" alt="" />
+                                </div>
+                            </div>
+                            <div class="content-wrap">
+                                <div class="container">
+                                    <p class="headline">청구에서부터 보상까지!</p>
+                                    <p class="secondary">
+                                        어렵고 번거로운 보험 서비스<br />
+                                        다줌 보상프로가 해결해드립니다.
+                                    </p>
+                                    <div class="btn-wrap">
+                                        <a href="#" target="_blank" class="btn-line">
+                                            <span class="ico"><img src="static/img/main/ic_gstore.png" alt="" /></span>
+                                            <span>Google Play</span>
+                                        </a>
+                                        <a href="#" target="_blank" class="btn-line">
+                                            <span class="ico"><img src="static/img/main/ic_astore.png" alt="" /></span>
+                                            <span>App Store</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slider-nav">
+                        <div class="js-visual-nav"></div>
+                    </div>
+                </div>
+                <script>
+                    document.addEventListener("DOMContentLoaded", function () {
+                        $(".js-visual-slider").slick({
+                            arrows: true,
+                            dots: true,
+                            autoplay: true,
+                            pauseOnHover: false,
+                            appendArrows: $(".js-visual-nav"),
+                            appendDots: $(".js-visual-nav"),
+                        });
+                    });
+                </script>
+                <div class="main-category">
+                    <div class="container">
+                        <!-- 20210112 수정 -->
+                        <ul role="tablist" class="tabs liner-tabs">
+                            <li class="on"><a href="#mainCategory1" role="tab" aria-selected="true">분야별 보상프로</a></li>
+                            <li><a href="#mainCategory2" role="tab" aria-selected="false">지역별 보상프로</a></li>
+                        </ul>
+
+                        <div role="tabpanel" id="mainCategory1" class="tab-panel on">
+                            <ul class="main-category-list">
+                                <li>
+                                    <a href="#">
+                                        <span class="ico"><img src="static/img/main/ic_main_cate1.png" alt="" /></span>
+                                        <strong>진단비</strong>
+                                        <dl>
+                                            <dt>보상프로</dt>
+                                            <dd><em>2,123</em>명</dd>
+                                            <dt>사례</dt>
+                                            <dd><em>2,123</em>건</dd>
+                                        </dl>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="ico"><img src="static/img/main/ic_main_cate2.png" alt="" /></span>
+                                        <strong>후유장애</strong>
+                                        <dl>
+                                            <dt>보상프로</dt>
+                                            <dd><em>2,123</em>명</dd>
+                                            <dt>사례</dt>
+                                            <dd><em>2,123</em>건</dd>
+                                        </dl>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="ico"><img src="static/img/main/ic_main_cate3.png" alt="" /></span>
+                                        <strong>교통사고</strong>
+                                        <dl>
+                                            <dt>보상프로</dt>
+                                            <dd><em>2,123</em>명</dd>
+                                            <dt>사례</dt>
+                                            <dd><em>2,123</em>건</dd>
+                                        </dl>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="ico"><img src="static/img/main/ic_main_cate4.png" alt="" /></span>
+                                        <strong>배상책임</strong>
+                                        <dl>
+                                            <dt>보상프로</dt>
+                                            <dd><em>2,123</em>명</dd>
+                                            <dt>사례</dt>
+                                            <dd><em>2,123</em>건</dd>
+                                        </dl>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="ico"><img src="static/img/main/ic_main_cate5.png" alt="" /></span>
+                                        <strong>사망보험금</strong>
+                                        <dl>
+                                            <dt>보상프로</dt>
+                                            <dd><em>2,123</em>명</dd>
+                                            <dt>사례</dt>
+                                            <dd><em>2,123</em>건</dd>
+                                        </dl>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div role="tabpanel" id="mainCategory2" class="tab-panel">
+                            <ul class="location-pro-list">
+                                <li>
+                                    <a href="#">서울</a>
+                                </li>
+                                <li>
+                                    <a href="#">인천</a>
+                                </li>
+                                <li>
+                                    <a href="#">경기도</a>
+                                </li>
+                                <li>
+                                    <a href="#">충청도</a>
+                                </li>
+                                <li>
+                                    <a href="#">전라도</a>
+                                </li>
+                                <li>
+                                    <a href="#">경상도</a>
+                                </li>
+                                <li>
+                                    <a href="#">강원도</a>
+                                </li>
+                                <li>
+                                    <a href="#">제주도</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- //20210112 수정 -->
+                    </div>
+                </div>
+                <div class="main-recomm-pro">
+                    <div class="container">
+                        <!-- 20210105 수정 -->
+                        <h2 class="primary-title">다줌에서 보상프로를 추천해드립니다.</h2>
+                        <div class="recomm-pro-wrap">
+                            <div class="list-filter">
+                                <!-- 20210105 수정 -->
+                                <!-- <div class="col">
+                                <label class="form-checkbox btn-filter">
+                                    <input type="checkbox" name="connectCall" value="Y">
+                                    <span class="radio-label">
+                                        <span class="box"></span>
+                                        <span>전화 상담</span>
+                                    </span>
+                                </label>
+                            </div> -->
+                                <!-- 20210107 수정 -->
+                                <div class="col">
+                                    <div class="dropdown-wrap">
+                                        <button type="button" class="btn-filter js-toggle-dropdown">전체</button>
+                                        <div class="dropdown">
+                                            <ul class="dropdown-list">
+                                                <li class="on">
+                                                    <a href="#" role="button" class="js-chg-val">전체</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" role="button" class="js-chg-val"
+                                                        ><span class="pro-badge type3"></span>신규프로</a
+                                                    >
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="dropdown-wrap">
+                                        <button type="button" class="btn-filter js-toggle-dropdown">전체</button>
+                                        <div class="dropdown">
+                                            <ul class="dropdown-list">
+                                                <li class="on">
+                                                    <a href="#" role="button" class="js-chg-val">전체</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" role="button" class="js-chg-val">교통사고</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 20210112 수정 -->
+                            <div class="js-recomm-pro-slider">
+                                <div class="item">
+                                    <div class="profile-card">
+                                        <div class="thumb-wrap">
+                                            <a href="#" class="profile-thumb">
+                                                <img src="_temp/pro_thumb1.jpg" alt="" />
+                                            </a>
+                                            <p class="pro-badge type3"><span class="sr-text">신규프로</span></p>
+                                        </div>
+                                        <div class="front">
+                                            <p class="name">
+                                                <a href="#">김재헌</a>
+                                            </p>
+                                            <p class="category">배상책임/근로재해</p>
+                                            <div class="rating-wrap">
+                                                <span class="rating-score">5.0</span>
+                                                <span>(<em>312</em>개의 평가)</span>
+                                            </div>
+                                            <div class="counter-wrap">
+                                                <!-- 20210112 수정 -->
+                                                <div class="col">
+                                                    <p class="label">상담횟수</p>
+                                                    <p class="value">3,123명</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="cover">
+                                            <div class="top-meta">
+                                                <p class="name">
+                                                    <a href="#">김재헌</a>
+                                                </p>
+                                                <div class="rating-wrap">
+                                                    <span class="rating-score">5.0</span>
+                                                    <span><em>312</em>개의 상담</span>
+                                                </div>
+                                                <div class="category-tags">
+                                                    <a href="#" class="tag">교통사고</a>
+                                                    <a href="#" class="tag">어린이</a>
+                                                    <a href="#" class="tag">기타</a>
+                                                </div>
+                                            </div>
+                                            <div class="time-info">
+                                                <p class="label">주요활동시간</p>
+                                                <p class="value">
+                                                    <span>월-금</span>
+                                                    <span>11:00 - 23:00</span>
+                                                </p>
+                                            </div>
+                                            <div class="btn-wrap">
+                                                <a href="#" class="btn-call">전화 상담</a>
+                                                <a href="#" class="btn">자세히</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="profile-card">
+                                        <div class="thumb-wrap">
+                                            <a href="#" class="profile-thumb">
+                                                <img src="_temp/pro_thumb2.jpg" alt="" />
+                                            </a>
+                                            <p class="pro-badge type3"><span class="sr-text">신규프로</span></p>
+                                        </div>
+                                        <div class="front">
+                                            <p class="name">
+                                                <a href="#">김재헌</a>
+                                            </p>
+                                            <p class="category">배상책임/근로재해</p>
+                                            <div class="rating-wrap">
+                                                <span class="rating-score">5.0</span>
+                                                <span>(<em>312</em>개의 평가)</span>
+                                            </div>
+                                            <div class="counter-wrap">
+                                                <!-- 20210112 수정 -->
+                                                <div class="col">
+                                                    <p class="label">상담횟수</p>
+                                                    <p class="value">3,123명</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="cover">
+                                            <div class="top-meta">
+                                                <p class="name">
+                                                    <a href="#">김재헌</a>
+                                                </p>
+                                                <div class="rating-wrap">
+                                                    <span class="rating-score">5.0</span>
+                                                    <span><em>312</em>개의 상담</span>
+                                                </div>
+                                                <div class="category-tags">
+                                                    <a href="#" class="tag">교통사고</a>
+                                                    <a href="#" class="tag">어린이</a>
+                                                    <a href="#" class="tag">기타</a>
+                                                </div>
+                                            </div>
+                                            <div class="time-info">
+                                                <p class="label">주요활동시간</p>
+                                                <p class="value">
+                                                    <span>월-금</span>
+                                                    <span>11:00 - 23:00</span>
+                                                </p>
+                                            </div>
+                                            <div class="btn-wrap">
+                                                <a href="#" class="btn-call">전화 상담</a>
+                                                <a href="#" class="btn">자세히</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="profile-card">
+                                        <div class="thumb-wrap">
+                                            <a href="#" class="profile-thumb">
+                                                <img src="_temp/pro_thumb3.jpg" alt="" />
+                                            </a>
+                                            <p class="pro-badge type3"><span class="sr-text">신규프로</span></p>
+                                        </div>
+                                        <div class="front">
+                                            <p class="name">
+                                                <a href="#">김재헌</a>
+                                            </p>
+                                            <p class="category">배상책임/근로재해</p>
+                                            <div class="rating-wrap">
+                                                <span class="rating-score">5.0</span>
+                                                <span>(<em>312</em>개의 평가)</span>
+                                            </div>
+                                            <div class="counter-wrap">
+                                                <!-- 20210112 수정 -->
+                                                <div class="col">
+                                                    <p class="label">상담횟수</p>
+                                                    <p class="value">3,123명</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="cover">
+                                            <div class="top-meta">
+                                                <p class="name">
+                                                    <a href="#">김재헌</a>
+                                                </p>
+                                                <div class="rating-wrap">
+                                                    <span class="rating-score">5.0</span>
+                                                    <span><em>312</em>개의 상담</span>
+                                                </div>
+                                                <div class="category-tags">
+                                                    <a href="#" class="tag">교통사고</a>
+                                                    <a href="#" class="tag">어린이</a>
+                                                    <a href="#" class="tag">기타</a>
+                                                </div>
+                                            </div>
+                                            <div class="time-info">
+                                                <p class="label">주요활동시간</p>
+                                                <p class="value">
+                                                    <span>월-금</span>
+                                                    <span>11:00 - 23:00</span>
+                                                </p>
+                                            </div>
+                                            <div class="btn-wrap">
+                                                <a href="#" class="btn-call">전화 상담</a>
+                                                <a href="#" class="btn">자세히</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="profile-card">
+                                        <div class="thumb-wrap">
+                                            <a href="#" class="profile-thumb">
+                                                <img src="_temp/pro_thumb4.jpg" alt="" />
+                                            </a>
+                                        </div>
+                                        <div class="front">
+                                            <p class="name">
+                                                <a href="#">김재헌</a>
+                                            </p>
+                                            <p class="category">배상책임/근로재해</p>
+                                            <div class="rating-wrap">
+                                                <span class="rating-score">5.0</span>
+                                                <span>(<em>312</em>개의 평가)</span>
+                                            </div>
+                                            <div class="counter-wrap">
+                                                <!-- 20210112 수정 -->
+                                                <div class="col">
+                                                    <p class="label">상담횟수</p>
+                                                    <p class="value">3,123명</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="cover">
+                                            <div class="top-meta">
+                                                <p class="name">
+                                                    <a href="#">김재헌</a>
+                                                </p>
+                                                <div class="rating-wrap">
+                                                    <span class="rating-score">5.0</span>
+                                                    <span><em>312</em>개의 상담</span>
+                                                </div>
+                                                <div class="category-tags">
+                                                    <a href="#" class="tag">교통사고</a>
+                                                    <a href="#" class="tag">어린이</a>
+                                                    <a href="#" class="tag">기타</a>
+                                                </div>
+                                            </div>
+                                            <div class="time-info">
+                                                <p class="label">주요활동시간</p>
+                                                <p class="value">
+                                                    <span>월-금</span>
+                                                    <span>11:00 - 23:00</span>
+                                                </p>
+                                            </div>
+                                            <div class="btn-wrap">
+                                                <a href="#" class="btn-call">전화 상담</a>
+                                                <a href="#" class="btn">자세히</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="profile-card">
+                                        <div class="thumb-wrap">
+                                            <a href="#" class="profile-thumb">
+                                                <img src="_temp/pro_thumb1.jpg" alt="" />
+                                            </a>
+                                            <p class="pro-badge type3"><span class="sr-text">신규프로</span></p>
+                                        </div>
+                                        <div class="front">
+                                            <p class="name">
+                                                <a href="#">김재헌</a>
+                                            </p>
+                                            <p class="category">배상책임/근로재해</p>
+                                            <div class="rating-wrap">
+                                                <span class="rating-score">5.0</span>
+                                                <span>(<em>312</em>개의 평가)</span>
+                                            </div>
+                                            <div class="counter-wrap">
+                                                <!-- 20210112 수정 -->
+                                                <div class="col">
+                                                    <p class="label">상담횟수</p>
+                                                    <p class="value">3,123명</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="cover">
+                                            <div class="top-meta">
+                                                <p class="name">
+                                                    <a href="#">김재헌</a>
+                                                </p>
+                                                <div class="rating-wrap">
+                                                    <span class="rating-score">5.0</span>
+                                                    <span><em>312</em>개의 상담</span>
+                                                </div>
+                                                <div class="category-tags">
+                                                    <a href="#" class="tag">교통사고</a>
+                                                    <a href="#" class="tag">어린이</a>
+                                                    <a href="#" class="tag">기타</a>
+                                                </div>
+                                            </div>
+                                            <div class="time-info">
+                                                <p class="label">주요활동시간</p>
+                                                <p class="value">
+                                                    <span>월-금</span>
+                                                    <span>11:00 - 23:00</span>
+                                                </p>
+                                            </div>
+                                            <div class="btn-wrap">
+                                                <a href="#" class="btn-call">전화 상담</a>
+                                                <a href="#" class="btn">자세히</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slider-nav">
+                                <div class="js-recomm-pro-nav"></div>
+                            </div>
+
+                            <script>
+                                document.addEventListener("DOMContentLoaded", function () {
+                                    var $container = $(".js-recomm-pro-slider");
+                                    var option = {
+                                        slidesToShow: 4,
+                                        slidesToScroll: 4,
+                                        arrows: true,
+                                        dots: true,
+                                        appendArrows: ".js-recomm-pro-nav",
+                                        appendDots: ".js-recomm-pro-nav",
+                                    };
+
+                                    if (window.innerWidth > 1074) {
+                                        $container.slick(option);
+                                    }
+
+                                    $(window).on("resize", function () {
+                                        if (window.innerWidth <= 1074 && $container.hasClass("slick-initialized")) {
+                                            $container.slick("unslick");
+                                        } else if (window.innerWidth > 1074 && !$container.hasClass("slick-initialized")) {
+                                            $container.slick(option);
+                                        }
+                                    });
+                                });
+                            </script>
+                        </div>
+                    </div>
+                </div>
+                <div class="main-consulting">
+                    <div class="container">
+                        <h2 class="primary-title">
+                            언제 어디서든 열림 상담으로<br />
+                            상담이 가능합니다.
+                        </h2>
+                        <!-- 20210105 수정 -->
+                        <p class="desc">
+                            상담은 필요한데 너무 바쁘다!<br />
+                            지금 내 상황에 맞는 맞춤형 의견이 듣고 싶다!<br />
+                            고민하지 말고 바로 다줌 열림상담 서비스를 이용해보세요.<br />
+                            문의하면 다줌 보상프로가 상담을 도와드립니다
+                        </p>
+                        <!-- 20210105 수정 -->
+                        <a href="#" class="btn-action">열린상담 신청</a>
+                    </div>
+                </div>
+                <div class="main-review">
+                    <div class="container">
+                        <h2 class="primary-title">후기로 보는 보상프로</h2>
+                        <p class="desc">고객님들이 남긴 다줌 보상프로에 대한 후기입니다.</p>
+                        <a href="#" class="btn-view-all">전체보기</a>
+
+                        <div class="js-review-slider">
+                            <!-- 리뷰 -->
+                            <div class="item">
+                                <div class="review-card">
+                                    <div class="profile-wrap">
+                                        <div class="thumb-wrap">
+                                            <a href="#" class="profile-thumb"><img src="_temp/pro_thumb2.jpg" alt="" /></a>
+                                            <p class="pro-badge type3"><span class="sr-text">신규프로</span></p>
+                                        </div>
+                                        <div class="profile-meta">
+                                            <p class="name">
+                                                <a href="#">김재헌</a>
+                                            </p>
+                                            <p class="group">다줌손해사정사</p>
+                                            <p class="location">경기도</p>
+                                        </div>
+                                    </div>
+                                    <div class="rating-wrap">
+                                        <!-- 20200208 수정 -->
+                                        <span class="star-rating-4"></span>
+                                        <span class="score">4.0</span>
+                                        <span class="total">(312)</span>
+                                    </div>
+                                    <div class="review-content">
+                                        처음 당하는 교통사고로 당황하던 차에 다줌을 알게 되어 쿠폰 받아 상담했는데 사고처리 방법부터
+                                        합의까지 과정과 합의금 산출 방법을 상세하세 설명해주십 니다. 합의 시점에서 재신청 하겠습니다.
+                                    </div>
+                                    <p class="review-writer"><em>examaker***</em>님의 후기</p>
+                                </div>
+                            </div>
+                            <!-- 리뷰 -->
+                            <div class="item">
+                                <div class="review-card">
+                                    <div class="profile-wrap">
+                                        <div class="thumb-wrap">
+                                            <a href="#" class="profile-thumb"><img src="_temp/pro_thumb3.jpg" alt="" /></a>
+                                            <p class="pro-badge type3"><span class="sr-text">신규프로</span></p>
+                                        </div>
+                                        <div class="profile-meta">
+                                            <p class="name">
+                                                <a href="#">김재헌</a>
+                                            </p>
+                                            <p class="group">다줌손해사정사</p>
+                                            <p class="location">경기도</p>
+                                        </div>
+                                    </div>
+                                    <div class="rating-wrap">
+                                        <!-- 20200208 수정 -->
+                                        <span class="star-rating-4"></span>
+                                        <span class="score">4.0</span>
+                                        <span class="total">(312)</span>
+                                    </div>
+                                    <div class="review-content">
+                                        처음 당하는 교통사고로 당황하던 차에 다줌을 알게 되어 쿠폰 받아 상담했는데 사고처리 방법부터
+                                        합의까지 과정과 합의금 산출 방법을 상세하세 설명해주십 니다. 합의 시점에서 재신청 하겠습니다.
+                                    </div>
+                                    <p class="review-writer"><em>examaker***</em>님의 후기</p>
+                                </div>
+                            </div>
+                            <!-- 리뷰 -->
+                            <div class="item">
+                                <div class="review-card">
+                                    <div class="profile-wrap">
+                                        <div class="thumb-wrap">
+                                            <a href="#" class="profile-thumb"><img src="_temp/pro_thumb4.jpg" alt="" /></a>
+                                            <p class="pro-badge type3"><span class="sr-text">신규프로</span></p>
+                                        </div>
+                                        <div class="profile-meta">
+                                            <p class="name">
+                                                <a href="#">김재헌</a>
+                                            </p>
+                                            <p class="group">다줌손해사정사</p>
+                                            <p class="location">경기도</p>
+                                        </div>
+                                    </div>
+                                    <div class="rating-wrap">
+                                        <!-- 20200208 수정 -->
+                                        <span class="star-rating-5"></span>
+                                        <span class="score">5.0</span>
+                                        <span class="total">(312)</span>
+                                    </div>
+                                    <div class="review-content">
+                                        처음 당하는 교통사고로 당황하던 차에 다줌을 알게 되어 쿠폰 받아 상담했는데 사고처리 방법부터
+                                        합의까지 과정과 합의금 산출 방법을 상세하세 설명해주십 니다. 합의 시점에서 재신청 하겠습니다.
+                                    </div>
+                                    <p class="review-writer"><em>examaker***</em>님의 후기</p>
+                                </div>
+                            </div>
+                            <!-- 리뷰 -->
+                            <div class="item">
+                                <div class="review-card">
+                                    <div class="profile-wrap">
+                                        <div class="thumb-wrap">
+                                            <a href="#" class="profile-thumb"><img src="_temp/pro_thumb5.jpg" alt="" /></a>
+                                            <p class="pro-badge type3"><span class="sr-text">신규프로</span></p>
+                                        </div>
+                                        <div class="profile-meta">
+                                            <p class="name">
+                                                <a href="#">김재헌</a>
+                                            </p>
+                                            <p class="group">다줌손해사정사</p>
+                                            <p class="location">경기도</p>
+                                        </div>
+                                    </div>
+                                    <div class="rating-wrap">
+                                        <!-- 20200208 수정 -->
+                                        <span class="star-rating-5"></span>
+                                        <span class="score">5.0</span>
+                                        <span class="total">(312)</span>
+                                    </div>
+                                    <div class="review-content">
+                                        처음 당하는 교통사고로 당황하던 차에 다줌을 알게 되어 쿠폰 받아 상담했는데 사고처리 방법부터
+                                        합의까지 과정과 합의금 산출 방법을 상세하세 설명해주십 니다. 합의 시점에서 재신청 하겠습니다.
+                                    </div>
+                                    <p class="review-writer"><em>examaker***</em>님의 후기</p>
+                                </div>
+                            </div>
+                            <!-- 리뷰 -->
+                            <div class="item">
+                                <div class="review-card">
+                                    <div class="profile-wrap">
+                                        <div class="thumb-wrap">
+                                            <a href="#" class="profile-thumb"><img src="_temp/pro_thumb1.jpg" alt="" /></a>
+                                            <p class="pro-badge type3"><span class="sr-text">신규프로</span></p>
+                                        </div>
+                                        <div class="profile-meta">
+                                            <p class="name">
+                                                <a href="#">김재헌</a>
+                                            </p>
+                                            <p class="group">다줌손해사정사</p>
+                                            <p class="location">경기도</p>
+                                        </div>
+                                    </div>
+                                    <div class="rating-wrap">
+                                        <!-- 20200208 수정 -->
+                                        <span class="star-rating-5"></span>
+                                        <span class="score">5.0</span>
+                                        <span class="total">(312)</span>
+                                    </div>
+                                    <div class="review-content">
+                                        처음 당하는 교통사고로 당황하던 차에 다줌을 알게 되어 쿠폰 받아 상담했는데 사고처리 방법부터
+                                        합의까지 과정과 합의금 산출 방법을 상세하세 설명해주십 니다. 합의 시점에서 재신청 하겠습니다.
+                                    </div>
+                                    <p class="review-writer"><em>examaker***</em>님의 후기</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="slider-nav">
+                            <div class="js-review-nav"></div>
+                        </div>
+
+                        <script>
+                            document.addEventListener("DOMContentLoaded", function () {
+                                var $container = $(".js-review-slider");
+                                var option = {
+                                    arrows: true,
+                                    dots: true,
+                                    slidesToShow: 3,
+                                    slidesToScroll: 3,
+                                    appendArrows: ".js-review-nav",
+                                    appendDots: ".js-review-nav",
+                                    responsive: [
+                                        {
+                                            breakpoint: 1074,
+                                            settings: {
+                                                slidesToShow: 1,
+                                                slidesToScroll: 1,
+                                                centerMode: true,
+                                            },
+                                        },
+                                    ],
+                                };
+
+                                $container.slick(option);
+                            });
+                        </script>
+                    </div>
+                </div>
+                <div class="main-case">
+                    <div class="container">
+                        <h2 class="primary-title">다줌의 다양한 보상 사례</h2>
+                        <a href="#" class="btn-view-all2">전체보기</a>
+
+                        <div class="js-main-case-slider">
+                            <!-- 사례 -->
+                            <div class="item">
+                                <ul class="case-list">
+                                    <li class="first-case">
+                                        <div class="card">
+                                            <div class="top-img">
+                                                <!-- 20210112 수정 -->
+                                                <img src="static/img/main/main_case_symbol.png" alt="" />
+                                            </div>
+                                            <p class="case-title">
+                                                <a href="#"><strong>승마 중 낙마 사고</strong> <em>배상책임보험</em> 보상 사례</a>
+                                            </p>
+                                            <p class="case-content">
+                                                중요한 것은 승마 업체에 배상책임보험이 가입되어 있느냐의 여부인데 정식 등록된 업체라면
+                                                배상책임보험은 무조건 가입되어 있다고 보시면 되십니다.<br />
+                                                L님의 경우 다행스럽게도 승마 업체에 정상적인 보험이 가입되어 있었습니다. 타본 경험이
+                                                없는데도 예민한 말이 배정…
+                                            </p>
+                                            <div class="profile-wrap">
+                                                <div class="thumb-wrap">
+                                                    <a href="#" class="profile-thumb"><img src="_temp/pro_thumb2.jpg" alt="" /></a>
+                                                </div>
+                                                <div class="profile-meta">
+                                                    <p class="name">
+                                                        <a href="#">
+                                                            <strong>이다줌</strong>
+                                                            <span>손해사정사</span>
+                                                        </a>
+                                                    </p>
+                                                    <p class="category">배상책임, 신체손해사정</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="card">
+                                            <p class="case-title"><strong>목욕탕 넘어짐 사고</strong> <em>배상책임보험</em> 보상 사례</p>
+                                            <p class="case-content">
+                                                상완골 대거친면에 골절이 발생한 상태입니다. 주로 넘어질 때 바닥에 손을 짚으며 발생하는
+                                                진단명입니다. 대거친면은 대결절이라고도 …
+                                            </p>
+                                            <span class="btn-view-more"><span class="sr-text">자세히보기</span></span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="card">
+                                            <p class="case-title"><strong>단지내 낙상 사고</strong> <em>배상책임보험</em> 보상 사례</p>
+                                            <p class="case-content">
+                                                물론 아파트 단지 내에서 낙상사고가 발생했다고 하여 무조건 아파트 배상책임보험이 적용되는
+                                                것은 아닙니다. 우선 아파트 관리사무소가 ...
+                                            </p>
+                                            <span class="btn-view-more"><span class="sr-text">자세히보기</span></span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="card">
+                                            <p class="case-title">
+                                                <strong>수상레저 땅콩보트 사고</strong> <em>배상책임보험</em> 보상 사례
+                                            </p>
+                                            <p class="case-content">
+                                                업체에서 가입한 영업배상책임보험으로 보상을 받을 수 있습니다. 영업배상책임보험으로 보상 받을
+                                                수 있는 항목은 위자료, 치료비, 휴업손해…
+                                            </p>
+                                            <span class="btn-view-more"><span class="sr-text">자세히보기</span></span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="card">
+                                            <p class="case-title"><strong>헬스장 사고</strong><em>배상책임보험</em> 보상 사례</p>
+                                            <p class="case-content">
+                                                헬스장이 가입해둔 영업배상책임보험으로 보상을 받으실 수 있습니다. 정상적으로 등록 되어 있는
+                                                헬스장의 경우에는 “체육시설업자…
+                                            </p>
+                                            <span class="btn-view-more"><span class="sr-text">자세히보기</span></span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- 사례 -->
+                            <div class="item">
+                                <ul class="case-list">
+                                    <li class="first-case">
+                                        <div class="card">
+                                            <div class="top-img">
+                                                <img src="static/img/main/main_case_symbol.png" alt="" />
+                                            </div>
+                                            <p class="case-title">
+                                                <a href="#"><strong>승마 중 낙마 사고</strong> <em>배상책임보험</em> 보상 사례</a>
+                                            </p>
+                                            <p class="case-content">
+                                                중요한 것은 승마 업체에 배상책임보험이 가입되어 있느냐의 여부인데 정식 등록된 업체라면
+                                                배상책임보험은 무조건 가입되어 있다고 보시면 되십니다.<br />
+                                                L님의 경우 다행스럽게도 승마 업체에 정상적인 보험이 가입되어 있었습니다. 타본 경험이
+                                                없는데도 예민한 말이 배정…
+                                            </p>
+                                            <div class="profile-wrap">
+                                                <div class="thumb-wrap">
+                                                    <a href="#" class="profile-thumb"><img src="_temp/pro_thumb2.jpg" alt="" /></a>
+                                                </div>
+                                                <div class="profile-meta">
+                                                    <p class="name">
+                                                        <a href="#">
+                                                            <strong>이다줌</strong>
+                                                            <span>손해사정사</span>
+                                                        </a>
+                                                    </p>
+                                                    <p class="category">배상책임, 신체손해사정</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="card">
+                                            <p class="case-title"><strong>목욕탕 넘어짐 사고</strong> <em>배상책임보험</em> 보상 사례</p>
+                                            <p class="case-content">
+                                                상완골 대거친면에 골절이 발생한 상태입니다. 주로 넘어질 때 바닥에 손을 짚으며 발생하는
+                                                진단명입니다. 대거친면은 대결절이라고도 …
+                                            </p>
+                                            <span class="btn-view-more"><span class="sr-text">자세히보기</span></span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="card">
+                                            <p class="case-title"><strong>단지내 낙상 사고</strong> <em>배상책임보험</em> 보상 사례</p>
+                                            <p class="case-content">
+                                                물론 아파트 단지 내에서 낙상사고가 발생했다고 하여 무조건 아파트 배상책임보험이 적용되는
+                                                것은 아닙니다. 우선 아파트 관리사무소가 ...
+                                            </p>
+                                            <span class="btn-view-more"><span class="sr-text">자세히보기</span></span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="card">
+                                            <p class="case-title">
+                                                <strong>수상레저 땅콩보트 사고</strong> <em>배상책임보험</em> 보상 사례
+                                            </p>
+                                            <p class="case-content">
+                                                업체에서 가입한 영업배상책임보험으로 보상을 받을 수 있습니다. 영업배상책임보험으로 보상 받을
+                                                수 있는 항목은 위자료, 치료비, 휴업손해…
+                                            </p>
+                                            <span class="btn-view-more"><span class="sr-text">자세히보기</span></span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="card">
+                                            <p class="case-title"><strong>헬스장 사고</strong><em>배상책임보험</em> 보상 사례</p>
+                                            <p class="case-content">
+                                                헬스장이 가입해둔 영업배상책임보험으로 보상을 받으실 수 있습니다. 정상적으로 등록 되어 있는
+                                                헬스장의 경우에는 “체육시설업자…
+                                            </p>
+                                            <span class="btn-view-more"><span class="sr-text">자세히보기</span></span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="slider-nav">
+                            <div class="js-main-case-nav"></div>
+                        </div>
+
+                        <script>
+                            document.addEventListener("DOMContentLoaded", function () {
+                                var $container = $(".js-main-case-slider");
+                                var option = {
+                                    arrows: true,
+                                    dots: true,
+                                    appendArrows: ".js-main-case-nav",
+                                    appendDots: ".js-main-case-nav",
+                                };
+
+                                if (window.innerWidth > 1074) {
+                                    $container.slick(option);
+                                }
+
+                                $(window).on("resize", function () {
+                                    if (window.innerWidth <= 1074 && $container.hasClass("slick-initialized")) {
+                                        $container.slick("unslick");
+                                    } else if (window.innerWidth > 1074 && !$container.hasClass("slick-initialized")) {
+                                        $container.slick(option);
+                                    }
+                                });
+                            });
+                        </script>
+                    </div>
+                </div>
+                <div class="main-total-counter">
+                    <div class="container">
+                        <p>
+                            <span
+                                >다줌에 방문해주시는<br />
+                                <em>32,123</em><span class="entity">명</span>의 방문자분들이</span
+                            >
+                            <span
+                                ><em>3,123</em><span class="entity">명</span>의<br />
+                                전문 보상프로에게</span
+                            >
+                            <span
+                                ><em>28,123</em><span class="entity">건</span>의<br />
+                                상담을 받으셨습니다.</span
+                            >
+                        </p>
+                        <p class="update">*2020년 10월 기준</p>
+                    </div>
+                </div>
+                <!-- 20210203 수정 -->
+                <div class="main-notice">
+                    <div class="container">
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    <p class="regdate"><strong>22</strong><span>2020.10</span></p>
+                                    <div class="content-wrap">
+                                        <p class="title"><em class="board-label event">이벤트</em><span>다줌 홈페이지 오픈</span></p>
+                                        <p class="summary">
+                                            다줌 홈페이지 오픈 다줌 홈페이지 오픈 다줌 홈페이지 오픈 다줌 홈페이지 오픈 다줌 홈페이지 오픈
+                                            다줌 홈페이지 오픈 다줌 홈페이지 오픈
+                                        </p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="regdate"><strong>09</strong><span>2020.10</span></p>
+                                    <div class="content-wrap">
+                                        <p class="title"><em class="board-label event">이벤트</em><span>다줌 홈페이지 오픈</span></p>
+                                        <p class="summary">
+                                            다줌 홈페이지 오픈 다줌 홈페이지 오픈 다줌 홈페이지 오픈 다줌 홈페이지 오픈 다줌 홈페이지 오픈
+                                            다줌 홈페이지 오픈 다줌 홈페이지 오픈
+                                        </p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="regdate"><strong>09</strong><span>2020.10</span></p>
+                                    <div class="content-wrap">
+                                        <p class="title"><em class="board-label notice">일반공지</em><span>다줌 홈페이지 오픈</span></p>
+                                        <p class="summary">
+                                            다줌 홈페이지 오픈 다줌 홈페이지 오픈 다줌 홈페이지 오픈 다줌 홈페이지 오픈 다줌 홈페이지 오픈
+                                            다줌 홈페이지 오픈 다줌 홈페이지 오픈
+                                        </p>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="btn-wrap">
+                            <a href="#" class="btn-action">더보기</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- //20210203 수정 -->
+            </div>
+        </div>
+
+        <div class="spy-sidebox">
+            <a href="#" class="btn-chatbot">무엇을 도와드릴까요?</a>
+        </div>
+
+        <!-- 보상프로 모집 안내 -->
+        <aside class="aside-footer">
+            <div class="container">
+                <p class="headline"><span>다줌과 함께할</span> 보상프로를 찾습니다.</p>
+                <p>다줌 보상프로 등록하고 의뢰인을 만나세요.</p>
+                <div class="btn-wrap">
+                    <a href="#" class="btn">등록하기</a>
+                    <a href="#" class="btn-benefit">다줌 보상프로가 되면 좋은점</a>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="logo-wrap">
+                    <p class="footer-logo"><span class="sr-text">DAZUM</span></p>
+                </div>
+                <div class="content-wrap">
+                    <ul class="footer-menu">
+                        <li>
+                            <a href="#">회사소개</a>
+                        </li>
+                        <li>
+                            <a href="#">이용약관</a>
+                        </li>
+                        <li>
+                            <a href="#"><strong>개인정보처리방침</strong></a>
+                        </li>
+                        <li>
+                            <a href="#">법적책임</a>
+                        </li>
+                        <li>
+                            <a href="#">운영정책</a>
+                        </li>
+                        <li>
+                            <a href="#">고객센터</a>
+                        </li>
+                        <li>
+                            <a href="#"><em>제휴문의</em></a>
+                        </li>
+                    </ul>
+                    <div class="company-info">
+                        <p class="company-name">(주)엑사메이커스</p>
+                        <p>
+                            <span>서울시 강남구 역삼동 738번지 4층</span>
+                            <span>사업자번호:000-00-00000</span>
+                            <span>통신판매번호 : 2020-서울서초-0000</span>
+                            <br />
+                            <span>대표자명 : 김금동</span>
+                            <span>대표번호 : 02-0000-0000</span>
+                        </p>
+                        <p class="copyright">(C) Examakers Co., Ltd. ALL RIGHTS RESERVED.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Script -->
+        <script src="static/js/lib/jquery.min.js"></script>
+        <script src="static/js/slick.min.js"></script>
+        <script src="static/js/Chart.min.js"></script>
+        <script src="static/js/aos.js"></script>
+        <script src="static/js/main.js"></script>
+    </body>
+</html>
