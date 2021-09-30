@@ -32,6 +32,20 @@ input[type="number"]::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
+.pc {
+    display: block;
+}
+.m {
+    display: none;
+}
+@media (max-width: 680px) {
+    .pc {
+        display: none;
+    }
+    .m {
+        display: block;
+    }
+}
 
 // title
 .sub-header {
@@ -60,6 +74,15 @@ input[type="number"]::-webkit-inner-spin-button {
         color: #666;
     }
 }
+@media (max-width: 680px) {
+    .tit-wrap {
+        padding-bottom: 10px;
+        padding-top: 60px;
+        .primary-title-t2 {
+            font-size: 20px;
+        }
+    }
+}
 
 // btn
 .btn-wrap-easy {
@@ -84,6 +107,11 @@ input[type="number"]::-webkit-inner-spin-button {
         background: $w;
         color: #bac0c6 !important;
     }
+}
+@media (max-width: 1074px) {
+    // .btn-wrap-easy {
+    //     margin-top: 30px;
+    // }
 }
 
 // form
@@ -146,7 +174,8 @@ input[type="number"]::-webkit-inner-spin-button {
         display: flex;
         justify-content: center;
         align-items: center;
-        height: calc(100vh - 280px);
+        padding: 180px 0 200px;
+        // height: calc(100vh - 280px);
         font-size: inherit;
         white-space: normal;
         background: url(../img/easy/bg_visual.svg) no-repeat 50% 0 / cover;
@@ -222,6 +251,7 @@ input[type="number"]::-webkit-inner-spin-button {
         li {
             position: relative;
             width: 30%;
+            min-width: 300px;
             padding: 0 30px;
             &.ico-1 a {
                 &::before {
@@ -313,9 +343,32 @@ input[type="number"]::-webkit-inner-spin-button {
     }
 }
 
-@media (max-width: 1074px) {
+@media (max-width: 780px) {
     #easy {
+        .main-visual {
+            padding: 50px 0 30px;
+        }
         .easy-intro {
+            width: 100%;
+            transform: scale(0.9);
+            .txt-m {
+                font-size: 18px;
+            }
+            .txt-highlighter {
+                font-size: 20px;
+            }
+        }
+        .lst-easy-goto {
+            li {
+                width: 50%;
+                min-width: 0;
+                padding: 0 10px;
+            }
+            a {
+                p {
+                    font-size: 13px;
+                }
+            }
         }
     }
 }
@@ -520,6 +573,7 @@ input[type="number"]::-webkit-inner-spin-button {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
+        margin: 0;
         li {
             float: left;
             width: 18%;
@@ -591,6 +645,30 @@ input[type="number"]::-webkit-inner-spin-button {
     }
     .form-agreement {
         padding-bottom: 0;
+    }
+}
+
+@media (max-width: 1074px) {
+    .find-billing-wrap {
+        padding-top: 0;
+        > section:first-child {
+            margin-bottom: 50px;
+        }
+        .listview {
+            li {
+                width: 32%;
+            }
+        }
+    }
+}
+@media (max-width: 680px) {
+    .find-billing-wrap {
+        .listview {
+            .box-insu {
+                height: 70px;
+                background-size: 70% auto !important;
+            }
+        }
     }
 }
 
@@ -736,6 +814,11 @@ input[type="number"]::-webkit-inner-spin-button {
         font-size: 12px;
         line-height: 1;
         color: #5c5c5c;
+    }
+}
+@media (max-width: 680px) {
+    .billing-step {
+        width: 100%;
     }
 }
 

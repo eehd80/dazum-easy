@@ -39,6 +39,23 @@ input[type="number"]::-webkit-inner-spin-button {
   margin: 0;
 }
 
+.pc {
+  display: block;
+}
+
+.m {
+  display: none;
+}
+
+@media (max-width: 680px) {
+  .pc {
+    display: none;
+  }
+  .m {
+    display: block;
+  }
+}
+
 .sub-header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -75,6 +92,16 @@ input[type="number"]::-webkit-inner-spin-button {
   letter-spacing: -1px;
   font-style: normal;
   color: #666;
+}
+
+@media (max-width: 680px) {
+  .tit-wrap {
+    padding-bottom: 10px;
+    padding-top: 60px;
+  }
+  .tit-wrap .primary-title-t2 {
+    font-size: 20px;
+  }
 }
 
 .btn-wrap-easy {
@@ -173,7 +200,7 @@ input[type="number"]::-webkit-inner-spin-button {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: calc(100vh - 280px);
+  padding: 180px 0 200px;
   font-size: inherit;
   white-space: normal;
   background: url(../img/easy/bg_visual.svg) no-repeat 50% 0/cover;
@@ -262,6 +289,7 @@ input[type="number"]::-webkit-inner-spin-button {
 #easy .lst-easy-goto li {
   position: relative;
   width: 30%;
+  min-width: 300px;
   padding: 0 30px;
 }
 
@@ -364,6 +392,31 @@ input[type="number"]::-webkit-inner-spin-button {
   font-weight: 100;
   letter-spacing: -1.26px;
   color: #fff;
+}
+
+@media (max-width: 780px) {
+  #easy .main-visual {
+    padding: 50px 0 30px;
+  }
+  #easy .easy-intro {
+    width: 100%;
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+  #easy .easy-intro .txt-m {
+    font-size: 18px;
+  }
+  #easy .easy-intro .txt-highlighter {
+    font-size: 20px;
+  }
+  #easy .lst-easy-goto li {
+    width: 50%;
+    min-width: 0;
+    padding: 0 10px;
+  }
+  #easy .lst-easy-goto a p {
+    font-size: 13px;
+  }
 }
 
 .find-billing-wrap .step-t2 {
@@ -621,6 +674,7 @@ input[type="number"]::-webkit-inner-spin-button {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  margin: 0;
 }
 
 .find-billing-wrap .listview li {
@@ -714,6 +768,25 @@ input[type="number"]::-webkit-inner-spin-button {
 
 .find-billing-wrap .form-agreement {
   padding-bottom: 0;
+}
+
+@media (max-width: 1074px) {
+  .find-billing-wrap {
+    padding-top: 0;
+  }
+  .find-billing-wrap > section:first-child {
+    margin-bottom: 50px;
+  }
+  .find-billing-wrap .listview li {
+    width: 32%;
+  }
+}
+
+@media (max-width: 680px) {
+  .find-billing-wrap .listview .box-insu {
+    height: 70px;
+    background-size: 70% auto !important;
+  }
 }
 
 .billing-step {
@@ -889,6 +962,12 @@ input[type="number"]::-webkit-inner-spin-button {
   font-size: 12px;
   line-height: 1;
   color: #5c5c5c;
+}
+
+@media (max-width: 680px) {
+  .billing-step {
+    width: 100%;
+  }
 }
 
 .result-easy {
