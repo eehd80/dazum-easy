@@ -73,6 +73,11 @@ input[type="number"]::-webkit-inner-spin-button {
   padding: 0;
 }
 
+.sub-header.sub-01 {
+  height: 216px;
+  min-height: 0;
+}
+
 .tit-wrap {
   position: relative;
   margin-bottom: 50px;

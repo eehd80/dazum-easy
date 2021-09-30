@@ -54,6 +54,10 @@ input[type="number"]::-webkit-inner-spin-button {
     align-items: center;
     justify-content: center;
     padding: 0;
+    &.sub-01 {
+        height: 216px;
+        min-height: 0;
+    }
 }
 
 .tit-wrap {
