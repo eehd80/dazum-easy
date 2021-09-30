@@ -130,6 +130,12 @@ input[type="number"]::-webkit-inner-spin-button {
   color: #bac0c6 !important;
 }
 
+@media (max-width: 1074px) {
+  .btn-wrap-easy .btn- {
+    padding: 12px 15px;
+  }
+}
+
 .form-selectbox2 {
   display: inline-block;
   position: relative;
@@ -1048,6 +1054,16 @@ input[type="number"]::-webkit-inner-spin-button {
   color: #4d4d4d;
 }
 
+@media (max-width: 680px) {
+  .billing-ending {
+    -webkit-transform: scale(0.85);
+            transform: scale(0.85);
+  }
+  .billing-ending strong {
+    font-size: 28px;
+  }
+}
+
 .secondary-title-option {
   font-size: 15px;
   font-weight: 400;
@@ -1072,31 +1088,6 @@ input[type="number"]::-webkit-inner-spin-button {
   color: #4a65f7;
   vertical-align: bottom;
   font-family: "verdana", serif;
-}
-
-.board-list-type2 {
-  margin-top: 30px;
-}
-
-.board-list-type2 .board-list-header .row > span {
-  border-top: none;
-  border-bottom-width: 2px;
-}
-
-.board-list-type2 .title {
-  text-align: center;
-}
-
-.board-list-type2 .btn-view {
-  display: block;
-  width: 67px;
-  height: 36px;
-  margin: 4px auto;
-  padding: 8px 0;
-  border-radius: 5px;
-  background-color: #4a65f7;
-  font-size: 13px;
-  color: #fff;
 }
 
 .result-wrap .slick-arrow {
@@ -1161,5 +1152,178 @@ input[type="number"]::-webkit-inner-spin-button {
   font-style: normal;
   font-size: 16px;
   color: #666;
+}
+
+.board-list-type2 {
+  margin-top: 30px;
+}
+
+.board-list-type2 .board-list-header .row > span {
+  border-top: none;
+  border-bottom-width: 2px;
+}
+
+.board-list-type2 .btn-view {
+  display: block;
+  width: 67px;
+  height: 36px;
+  margin: 4px auto;
+  padding: 8px 0;
+  border-radius: 5px;
+  border: none;
+  background-color: #4a65f7;
+  font-size: 13px;
+  color: #fff;
+}
+
+.board-list-easy {
+  display: table-row-group;
+  list-style: none;
+  width: 100%;
+}
+
+.board-list-easy li {
+  display: table-row;
+}
+
+.board-list-easy li > span {
+  display: table-cell;
+  padding: 10px 0 11px;
+  font-size: 12px;
+  color: #666;
+  letter-spacing: -0.05em;
+  text-align: center;
+  vertical-align: middle;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.board-list-easy a:hover, .board-list-easy a:focus {
+  text-decoration: underline;
+}
+
+.board-list-easy .no {
+  font-family: "Roboto", sans-serif;
+  font-size: 13px;
+  color: #000;
+}
+
+.board-list-easy .title {
+  font-size: 15px;
+  color: #000;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.board-list-easy .title .board-label {
+  display: inline-block;
+  position: relative;
+  top: 1px;
+  min-width: 3.66667em;
+  margin: 0 4px 0 0;
+  padding: 3px 5px 5px;
+  font-size: 12px;
+  font-style: normal;
+  letter-spacing: -0.05em;
+  line-height: 1;
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 3px;
+}
+
+.board-list-easy .title .board-label.event {
+  color: #4a65f7;
+  border: 1px solid #4a65f7;
+}
+
+.board-list-easy .title .board-label.notice {
+  color: #fff;
+  border: 1px solid #343434;
+  background: #343434;
+}
+
+.board-list-easy .title a {
+  display: inline-block;
+  max-width: 72.72727%;
+  text-overflow: ellipsis;
+  vertical-align: middle;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.board-list-easy .viewing,
+.board-list-easy .regdate {
+  font-family: "Roboto", sans-serif;
+}
+
+@media (max-width: 1074px) {
+  .board-list-type2 {
+    border-top: 1px solid #000;
+  }
+  .board-list-easy li > span {
+    width: 11%;
+  }
+  .board-list-easy .title {
+    width: 30%;
+  }
+  .board-list-easy .title a {
+    display: block;
+  }
+  .board-list-easy .writer {
+    display: table-cell;
+    width: 20%;
+  }
+  .board-list-easy .regdate {
+    width: 20%;
+  }
+}
+
+@media (max-width: 680px) {
+  .board-list-easy {
+    display: block;
+  }
+  .board-list-easy li {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    width: 100%;
+    padding: 5px 0 2px;
+    border-bottom: 1px solid #e6e6e6;
+  }
+  .board-list-easy li > span {
+    display: block;
+    padding: 5px 0 6px;
+    border-bottom: none;
+    white-space: nowrap;
+    text-align: left;
+  }
+  .board-list-easy .insurance {
+    width: 30%;
+  }
+  .board-list-easy .title {
+    width: 65%;
+  }
+  .board-list-easy .writer {
+    display: block;
+  }
+  .board-list-easy .view {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: auto;
+  }
+  .board-list-easy .date {
+    width: 30%;
+  }
 }
 /*# sourceMappingURL=easy.css.map */
