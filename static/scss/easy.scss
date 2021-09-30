@@ -309,6 +309,7 @@ input[type="number"]::-webkit-inner-spin-button {
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            height: 180px;
             padding: 20px 0;
             border-radius: 12px;
             border: 1px solid $w;
@@ -336,6 +337,7 @@ input[type="number"]::-webkit-inner-spin-button {
             strong {
                 display: block;
                 font-weight: 300;
+                font-size: 15px;
             }
             p {
                 opacity: 0.55;
@@ -367,11 +369,16 @@ input[type="number"]::-webkit-inner-spin-button {
             li {
                 width: 50%;
                 min-width: 0;
-                padding: 0 10px;
+                padding: 0 8px;
             }
             a {
                 p {
                     font-size: 13px;
+                }
+                &::before {                    
+                    transform-origin: 50% 50%;
+                    transform: scale(0.8);
+                    background-position: 0 0;
                 }
             }
         }
