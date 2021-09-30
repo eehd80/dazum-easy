@@ -457,6 +457,7 @@ input[type="number"]::-webkit-inner-spin-button {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: relative;
   width: 41px;
   height: 41px;
   padding: 1px 0 0;
@@ -470,13 +471,18 @@ input[type="number"]::-webkit-inner-spin-button {
 
 .find-billing-wrap .btn-arrow::before {
   display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   font-family: "Line Awesome Free";
   font-weight: 900;
   font-size: 15px;
 }
 
 .find-billing-wrap .btn-prev {
-  right: 110px;
+  right: 0;
 }
 
 .find-billing-wrap .btn-prev::before {
