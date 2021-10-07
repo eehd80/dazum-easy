@@ -39,6 +39,15 @@ input[type="number"]::-webkit-inner-spin-button {
   margin: 0;
 }
 
+.blind {
+  overflow: hidden;
+  position: absolute;
+  width: 0;
+  height: 0;
+  line-height: 0;
+  text-indent: -9999px;
+}
+
 .pc {
   display: block;
 }
@@ -85,6 +94,7 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 .tit-wrap .primary-title-t2 {
+  display: inline-block;
   font-size: 22px;
   letter-spacing: -2px;
   font-weight: 500;
@@ -98,6 +108,17 @@ input[type="number"]::-webkit-inner-spin-button {
   color: #666;
 }
 
+.tit-wrap .btn-primary {
+  display: inline-block;
+  margin: -8px 0 0 5px;
+  padding: 3px 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  vertical-align: middle;
+  font-size: 12px;
+  color: #777;
+}
+
 @media (max-width: 680px) {
   .tit-wrap {
     padding-bottom: 10px;
@@ -105,6 +126,9 @@ input[type="number"]::-webkit-inner-spin-button {
   }
   .tit-wrap .primary-title-t2 {
     font-size: 20px;
+  }
+  .tit-wrap .btn-primary {
+    margin: 0;
   }
 }
 
@@ -522,7 +546,6 @@ input[type="number"]::-webkit-inner-spin-button {
 .modal-popup .modal-container {
   width: 550px;
   min-height: 479px;
-  margin: 0 20px;
 }
 
 .modal-popup .popup-action {
@@ -538,19 +561,32 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 .modal-popup .modal-header {
-  padding: 28px 0;
   text-align: center;
   border-bottom: 1px solid #f0f0f0;
 }
 
 .modal-popup .modal-header .tit- {
   display: block;
+  height: 80px;
+  line-height: 80px;
 }
 
 .modal-popup .modal-header .txt- {
-  margin-top: 12px;
+  margin: -20px 0 20px;
   font-size: 15px;
   color: #666;
+}
+
+.modal-popup .alert-rule {
+  width: 100%;
+  max-width: none;
+}
+
+.modal-popup .alert-rule .alert-content {
+  margin-top: 0;
+  text-align: left;
+  font-size: 10pt;
+  font-weight: 300;
 }
 
 .modal-popup .txt-desc {
@@ -828,6 +864,12 @@ input[type="number"]::-webkit-inner-spin-button {
   font-weight: 500;
 }
 
+.billing-step .form-txt {
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #777;
+}
+
 .billing-step .form-label {
   display: block;
 }
@@ -881,7 +923,7 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 .billing-step .input-file-wrap.input-file-disabled .label-file::after {
-  content: "파일삭제";
+  content: "파일변경";
   background-color: #666;
 }
 
@@ -908,16 +950,16 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 .billing-step .input-file-wrap .label-file::after {
-  content: "파일추가";
+  content: "+ 파일추가";
   position: absolute;
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   right: 5px;
   display: inline-block;
-  width: 5.15385em;
+  width: 75px;
   margin: auto;
-  padding: 11px 6px 12px;
+  padding: 11px 10px 12px;
   font-size: 13px;
   color: #fff;
   letter-spacing: -0.05em;
@@ -951,22 +993,36 @@ input[type="number"]::-webkit-inner-spin-button {
   color: #999;
 }
 
-.billing-step .btn-delete {
+.billing-step .btn- {
   display: block;
   position: absolute;
-  bottom: -25px;
-  right: 3px;
-  font-size: 14px;
-  font-weight: 500;
-  color: #666;
-  background-color: transparent;
-  border: none;
+  bottom: 0;
+  right: -81px;
+  display: inline-block;
+  width: 75px;
+  height: 50px;
+  margin: auto;
+  padding: 0 6px 0;
+  font-size: 13px;
+  font-weight: 300;
+  color: #555;
+  letter-spacing: -0.05em;
+  line-height: 34px;
+  text-align: center;
+  border-radius: 5px;
+  border: 1px solid #e0e3e5;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
-.billing-step .btn-plus {
+.billing-step .btn-delete {
+  background: #fff;
+}
+
+.billing-step .btn-blue {
   display: block;
   position: absolute;
-  bottom: -25px;
+  bottom: -35px;
   right: 3px;
   font-size: 14px;
   font-weight: 500;
@@ -989,10 +1045,35 @@ input[type="number"]::-webkit-inner-spin-button {
   color: #5c5c5c;
 }
 
+.billing-step .form-error.is-pass::before {
+  content: "\f00c";
+}
+
+.billing-step .form-error::before {
+  content: "\f00d";
+  display: inline-block;
+  margin: -1px 5px 0 0;
+  font-family: "Line Awesome Free";
+  font-weight: 900;
+  vertical-align: middle;
+}
+
 @media (max-width: 680px) {
   .billing-step {
     width: 100%;
   }
+  .billing-step .btn- {
+    float: right;
+    position: static;
+    height: 26px;
+    margin-top: 5px;
+    line-height: 22px;
+    font-size: 12px;
+  }
+}
+
+.join-form {
+  border: none;
 }
 
 .result-easy {
@@ -1195,6 +1276,10 @@ input[type="number"]::-webkit-inner-spin-button {
   color: #fff;
 }
 
+.board-list-type2 .btn-view:hover {
+  text-decoration: none;
+}
+
 .board-list-easy {
   display: table-row-group;
   list-style: none;
@@ -1224,6 +1309,10 @@ input[type="number"]::-webkit-inner-spin-button {
   font-family: "Roboto", sans-serif;
   font-size: 13px;
   color: #000;
+}
+
+.board-list-easy .date {
+  width: 10%;
 }
 
 .board-list-easy .title {

@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>보험금 청구를 위한 필수 약관 동의 - DAZUM 다줌</title>
+        <meta name="keyword" content="보험, 보상프로, 보험상담, 손해사정사" />
+        <meta name="description" content="청구에서 보상까지! 어렵고 번거로운 보험 서비스 다줌 보상프로가 해결해드립니다." />
+        <meta name="format-detection" content="address=no, email=no, telephone=no" />
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="DAZUM 다줌" />
+        <meta property="og:url" content="http://" />
+        <meta property="og:description" content="청구에서 보상까지! 어렵고 번거로운 보험 서비스 다줌 보상프로가 해결해드립니다." />
+        <meta property="og:image" content="./static/img/mobile.png" />
+        <!-- [D]절대경로 -->
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="http://" />
+        <meta property="twitter:description" content="청구에서 보상까지! 어렵고 번거로운 보험 서비스 다줌 보상프로가 해결해드립니다." />
+        <meta property="twitter:image" content="./static/img/mobile.png" />
+        <!-- [D]절대경로 -->
+
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="static/img/favicon.ico" type="image/x-icon" />
+
+        <!-- Style -->
+        <link rel="stylesheet" href="static/css/slick.css" />
+        <link rel="stylesheet" href="static/css/Chart.min.css" />
+        <link rel="stylesheet" href="static/css/aos.css" />
+        <link rel="stylesheet" href="static/css/main.css" />
+        <!-- 간편청구 210915 추가 -->
+        <link
+            rel="stylesheet"
+            href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"
+        />
+        <link rel="stylesheet" href="static/css/easy.css" />
+    </head>
+
+    <body>
+        <!--[if lt IE 10]>
+            <p
+                id="browser-upgrade"
+                style="
+                    position: relative;
+                    padding: 4px 1em;
+                    font-size: 12px;
+                    color: #000;
+                    letter-spacing: 0;
+                    background: #ffc;
+                    border-bottom: 2px outset #fff;
+                    margin: 0;
+                    text-align: left;
+                    z-index: 99;
+                "
+            >
+                사용하는 브라우저에서 사이트가 정상적으로 표시되지 않습니다. 최신 브라우저로
+                <a href="http://outdatedbrowser.com/ko" style="color: #00f; text-decoration: underline">업데이트</a> 하세요. Your browser is
+                out of date! Update your browser to view this website correctly.
+                <a href="http://outdatedbrowser.com/ko" style="padding: 0 4px; color: #00f; font-weight: bold; text-decoration: underline"
+                    >Update now</a
+                >
+            </p>
+        <![endif]-->
+
+        <a href="#content" class="skip">메뉴 건너띄기</a>
+
+        <header class="header">
+            <div class="gnb-wrap">
+                <a href="#gnb" role="button" aria-expanded="false" class="btn-open-menu js-toggle-menu"
+                    ><span class="sr-text">메뉴열기</span></a
+                >
+                <div id="gnb" class="menu-wrap">
+                    <a href="#" role="button" aria-expanded="false" class="btn-close-menu js-toggle-menu"
+                        ><span class="sr-text">메뉴닫기</span></a
+                    >
+
+                    <!-- mobile only -->
+                    <div class="top-area">
+                        <a href="#" class="btn-notify">
+                            <span class="sr-text">알림</span>
+                            <!-- [D]새 알림이 있을때 표시 -->
+                            <span class="new-dot">New</span>
+                        </a>
+                        <a href="#" class="btn-setting"><span class="sr-text">설정</span></a>
+                        <div class="profile-wrap">
+                            <a href="#" class="profile-thumb"><img src="static/img/common/default_profile.png" alt="" /></a>
+                            <!-- 20210205 수정 -->
+                            <!-- 로그인전 -->
+                            <div class="no-name">
+                                <a href="#">로그인</a>
+                                <a href="#">회원가입</a>
+                            </div>
+                            <!-- 로그인후 -->
+                            <!-- <div class="profile-name">
+                    <p><em>홍길동</em> 님</p>
+                    <a href="#">마이페이지</a>
+                    <a href="#" class="btn-logout">로그아웃</a>
+                </div> -->
+                        </div>
+                        <div class="quick-menu-list">
+                            <ul>
+                                <li><a href="#">보상프로 찾기</a></li>
+                                <li><a href="#">보상청구</a></li>
+                                <li><a href="#">상담신청</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- gnb 메뉴 -->
+                    <nav>
+                        <ul class="top-menu">
+                            <li><a href="#">보상사례</a></li>
+                            <li><a href="#">상담사례</a></li>
+                            <li><a href="#">이용후기</a></li>
+                            <li><a href="#">고객센터</a></li>
+                        </ul>
+                        <!-- 20210205 수정 -->
+                        <ul class="bottom-menu">
+                            <li><a href="#">공지사항</a></li>
+                            <li><a href="#">자주 묻는 질문</a></li>
+                            <li><a href="#">이용약관</a></li>
+                            <li><a href="#">개인정보보호정책</a></li>
+                            <li><a href="#">회사소개</a></li>
+                        </ul>
+                    </nav>
+                    <!-- //gnb 메뉴 -->
+
+                    <!-- mobile only -->
+                    <div class="bottom-banner">
+                        <p class="headline">
+                            다줌과 함께할<br />
+                            보상프로를 찾습니다.
+                        </p>
+                        <a href="#" class="btn-benefit">다줌 보상프로가 되면 좋은점</a>
+                    </div>
+                </div>
+            </div>
+
+            <h1 class="top-logo">
+                <a href="#"><span class="sr-text">DAZUM</span></a>
+            </h1>
+
+            <!-- widescreen only -->
+            <p class="top-page-title">간편청구</p>
+
+            <div class="rt-menu">
+                <!-- <div class="total-search-wrap">
+                <a href="#totalSearchArea1" role="button" aria-expanded="false" class="btn-top-search js-toggle-total-search"><span class="sr-text">통합검색</span></a>
+                <div id="totalSearchArea1" class="total-search">
+                    <a href="#totalSearch1" role="button" aria-expanded="false" class="btn-close-top-search js-toggle-total-search"><span class="sr-text">통합검색 닫기</span></a>
+                    <div class="container">
+                        <form action="/" method="POST">
+                            <div class="total-search-form">
+                                <label>
+                                    <span class="sr-text">검색어 입력</span>
+                                    <input type="search" name="search" placeholder="검색어를 입력해주세요" class="form-text">
+                                </label>
+                                <button type="submit" class="btn-total-search"><span class="sr-text">검색하기</span></button>
+                            </div>
+                            <div class="recomm-keyword">
+                                <p class="title">추천 키워드로 찾으세요.</p>
+                                <div class="keyword-list">
+                                    <ul>
+                                        <li class="best"><a href="#">교통사고처리방법</a></li>
+                                        <li class="best"><a href="#">손해사정사의 보험금 상담</a></li>
+                                        <li class="best"><a href="#">보험사고 상담</a></li>
+                                        <li><a href="#">화재사고 상담</a></li>
+                                        <li><a href="#">보험가입담보설정 상담</a></li>
+                                    </ul>
+                                    <ul>
+                                        <li><a href="#">면부책</a></li>
+                                        <li><a href="#">뇌경색진단비 근재보험</a></li>
+                                        <li><a href="#">사망보험금</a></li>
+                                        <li><a href="#">후유장해</a></li>
+                                        <li><a href="#">암진단비</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div> -->
+
+                <!-- 20210205 수정 -->
+                <div class="member-menu">
+                    <!-- 로그인 전 -->
+                    <a href="https://dazum.co.kr/find/cmpsPro/cmpsProList.do" class="btn- bg-blue c-white">보상프로 찾기</a>
+                    <a href="#">로그인</a>
+                    <a href="#">회원가입</a>
+                    <a href="#">고객센터</a>
+                    <!-- 로그인 후 -->
+                    <!-- <div class="dropdown-wrap info">
+                    <a href="#" class="profile-thumb">
+                        <img src="static/img/common/default_profile.png" alt="">
+                    </a>
+                    <button type="button" class="btn js-toggle-dropdown">User ID</button>
+                    <div class="dropdown">
+                        <ul>
+                            <li><a href="#">마이페이지</a></li>
+                            <li><a href="#">로그아웃</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <a href="#">고객센터</a> -->
+                </div>
+                <!-- //20210205 수정 -->
+            </div>
+        </header>
+
+        <!-- Content -->
+        <div id="content">
+            <div class="sub-header sub-01">
+                <div class="container">
+                    <h2 class="title">회원가입</h2>
+                </div>
+            </div>
+
+            <div class="sub-body">
+                <div class="sub-content billing-content">
+                    <div class="find-billing-wrap">
+                        <!-- 간편청구 -->
+                        <section class="section">
+                            <div class="container">
+                                <form action="">
+                                    <div class="tit-wrap">
+                                        <h3 class="primary-title-t2">한국신용정보원 아이디(ID) 찾기</h3>
+                                    </div>
+
+                                    <div class="result-wrap billing-step">
+                                        <div class="form-section">
+                                            <p class="form-title"><span>한국신용정보원</span></p>
+                                            <p class="form-txt">
+                                                금융소비자의 소중한 개인(신용)정보 보호를 위하여 회원으로 가입한 경우에만 <br class="pc" />
+                                                본인신용정보를 열람하실 수 있습니다.
+                                            </p>
+
+                                            <div class="form-row">
+                                                <p class="form-label">이름</p>
+                                                <label>
+                                                    <span class="sr-text">이름 입력</span>
+                                                    <input
+                                                        type="text"
+                                                        name="usrName"
+                                                        value="홍길동"
+                                                        aria-required="true"
+                                                        disabled=""
+                                                        class="form-text"
+                                                    />
+                                                </label>
+                                            </div>
+                                            <div class="form-row">
+                                                <p class="form-label">생년월일</p>
+                                                <label>
+                                                    <span class="sr-text">주민등록번호</span>
+                                                    <input
+                                                        type="number"
+                                                        name="usrEmail"
+                                                        aria-required="true"
+                                                        placeholder="8자리 숫자로 입력해주세요.(YYYYMMDD)"
+                                                        class="form-text"
+                                                    />
+                                                </label>
+                                            </div>
+                                            <div class="form-row">
+                                                <p class="form-label">성별</p>
+                                                <div class="form-toggle-wrap">
+                                                    <label class="form-radiobox">
+                                                        <input type="radio" name="usrGender" value="남성" checked="" />
+                                                        <span class="radio-label">
+                                                            <span class="box"></span>
+                                                            <span>남성</span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="form-radiobox">
+                                                        <input type="radio" name="usrGender" value="여성" />
+                                                        <span class="radio-label">
+                                                            <span class="box"></span>
+                                                            <span>여성</span>
+                                                        </span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="form-row">
+                                                <p class="form-label">이메일</p>
+                                                <label>
+                                                    <span class="sr-text">이메일 입력</span>
+                                                    <input
+                                                        type="email"
+                                                        name="usrEmail"
+                                                        aria-required="true"
+                                                        placeholder="이메일 (가입인증을 위한 이메일 주소)"
+                                                        class="form-text"
+                                                    />
+                                                </label>
+                                                <p class="form-error is-pass">회원가입 당시 등록한 이메일을 입력하여 주시기 바랍니다.</p>
+                                            </div>
+                                            <div class="form-row">
+                                                <p class="form-label">인증방식</p>
+                                                <div class="form-toggle-wrap">
+                                                    <label class="form-radiobox">
+                                                        <input type="radio" name="Certificate" value="휴대폰" checked="" />
+                                                        <span class="radio-label">
+                                                            <span class="box"></span>
+                                                            <span>휴대폰</span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="form-radiobox">
+                                                        <input type="radio" name="Certificate" value="공인인증서" />
+                                                        <span class="radio-label">
+                                                            <span class="box"></span>
+                                                            <span>공인인증서</span>
+                                                        </span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="btn-wrap-easy">
+                                        <button type="submit" class="btn- btn-submit">확인</button>
+                                        <button type="submit" class="btn- btn-white">메인으로</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </section>
+                        <!-- 간편청구 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- modal - 이용약관 -->
+        <div id="mdJoinRule" class="modal-popup">
+            <div role="dialog" class="modal-container">
+                <div class="modal-header">
+                    <h3 class="tit-">이용약관</h3>
+                    <button type="button" class="btn-close-popup js-close-popup"><span class="sr-text">창닫기</span></button>
+                </div>
+                <div class="modal-content">
+                    <div class="popup-alert alert-rule">
+                        <div class="alert-content" style="word-break: keep-all">
+                            제 1 장 총칙<br /><br />
+
+                            제 1 조 (목적)<br /><br />
+
+                            이 약관은 종합신용정보집중기관인 한국신용정보원(Korea Credit Information Services, 이하 "신용정보원"이라
+                            합니다.)이 제공하는 서비스의 이용과 관련하여 신용정보원과 회원 간의 권리 · 의무 및 책임, 기타 필요한 사항을
+                            규정함을 목적으로 합니다.<br /><br />
+
+                            제 2 조 (정의)<br /><br />
+
+                            ① 이 약관에서 사용하는 용어의 정의는 다음 각 호와 같습니다.<br /><br />
+
+                            1. "서비스"란 "회원"이 PC 등을 통해 본인의 일반신용정보 또는 보험신용정보를 열람하는 제반 서비스를
+                            의미합니다.<br />
+                            2. "회원"이란 신용정보원의 서비스에 접속하여 이 약관에 따라 신용정보원의 가입절차를 통해 아이디를 부여받은 자를
+                            의미합니다.<br />
+                            3. "아이디"란 회원의 식별과 서비스 이용을 위하여 회원이 신청하고 신용정보원이 승인하는 문자와 숫자의 조합을
+                            의미합니다.<br />
+                            4. "비밀번호"란 회원이 부여 받은 아이디와 일치하는지를 확인하고 통신망에서 자신의 비밀보호를 위하여 회원 자신이
+                            선정한 문자와 숫자, 특수문자의 조합을 말합니다.<br />
+                            5. "탈퇴"란 회원이 이용계약을 종료시키는 행위를 말합니다. <br /><br />
+
+                            ② 이 약관에서 사용하는 용어의 정의는 제1항에서 정하는 것을 제외하고는 관련 법령 및 서비스별 안내에서 정하는 바에
+                            따릅합니다.<br /><br />
+
+                            제 3 조 (약관의 게시와 개정)<br /><br />
+
+                            ① 신용정보원은 이 약관의 내용을 회원이 쉽게 알 수 있도록 서비스 화면에 게시합니다.<br />
+                            ② 신용정보원은 ⌈약관의규제등에관한법률⌋, ⌈신용정보의이용및보호에관한법률⌋, ⌈정보통신망이용촉진등에관한법률⌋,
+                            ⌈개인정보보호법⌋ 등 (이하 "관련 법령" 이라 합니다.)을 위배하지 않는 범위에서 이 약관을 개정할 수 있습니다.<br />
+                            ③ 신용정보원이 약관을 개정할 경우 신용정보원은 적용일자 및 개정사유를 명시하여 현행 약관과 함께 제1항의 방식에
+                            따라 그 개정약관의 적용일자 30일 전부터 적용일자 전일까지 공지합니다. 다만, 회원에게 불리한 약관의 개정의 경우
+                            공지 외에 일정기간 서비스 내 회원이 입력한 전자우편주소를 통해 따로 통지합니다.<br />
+                            ④ 신용정보원이 제3항에 따라 개정약관을 공지 또는 통지하면서 회원이 30일 기간 내에 의사표시를 하지 않으면
+                            의사표시가 표명된 것으로 본다는 뜻을 명확하게 공지 또는 통지하였음에도 회원이 명시적으로 거부의 의사표시를 하지
+                            아니한 경우 회원이 개정약관에 동의한 것으로 봅니다.<br />
+                            ⑤ 회원이 개정약관의 적용에 동의하지 않는 경우 신용정보원은 개정 약관의 내용을 적용할 수 없으며, 이 경우 회원은
+                            이용계약을 해지할 수 있습니다. 다만, 기존 약관을 적용할 수 없는 특별한 사정이 있는 경우 신용정보원은 회원과의
+                            이용계약을 해지할 수 있습니다.<br /><br />
+
+                            제 2 장 회원가입 <br /><br />
+
+                            제 4 조 (회원가입) <br /><br />
+
+                            ① 이용계약은 회원이 되고자 하는 자(이하 "가입신청자" 라 합니다.)가 약관의 내용에 대하여 동의를 한 다음 회원가입
+                            신청을 하고 신용정보원이 이러한 신청에 대하여 승낙함으로써 체결됩니다.<br />
+                            ② 신용정보원은 다음 각 호의 사유에 해당하는 신청에 대하여는 승낙을 하지 않거나 사후에 이용계약을 해지할 수
+                            있습니다.<br />
+                            1. 실명이 아니거나 타인의 명의를 이용한 경우<br />
+                            2. 가입신청 시 허위 정보를 기재하거나, 신용정보원이 제시하는 내용을 기재하지 않은 경우<br />
+                            ③ 본인확인 후 정보열람이 가능한 서비스 특성상 가입신청자가 만14세 이상인 경우에 한하여 회원가입이 가능합니다.<br /><br />
+
+                            제 5 조 (회원정보의 변경) <br /><br />
+
+                            ① 회원은 개인정보관리화면을 통하여 언제든지 본인의 개인정보를 열람하고 변경할 수 있습니다. 다만, 서비스 관리를
+                            위해 필요한 실명, 주민등록번호, 아이디 등은 변경이 불가능 합니다.<br />
+                            ② 회원은 회원가입신청 시 기재한 사항이 변경되었을 경우 온라인으로 수정을 하거나 전자우편 기타 방법으로
+                            신용정보원에 대하여 그 변경사항을 알려야 합니다.<br />
+                            ③ 제2항의 변경사항을 신용정보원에 알리지 않아 발생한 불이익에 대하여 신용정보원은 책임지지 않습니다.<br /><br />
+
+                            제 6 조 (회원의 아이디 및 비밀번호의 관리에 대한 의무)<br /><br />
+
+                            ① 회원의 아이디와 비밀번호에 대한 관리 책임은 회원에게 있으며, 이를 제3자에게 양도하거나 이용하도록 하여서는
+                            안됩니다.<br />
+                            ② 회원은 아이디 및 비밀번호가 도용되거나 제3자에 의해 사용되고 있음을 인지한 경우에는 이를 즉시 신용정보원에
+                            통지하고 신용정보원의 안내에 따라야 합니다.<br />
+                            ③ 제2항의 경우에 해당 회원이 신용정보원에 그 사실을 통지하지 않거나, 통지한 경우에도 신용정보원의 안내에 따르지
+                            않아 발생한 불이익에 대하여 신용정보원은 책임지지 않습니다.<br /><br />
+
+                            제 7 조 (회원에 대한 통지)<br /><br />
+
+                            ① 신용정보원은 회원에 대한 통지를 하는 경우 회원이 입력한 전자우편주소로 할 수 있으며, 해당 전자우편주소는 본
+                            서비스와 관련되어서만 이용될 수 있습니다.<br />
+                            ② 신용정보원은 회원 전체에 대한 통지의 경우 7일 이상 서비스 화면에 게시함으로써 제1항의 통지에 갈음할 수
+                            있습니다. 다만, 회원 본인의 권리의무와 관련하여 중대한 영향을 미치는 사항에 대하여는 제1항의 통지를 합니다.<br /><br />
+
+                            제 8 조 (회원탈퇴) <br /><br />
+
+                            ① 회원은 언제든지 탈퇴를 요청할 수 있습니다. 신용정보원은 탈퇴 요청 즉시 관련 법령이 정하는 바에 따라 이를
+                            처리하며, 이미 신청한 서비스나 이용 중인 서비스는 즉시 정지됩니다.<br />
+                            ② 회원탈퇴를 할 경우 신용정보원은 관련 법령 및 개인정보처리방침에 따라 회원정보를 보유해야 하는 경우를
+                            제외하고는 회원의 모든 정보를 삭제합니다.<br /><br />
+
+                            제 3 장 서비스 이용계약 <br /><br />
+
+                            제 9 조 (신용정보원의 의무) <br /><br />
+
+                            ① 신용정보원은 관련법령과 이 약관이 금지하는 행위를 하지 않으며 이 약관이 정하는 바에 따라 지속적이고 안정적으로
+                            서비스를 제공하는 데 최선을 다하여 노력합니다.<br />
+                            ② 신용정보원은 회원이 안정적으로 서비스를 이용할 수 있도록 회원의 개인정보 보호를 위한 보안시스템을 갖추어야
+                            합니다.<br />
+                            ③ 신용정보원은 회원이 원하지 않는 영리목적의 광고성 전자우편을 발송하지 않습니다.<br />
+                            ④ 신용정보원은 회원에 대한 개인정보를 관련 법령 및 신용정보원의 개인정보처리방침에 따라 보호합니다.<br /><br />
+
+                            제 10 조 (회원의 의무) <br /><br />
+
+                            회원은 서비스 이용과 관련하여 다음 각 호의 어느 하나에 해당하는 행위를 하여서는 안됩니다.<br />
+                            1. 다른 사람의 개인정보, 인증서의 정보를 부정 사용하거나 자신의 개인정보, 인증서 등을 제3자에게 이용하게 하는
+                            행위<br />
+                            2. 서비스의 안정적 운영을 방해할 수 있는 정보를 전송하거나 수신자의 의사에 반하여 광고성 정보를 전송하는 행위<br />
+                            3. 공공질서 및 미풍양속에 위반되는 내용의 정보, 문장, 도형, 동영상, 음성 등을 유포하는 행위<br />
+                            4. 서비스와 관련된 설비의 오작동이나 정보 등의 파괴 및 혼란을 유발시키는 컴퓨터 바이러스 감염자료를 등록 또는
+                            유포하는 행위<br />
+                            5. 신용정보원의 저작권, 제3자의 저작권 등 기타 권리를 침해하는 행위<br />
+                            6. 서비스를 이용함으로써 얻은 모든 자료 및 정보(이하 "콘텐츠" 라 합니다)를 신용정보원의 사전승낙 없이 복제,
+                            배포, 방송, 전송 및 기타 방법에 의하여 이용하거나 제3자에게 제공하여 이용하게 하는 행위<br />
+                            7. 신용정보원의 사전승낙 없이 기술적 수단(스크레이핑, 캡처, 크롤러, 미러링 등 데이터 추출 프로그램 및 기타
+                            자동화 수단)을 사용하여 신용정보원이 제공하는 서비스의 콘텐츠를 가져가거나 제3가자 가져가도록 허용하는 행위<br />
+                            8. 신용정보원의 사전승낙 없이 다른 인터넷 사이트에서 서비스 사이트로 링크하는 행위<br />
+                            9. 신용정보원의 사전승낙 없이 웹사이트 등 수단을 통하여 서비스 사이트에 표시된 콘텐츠를 운영하거나 표시하는
+                            행위<br />
+                            10. 신용정보원의 인프라에 부당하게 또는 통상적인 수준 이상의 부담을 주거나 줄 수 있는 조치를 하는 행위<br />
+                            11. 신용정보원의 서비스 사이트의 적절한 운영 또는 서비스 사이트 내 활용을 방해하거나 방해를 시도하는 행위<br />
+                            12. 신용정보원의 서비스 사이트의 접속을 금지하거나 제한하기 위해 신용정보원이 취할 수 있는 조치를 회피하거나
+                            회피를 시도하는 행위<br />
+                            13. 회원 이외 제3자의 제1호 내지 제12호의 행위에 대한 협력 행위<br />
+                            14. 기타 관련 법령이나 신용정보원이 정한 이용조건을 위배하는 행위<br /><br />
+
+                            제 11 조 (서비스의 제공 등) <br /><br />
+
+                            ① 신용정보원은 휴대폰, 공동인증서 등을 통해 본인인증을 완료한 회원에 한해 각 호의 서비스를 제공합니다.<br />
+                            1. 내 신용정보열람<br />
+                            2. 내 보험정보열람<br />
+                            3. 기타 신용정보원이 추가 개발을 통해 회원에게 제공하는 일체의 서비스<br />
+                            ② 서비스 이용시간은 신용정보원의 업무상 또는 기술상 특별한 지장이 없는 한 연중무휴, 1일 24시간을 원칙으로
+                            합니다.<br />
+                            ③ 신용정보원은 컴퓨터 등 정보통신설비의 보수점검, 교체 및 고장, 통신두절 또는 운영상 상당한 이유가 있는 경우
+                            서비스의 제공을 일시적으로 중단할 수 있습니다.<br />
+                            ④ 제3항의 경우 사전에 공지함을 원칙으로 합니다. 다만, 신용정보원이 사전에 공지할 수 없는 부득이한 사유가 있는
+                            경우 사후에 공지할 수 있습니다.<br /><br />
+
+                            제 12 조(서비스의 변경) <br /><br />
+
+                            ① 신용정보원은 상당한 이유가 있는 경우에 운영상, 기술상의 필요에 따라 제공하고 있는 전부 또는 일부 서비스를
+                            변경할 수 있습니다.<br />
+                            ② 서비스의 내용, 이용방법, 이용시간에 대하여 변경이 있는 경우에는 변경사유, 변경될 서비스의 내용 및 제공일자
+                            등은 그 변경 전에 공지합니다.<br />
+                            ③ 신용정보원은 제공되는 서비스의 일부 또는 전부를 신용정보원의 정책 및 운영의 필요상 수정, 중단, 변경할 수
+                            있으며, 이에 대하여 관련 법령에 특별한 규정이 없는 한 회원에게 별도의 보상을 하지 않습니다.<br /><br />
+
+                            제 13 조(게시물의 삭제)<br /><br />
+
+                            신용정보원은 회원이 게시하거나 등록하는 서비스 내의 내용물이 다음 각 호에 해당한다고 판단되는 경우에 사전통지
+                            없이 삭제할 수 있습니다. 단, 신용정보원은 이러한 정보의 삭제 등을 할 의무를 지지 않습니다.<br />
+                            1. 다른 회원 또는 제3자를 비방하거나 중상모략 등으로 명예를 손상시키는 내용인 경우<br />
+                            2. 공공질서 및 미풍양속에 위반되는 내용인 경우<br />
+                            3. 음란물을 게재하거나 음란사이트를 연결(링크)하는 경우<br />
+                            4. 기타 이 약관 및 관련 법령에 위반된다고 판단되는 경우<br /><br />
+
+                            제 14 조 (저작권 등의 귀속)<br /><br />
+
+                            ① 신용정보원이 작성한 저작물에 대한 저작권 기타 지적재산권은 신용정보원에 귀속합니다.<br />
+                            ② 회원은 신용정보원이 제공하는 서비스를 이용함으로써 얻은 정보 중 신용정보원에 지적재산권이 귀속된 정보를
+                            신용정보원의 사전승낙 없이 복제, 전송, 출판, 배포, 방송, 기타 방법에 의하여 영리목적으로 이용하거나 제3자에
+                            이용하게 하여서는 안됩니다.<br /><br />
+
+                            제 15 조(개인정보의 보호)<br /><br />
+
+                            신용정보원은 관련 법령이 정하는 바에 따라서 회원의 개인정보를 보호하기 위하여 노력합니다. 회원의 개인정보의 보호
+                            및 이용에 관한 사항은 관련 법령 및 신용정보원의 개인정보처리방침에 정한 바에 따릅니다. 다만, 신용정보원의 공식
+                            사이트 이외의 링크된 사이트에서는 신용정보원의 개인정보처리방침이 적용되지 않습니다.<br /><br />
+
+                            제 16 조(개인정보의 보호)<br /><br />
+
+                            ① 신용정보원은 수집된 개인정보의 처리 업무를 스스로 수행함을 원칙으로 하나, 필요한 경우 본인인증업무의 일부 또는
+                            전부를 사업자에게 위탁할 수 있습니다.<br />
+                            1. 본인인증업무 ② 신용정보원은 주민등록번호 정보를 입력하지 않은 회원의 경우 7일 미접속시 관련 개인정보를
+                            삭제(삭제 3일 전 회원에게 통지)하며, 주민등록번호 정보를 입력한 회원의 경우 1년 미접속시 관련 개인정보를
+                            삭제(삭제 1달 전 회원에게 통지) 합니다.<br />
+                            ③ 제1항 및 제2항 이외 개인정보 처리 및 위탁 등에 관한 사항은 관련 법령 및 신용정보원이 정하는 개인정보처리방침에
+                            정한 바에 따릅니다.<br /><br />
+
+                            제 4 장 이용계약의 이용제한 등 <br /><br />
+
+                            제 17 조(서비스 이용제한)<br /><br />
+
+                            신용정보원은 회원이 다음 제10조 각 호의 어느 하나에 해당하는 행위를 하였을 경우, 사전통지 없이 서비스 이용을
+                            중지 또는 제한하는 조치를 하거나 필요한 경우 관계당국에 고발 또는 민 · 형사상 등의 조치를 할 수 있습니다.<br />
+
+                            제 18 조(책임제한)<br /><br />
+
+                            ① 신용정보원은 천재지변 또는 이에 준하는 불가항력으로 인하여 서비스를 제공할 수 없는 경우에는 서비스 제공에 관한
+                            책임이 면제됩니다.<br />
+                            ② 신용정보원은 회원의 귀책사유로 인한 서비스이용의 장애에 대하여 책임을 지지 않습니다.<br />
+                            ③ 신용정보원은 회원이 서비스와 관련하여 게재한 정보, 자료, 사실의 신뢰도, 정확성 등의 내용에 관하여는 책임을
+                            지지 않습니다.<br />
+                            ④ 신용정보원은 회원 상호간 또는 회원과 제3자 간에 서비스를 매개로 하여 발생한 분쟁 등에 대하여 책임을 지지
+                            않습니다.<br /><br />
+
+                            제 19 조(약관해석 및 관할법원)<br /><br />
+
+                            ① 이 약관에 명시되지 않은 사항과 이 약관의 해석에 관하여는 관련 법령과 상관습에 따릅니다.<br />
+                            ② 서비스 이용과 관련하여 신용정보원과 회원 사이에 분잭이 발생한 경우, 대한민국 법을 적용합니다.<br />
+                            ③ 서비스 이용에 관한 분쟁에 대해 소송이 제기될 경우 관할법원은 서울중앙지방법원으로 합니다.<br /><br />
+
+                            [ 부 칙 ]<br /><br />
+
+                            이 약관은 2018년 12월 3일 부터 시행합니다.<br /><br />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- modal - 개인정보 수집이용에 대한 동의안내 -->
+        <div id="mdInfoUseRule" class="modal-popup">
+            <div role="dialog" class="modal-container">
+                <div class="modal-header">
+                    <h3 class="tit-">개인(신용)정보 수집·이용에 대한 동의안내</h3>
+                    <button type="button" class="btn-close-popup js-close-popup"><span class="sr-text">창닫기</span></button>
+                </div>
+                <div class="modal-content">
+                    <div class="popup-alert alert-rule">
+                        <div class="alert-content" style="word-break: keep-all">
+                            한국신용정보원은 회원가입 등을 위하여 ⌈개인정보보호법⌋ 및 ⌈신용정보의이용및보호에관한법률⌋에 따라 아래와 같이
+                            개인(신용)정보를 수집 · 이용하기 위하여 귀하의 동의가 필요합니다.<br /><br />
+
+                            제1조 개인(신용)정보의 수집 · 이용 목적<br />
+                            - 서비스 이용 및 회원 관리<br />
+                            - 고지사항 전달<br /><br />
+
+                            제2조 수집 · 이용할 개인정보<br />
+                            - 회원가입에 필요한 정보<br />
+                            · 아이디, 비밀번호, 성명, 생년월일, 성별, 전자우편주소(단, 회원관리, 법령의무이행 등이 어려운 전자우편주소
+                            제외)<br />
+                            - 서비스 이용과정에서 자동으로 생성 · 수집되는 정보<br />
+                            · IP주소, 서비스이용기록<br /><br />
+
+                            제3조 개인(신용)정보의 보유 · 이용 기간<br />
+                            - 위 개인정보는 수집 · 이용에 관한 동의일(회원가입일)로부터 회원 탈퇴 시 까지 위 이용목적을 위하여 보유 ·
+                            이용됩니다. 단, 회원 탈퇴 후에는 민원처리 및 분쟁해결, 법령상 의무이행을 위하여 3년간 보유 · 이용됩니다.<br /><br />
+
+                            제4조 동의를 거부할 권리 및 동의를 거부할 경우의 불이익<br />
+                            - 위 개인정보의 수집 · 이용에 대한 동의는 회원가입을 위하여 필수적이므로 위 사항에 동의하셔야만 제공 서비스를
+                            이용할 수 있습니다.<br /><br />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="logo-wrap">
+                    <p class="footer-logo"><span class="sr-text">DAZUM</span></p>
+                </div>
+                <div class="content-wrap">
+                    <ul class="footer-menu">
+                        <li>
+                            <a href="#">회사소개</a>
+                        </li>
+                        <li>
+                            <a href="#">이용약관</a>
+                        </li>
+                        <li>
+                            <a href="#"><strong>개인정보처리방침</strong></a>
+                        </li>
+                        <li>
+                            <a href="#">법적책임</a>
+                        </li>
+                        <li>
+                            <a href="#">운영정책</a>
+                        </li>
+                        <li>
+                            <a href="#">고객센터</a>
+                        </li>
+                        <li>
+                            <a href="#"><em>제휴문의</em></a>
+                        </li>
+                    </ul>
+                    <div class="company-info">
+                        <p class="company-name">(주)엑사메이커스</p>
+                        <p>
+                            <span>서울시 강남구 역삼동 738번지 4층</span>
+                            <span>사업자번호:000-00-00000</span>
+                            <span>통신판매번호 : 2020-서울서초-0000</span>
+                            <br />
+                            <span>대표자명 : 김금동</span>
+                            <span>대표번호 : 02-0000-0000</span>
+                        </p>
+                        <p class="copyright">(C) Examakers Co., Ltd. ALL RIGHTS RESERVED.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Script -->
+        <script src="./static/js/lib/jquery.min.js"></script>
+        <script src="./static/js/slick.min.js"></script>
+        <script src="./static/js/Chart.min.js"></script>
+        <script src="./static/js/aos.js"></script>
+        <script src="./static/js/main.js"></script>
+        <script src="./static/js/easy.js"></script>
+    </body>
+</html>

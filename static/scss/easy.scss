@@ -32,6 +32,14 @@ input[type="number"]::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
+.blind {
+    overflow: hidden;
+    position: absolute;
+    width: 0;
+    height: 0;
+    line-height: 0;
+    text-indent: -9999px;
+}
 .pc {
     display: block;
 }
@@ -65,6 +73,7 @@ input[type="number"]::-webkit-inner-spin-button {
     padding-bottom: 20px;
     border-bottom: 2px solid #000;
     .primary-title-t2 {
+        display: inline-block;
         font-size: 22px;
         letter-spacing: -2px;
         font-weight: 500;
@@ -76,6 +85,17 @@ input[type="number"]::-webkit-inner-spin-button {
         font-style: normal;
         color: #666;
     }
+
+    .btn-primary {
+        display: inline-block;
+        margin: -8px 0 0 5px;
+        padding: 3px 10px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        vertical-align: middle;
+        font-size: 12px;
+        color: #777;
+    }
 }
 @media (max-width: 680px) {
     .tit-wrap {
@@ -83,6 +103,9 @@ input[type="number"]::-webkit-inner-spin-button {
         padding-top: 60px;
         .primary-title-t2 {
             font-size: 20px;
+        }
+        .btn-primary {
+            margin: 0;
         }
     }
 }
@@ -375,7 +398,7 @@ input[type="number"]::-webkit-inner-spin-button {
                 p {
                     font-size: 13px;
                 }
-                &::before {                    
+                &::before {
                     transform-origin: 50% 50%;
                     transform: scale(0.8);
                     background-position: 0 0;
@@ -449,7 +472,7 @@ input[type="number"]::-webkit-inner-spin-button {
     .modal-container {
         width: 550px;
         min-height: 479px;
-        margin: 0 20px;
+        // margin: 0 20px;
     }
     .popup-action {
         padding-top: 0;
@@ -462,16 +485,30 @@ input[type="number"]::-webkit-inner-spin-button {
         }
     }
     .modal-header {
-        padding: 28px 0;
+        // padding: 28px 0;
         text-align: center;
         border-bottom: 1px solid #f0f0f0;
         .tit- {
             display: block;
+            height: 80px;
+            line-height: 80px;
         }
         .txt- {
-            margin-top: 12px;
+            margin: -20px 0 20px;
             font-size: 15px;
             color: #666;
+        }
+    }
+
+    .alert-rule {
+        width: 100%;
+        max-width: none;
+        .alert-content {
+            margin-top: 0;
+            text-align: left;
+            // text-align: justify;
+            font-size: 10pt;
+            font-weight: 300;
         }
     }
 
@@ -697,6 +734,11 @@ input[type="number"]::-webkit-inner-spin-button {
         font-weight: 500;
         font-weight: 500;
     }
+    .form-txt {
+        margin-bottom: 10px;
+        font-size: 14px;
+        color: #777;
+    }
     .form-label {
         display: block;
     }
@@ -736,7 +778,7 @@ input[type="number"]::-webkit-inner-spin-button {
                 border: 1px solid #e0e3e5 !important;
                 background: #f7f8fa !important;
                 &::after {
-                    content: "파일삭제";
+                    content: "파일변경";
                     background-color: #666;
                 }
             }
@@ -758,13 +800,13 @@ input[type="number"]::-webkit-inner-spin-button {
             box-shadow: none;
             outline: 0;
             &::after {
-                content: "파일추가";
+                content: "+ 파일추가";
                 @include posY;
                 right: 5px;
                 display: inline-block;
-                width: 5.15385em;
+                width: 75px;
                 margin: auto;
-                padding: 11px 6px 12px;
+                padding: 11px 10px 12px;
                 font-size: 13px;
                 color: #fff;
                 letter-spacing: -0.05em;
@@ -794,21 +836,33 @@ input[type="number"]::-webkit-inner-spin-button {
         }
     }
 
-    .btn-delete {
+    .btn- {
         display: block;
         position: absolute;
-        bottom: -25px;
-        right: 3px;
-        font-size: 14px;
-        font-weight: 500;
-        color: #666;
-        background-color: transparent;
-        border: none;
+        bottom: 0;
+        right: -81px;
+        display: inline-block;
+        width: 75px;
+        height: 50px;
+        margin: auto;
+        padding: 0 6px 0;
+        font-size: 13px;
+        font-weight: 300;
+        color: #555;
+        letter-spacing: -0.05em;
+        line-height: 34px;
+        text-align: center;
+        border-radius: 5px;
+        border: 1px solid #e0e3e5;
+        box-sizing: border-box;
     }
-    .btn-plus {
+    .btn-delete {
+        background: #fff;
+    }
+    .btn-blue {
         display: block;
         position: absolute;
-        bottom: -25px;
+        bottom: -35px;
         right: 3px;
         font-size: 14px;
         font-weight: 500;
@@ -829,11 +883,38 @@ input[type="number"]::-webkit-inner-spin-button {
         line-height: 1;
         color: #5c5c5c;
     }
+    .form-error {
+        &.is-pass {
+            &::before {
+                content: "\f00c";
+            }
+        }
+        &::before {
+            content: "\f00d";
+            display: inline-block;
+            margin: -1px 5px 0 0;
+            font-family: "Line Awesome Free";
+            font-weight: 900;
+            vertical-align: middle;
+        }
+    }
 }
 @media (max-width: 680px) {
     .billing-step {
         width: 100%;
+        .btn- {
+            float: right;
+            position: static;
+            height: 26px;
+            margin-top: 5px;
+            line-height: 22px;
+            font-size: 12px;
+        }
     }
+}
+
+.join-form {
+    border: none;
 }
 
 .result-easy {
@@ -1006,6 +1087,9 @@ input[type="number"]::-webkit-inner-spin-button {
         background-color: #4a65f7;
         font-size: 13px;
         color: $w;
+        &:hover {
+            text-decoration: none;
+        }
     }
 }
 
@@ -1041,7 +1125,9 @@ input[type="number"]::-webkit-inner-spin-button {
         font-size: 13px;
         color: #000;
     }
-
+    .date {
+        width: 10%;
+    }
     .title {
         font-size: 15px;
         color: #000;

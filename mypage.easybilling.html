@@ -245,7 +245,10 @@
                                         <a href="#">회원정보 관리</a>
                                     </li>
                                     <li class="on">
-                                        <a href="#">간편청구내역</a>
+                                        <a href="mypage.easybilling.html">간편청구내역</a>
+                                    </li>
+                                    <li>
+                                        <a href="mypage.easybilling.loss.html">실손보장지급내역</a>
                                     </li>
                                 </ul>
                             </div>
@@ -268,57 +271,33 @@
                                                     <span class="title">발병(사고) 내용 </span>
                                                     <span class="writer">청구인</span>
                                                     <span class="viewing">청구일</span>
-                                                    <span class="regdate"> 진행 상태</span>
+                                                    <span class="regdate"> 진행상태</span>
                                                     <span class="regdate"> 청구상세</span>
                                                 </div>
                                             </div>
                                             <ol class="board-list-easy">
                                                 <li>
-                                                    <span class="insurance"> DB손해보험 </span>
-                                                    <span class="title txt-center">
+                                                    <span title="보험사" class="insurance"> DB손해보험 </span>
+                                                    <span title="발명(사고)내용" class="title">
                                                         <a href="#">손목 골절</a>
                                                     </span>
                                                     <span title="작성자" class="writer">홍길동</span>
-                                                    <span title="조회수" class="date">YYYY.MM.DD</span>
-                                                    <span title="작성일" class="regdate">완료</span>
-                                                    <span title="내용보기" class="view">
-                                                        <button class="btn-view">내용보기</button>
+                                                    <span title="청구일" class="date">YYYY.MM.DD</span>
+                                                    <span title="진행상태" class="regdate">완료</span>
+                                                    <span title="청구상세" class="view">
+                                                        <a href="javascript:openPopup('#mdReviewDetail');" class="btn-view">내용보기</a>
                                                     </span>
                                                 </li>
                                                 <li>
-                                                    <span class="insurance"> DB손해보험 </span>
-                                                    <span class="title txt-center">
+                                                    <span title="보험사" class="insurance"> DB손해보험 </span>
+                                                    <span title="발명(사고)내용" class="title txt-center">
                                                         <a href="#">손목 골절 손목 골절 손목 골절</a>
                                                     </span>
                                                     <span title="작성자" class="writer">홍길동</span>
-                                                    <span title="조회수" class="date">YYYY.MM.DD</span>
-                                                    <span title="작성일" class="regdate">완료</span>
-                                                    <span title="내용보기" class="view">
-                                                        <button class="btn-view">내용보기</button>
-                                                    </span>
-                                                </li>
-                                                <li>
-                                                    <span class="insurance"> DB손해보험 </span>
-                                                    <span class="title txt-center">
-                                                        <a href="#">손목 골절</a>
-                                                    </span>
-                                                    <span title="작성자" class="writer">홍길동</span>
-                                                    <span title="조회수" class="date">YYYY.MM.DD</span>
-                                                    <span title="작성일" class="regdate">완료</span>
-                                                    <span title="내용보기" class="view">
-                                                        <button class="btn-view">내용보기</button>
-                                                    </span>
-                                                </li>
-                                                <li>
-                                                    <span class="insurance"> DB손해보험 </span>
-                                                    <span class="title txt-center">
-                                                        <a href="#">손목 골절 손목 골절 손목 골절</a>
-                                                    </span>
-                                                    <span title="작성자" class="writer">홍길동</span>
-                                                    <span title="조회수" class="date">YYYY.MM.DD</span>
-                                                    <span title="작성일" class="regdate">완료</span>
-                                                    <span title="내용보기" class="view">
-                                                        <button class="btn-view">내용보기</button>
+                                                    <span title="청구일" class="date">YYYY.MM.DD</span>
+                                                    <span title="진행상태" class="regdate">완료</span>
+                                                    <span title="청구상세" class="view">
+                                                        <a href="javascript:openPopup('#mdReviewDetail');" class="btn-view">내용보기</a>
                                                     </span>
                                                 </li>
                                             </ol>
@@ -349,7 +328,7 @@
         </div>
 
         <!-- 병원비 돌려받기 팝업 -->
-        <div id="mdReviewDetail" class="modal-popup open" style="display: none">
+        <div id="mdReviewDetail" class="modal-popup">
             <!-- 간편청구 로그인 -->
             <div role="dialog" class="modal-container">
                 <div class="modal-header">
