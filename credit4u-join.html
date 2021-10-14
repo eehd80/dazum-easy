@@ -339,20 +339,109 @@
                                                     />
                                                 </label>
                                             </div>
+                                            <!-- 211014 추가 -->
+                                            <div class="form-row verify-option2">
+                                                <p class="form-label">연락처</p>
+                                                <div class="input-wrap input-wrap-col2">
+                                                    <label class="form-selectbox3">
+                                                        <span class="sr-text">통신사 선택</span>
+                                                        <select id="cmpsCaseCfCd" name="cmpsCaseCfCd">
+                                                            <option value="">통신사</option>
+                                                            <option value="KT">KT</option>
+                                                            <option value="SKT">SKT</option>
+                                                            <option value="LG">LG</option>
+                                                            <option value="KT알뜰폰">KT알뜰폰</option>
+                                                            <option value="SKT알뜰폰">SKT알뜰폰</option>
+                                                            <option value="LG알뜰폰">LG알뜰폰</option>
+                                                        </select>
+                                                    </label>
+                                                    <label class="form-col2">
+                                                        <span class="sr-text">연락처 입력</span>
+                                                        <input
+                                                            type="tel"
+                                                            name="usrPhone"
+                                                            aria-required="true"
+                                                            placeholder="휴대폰번호 ('-' 없이 입력)"
+                                                            maxlength="11"
+                                                            class="form-text"
+                                                        />
+                                                    </label>
+                                                    <button type="button" class="btn-sm dark">본인인증</button>
+                                                </div>
+                                                <div class="input-wrap">
+                                                    <label>
+                                                        <span class="sr-text">인증번호</span>
+                                                        <input
+                                                            type="number"
+                                                            name="authCode"
+                                                            placeholder="인증번호 6자리 입력"
+                                                            maxlength="6"
+                                                            class="form-text"
+                                                        />
+                                                    </label>
+                                                    <button type="button" class="btn-sm">인증하기</button>
+                                                </div>
+                                                <p class="form-error is-pass">휴대폰으로 전송된 인증번호를 입력해주세요.</p>
+                                                <p class="form-error is-pass">
+                                                    2분 이내에 인증문자가 수신되지 않을 경우, 이전에 입력한 휴대폰 번호를 확인해 주시기
+                                                    바랍니다.
+                                                </p>
+                                            </div>
                                             <div class="form-row">
                                                 <p class="form-label">이메일</p>
-                                                <label>
-                                                    <span class="sr-text">이메일 입력</span>
-                                                    <input
-                                                        type="email"
-                                                        name="usrEmail"
-                                                        aria-required="true"
-                                                        placeholder="이메일 (가입인증을 위한 이메일 주소)"
-                                                        class="form-text"
-                                                    />
-                                                </label>
+                                                <div class="input-wrap">
+                                                    <label>
+                                                        <span class="sr-text">이메일 입력</span>
+                                                        <input
+                                                            type="email"
+                                                            name="authCode"
+                                                            placeholder="가입인증을 위한 이메일 주소 입력"
+                                                            class="form-text"
+                                                        />
+                                                    </label>
+                                                    <button type="button" class="btn-lg dark">이메일 인증번호발송</button>
+                                                </div>
+                                                <div class="input-wrap">
+                                                    <label>
+                                                        <span class="sr-text">인증번호 입력</span>
+                                                        <input
+                                                            type="number"
+                                                            name="authCode"
+                                                            aria-required="true"
+                                                            placeholder="이메일로 발송된 인증번호 6자리 입력"
+                                                            maxlength="6"
+                                                            class="form-text"
+                                                        />
+                                                    </label>
+                                                    <button type="button" class="btn-sm">인증하기</button>
+                                                </div>
+                                                <p class="form-error is-pass">
+                                                    이메일이 수신되지 않았을 경우 스팸메일로 분류 됐을 수 있습니다.
+                                                </p>
+                                            </div>
+                                            <div class="form-row">
+                                                <p class="form-label">자동입력방지문자</p>
+
+                                                <div class="captcha-option">
+                                                    <label>
+                                                        <span class="sr-text">자동입력방지 문자 입력</span>
+                                                        <input
+                                                            type="tel"
+                                                            name="captchaCode"
+                                                            aria-required="true"
+                                                            maxlength="4"
+                                                            placeholder="자동입력방지 문자 입력"
+                                                            class="form-text"
+                                                        />
+                                                    </label>
+                                                    <div class="captcha-code"><em class="form-text">1231</em></div>
+                                                    <!-- <button type="button" class="btn">인증번호발송</button> -->
+                                                </div>
                                             </div>
                                         </div>
+
+                                        <!-- //211014 추가 -->
+
                                         <div class="form-section">
                                             <p class="form-title"><span>약관동의</span></p>
                                             <p class="form-txt">모든 약관 동의 후에 다양한 다줌 서비스를 이용해보세요.</p>
