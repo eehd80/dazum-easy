@@ -1197,6 +1197,34 @@ input[type="number"]::-webkit-inner-spin-button {
         z-index: 1;
     }
 }
+
+.captcha-option {
+    margin-top: 0;
+    .captcha-code {
+        position: relative;
+        width: calc(40% - 5px);
+        padding: 0;
+        .form-text {
+            padding: 0 20px;
+            text-align: left;
+        }
+    }
+    label {
+        position: relative;
+        float: right;
+        width: 60%;
+        .form-text {
+            letter-spacing: -1px;
+        }
+    }
+    .captcha-btn {
+        float: left;
+        width: 20%;
+    }
+    .btn {
+        width: auto;
+    }
+}
 .input-captcha {
     font-size: 20px;
     font-weight: bold;

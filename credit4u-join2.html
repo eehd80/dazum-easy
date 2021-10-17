@@ -226,282 +226,64 @@
                             <div class="container">
                                 <form action="/" method="POST" onchange="confirmRequiredForm(event);">
                                     <div class="tit-wrap">
-                                        <h3 class="primary-title-t2">회원기본정보 & 약관동의</h3>
+                                        <h3 class="primary-title-t2">본인인증</h3>
                                     </div>
                                     <div class="join-form billing-step">
                                         <div class="form-section">
-                                            <p class="form-title"><span>한국신용정보원 회원기본정보</span></p>
-                                            <p class="form-txt">
-                                                한국신용정보원 통합회원 가입 화면입니다. <br />
-                                                한국신용정보원에서 직접 조회하신 정보를 바탕으로 보험을 진단합니다.
-                                            </p>
-                                            <div class="form-row">
-                                                <p class="form-label">아이디</p>
-                                                <label>
-                                                    <span class="sr-text">계정아이디 입력</span>
-                                                    <!-- [D] validation 성공시 is-pass 클래스 추가 -->
-                                                    <input
-                                                        type="text"
-                                                        name="usrId"
-                                                        value=""
-                                                        aria-required="true"
-                                                        class="form-text is-pass"
-                                                    />
-                                                </label>
-                                                <!-- [D] validation 성공시 is-pass 클래스 추가 -->
-                                                <p class="form-error is-pass">사용 가능한 아이디입니다.</p>
-                                            </div>
-                                            <div class="form-row">
-                                                <p class="form-label">비밀번호</p>
-                                                <label>
-                                                    <span class="sr-text">비밀번호 입력</span>
-                                                    <!-- 20210205 수정 -->
-                                                    <input
-                                                        type="password"
-                                                        name="usrPwd"
-                                                        aria-required="true"
-                                                        minlength="8"
-                                                        maxlength="12"
-                                                        placeholder="비밀번호 (9~20자리 미만 문자, 숫자, 영문 소문자, 숫자만 사용)"
-                                                        class="form-text"
-                                                    />
-                                                </label>
-
-                                                <p class="form-error">
-                                                    9자리~20자리 미만 문자, 숫자, 특수문자(!,@,#,$,%,^,&,*,?,_,~) 조합 입력
-                                                </p>
-                                                <p class="form-error is-pass">연속되는 문자 (abc...), 숫자(123...)의 3자리 이상 미입력</p>
-                                                <p class="form-error is-pass">사용자 ID, 생년월일, 이름과 동일한 비밀번호 미입력</p>
-                                            </div>
-                                            <div class="form-row">
-                                                <p class="form-label">비밀번호 확인</p>
-                                                <label>
-                                                    <span class="sr-text">비밀번호 재입력</span>
-                                                    <!-- 20210205 수정 -->
-                                                    <!-- [D] validation 실패시 is-failed 클래스 추가 -->
-                                                    <input
-                                                        type="password"
-                                                        name="usrPwdCheck"
-                                                        aria-required="true"
-                                                        minlength="8"
-                                                        maxlength="12"
-                                                        placeholder="비밀번호 (8~12자의 영문 소문자, 숫자만 사용)"
-                                                        class="form-text is-failed"
-                                                    />
-                                                </label>
-                                                <!-- [D] validation 실패시 표시 -->
-                                                <p class="form-error">비밀번호를 다시 확인해주세요.</p>
-                                            </div>
-
-                                            <div class="form-row">
-                                                <p class="form-label">이름</p>
-                                                <label>
-                                                    <span class="sr-text">이름 입력</span>
-                                                    <input
-                                                        type="text"
-                                                        name="usrName"
-                                                        value="홍길동"
-                                                        aria-required="true"
-                                                        disabled=""
-                                                        class="form-text"
-                                                    />
-                                                </label>
-                                            </div>
-                                            <div class="form-row">
-                                                <p class="form-label">성별</p>
-                                                <div class="form-toggle-wrap">
-                                                    <label class="form-radiobox">
-                                                        <input type="radio" name="usrGender" value="남성" checked="" />
-                                                        <span class="radio-label">
-                                                            <span class="box"></span>
-                                                            <span>남성</span>
-                                                        </span>
-                                                    </label>
-                                                    <label class="form-radiobox">
-                                                        <input type="radio" name="usrGender" value="여성" />
-                                                        <span class="radio-label">
-                                                            <span class="box"></span>
-                                                            <span>여성</span>
-                                                        </span>
-                                                    </label>
-                                                </div>
-                                            </div>
-                                            <div class="form-row">
-                                                <p class="form-label">주민등록번호</p>
-                                                <label>
-                                                    <span class="sr-text">주민등록번호</span>
-                                                    <input
-                                                        type="number"
-                                                        name="usrEmail"
-                                                        aria-required="true"
-                                                        placeholder="주민등록번호 ('-' 없이 숫자만 입력)"
-                                                        class="form-text"
-                                                    />
-                                                </label>
-                                            </div>
+                                            <p class="form-title"><span>한국신용정보원 본인인증</span></p>
 
                                             <!-- 211017 수정 -->
-                                            <div class="form-row verify-option2">
-                                                <p class="form-label">연락처</p>
-                                                <div class="input-wrap input-wrap-col2">
-                                                    <label class="form-selectbox3">
-                                                        <span class="sr-text">통신사 선택</span>
-                                                        <select id="cmpsCaseCfCd" name="cmpsCaseCfCd">
-                                                            <option value="">통신사</option>
-                                                            <option value="KT">KT</option>
-                                                            <option value="SKT">SKT</option>
-                                                            <option value="LG">LG</option>
-                                                            <option value="KT알뜰폰">KT알뜰폰</option>
-                                                            <option value="SKT알뜰폰">SKT알뜰폰</option>
-                                                            <option value="LG알뜰폰">LG알뜰폰</option>
-                                                        </select>
-                                                    </label>
-                                                    <label class="form-col2">
-                                                        <span class="sr-text">연락처 입력</span>
+                                            <div class="form-row">
+                                                <p class="form-label">자동입력방지문자</p>
+
+                                                <div class="captcha-option input-wrap">
+                                                    <div class="captcha-code">
+                                                        <em class="form-text">2589</em>
+
+                                                        <button class="btn-sm dark">새로고침</button>
+                                                    </div>
+                                                    <label>
+                                                        <span class="sr-text">자동입력방지 문자 입력</span>
                                                         <input
                                                             type="tel"
-                                                            name="usrPhone"
+                                                            name="captchaCode"
                                                             aria-required="true"
-                                                            placeholder="휴대폰번호 ('-' 없이 입력)"
-                                                            maxlength="11"
+                                                            maxlength="4"
+                                                            placeholder="자동입력방지 문자 입력"
                                                             class="form-text"
                                                         />
+                                                        <button type="button" class="btn-sm">인증하기</button>
                                                     </label>
                                                 </div>
                                             </div>
-                                            <div class="form-row">
-                                                <p class="form-label">이메일</p>
+
+                                            <div class="form-row verify-option2">
+                                                <p class="form-label">SMS 인증 문자 입력</p>
                                                 <div class="input-wrap">
                                                     <label>
-                                                        <span class="sr-text">이메일 입력</span>
-                                                        <input
-                                                            type="email"
-                                                            name="authCode"
-                                                            placeholder="가입인증을 위한 이메일 주소 입력"
-                                                            class="form-text"
-                                                        />
-                                                    </label>
-                                                    <button type="button" class="btn-lg dark">이메일 인증번호발송</button>
-                                                </div>
-                                                <div class="input-wrap">
-                                                    <label>
-                                                        <span class="sr-text">인증번호 입력</span>
+                                                        <span class="sr-text">인증번호</span>
                                                         <input
                                                             type="number"
                                                             name="authCode"
-                                                            aria-required="true"
-                                                            placeholder="이메일로 발송된 인증번호 6자리 입력"
+                                                            placeholder="인증번호 6자리 입력"
                                                             maxlength="6"
                                                             class="form-text"
                                                         />
                                                     </label>
+                                                    <button type="button" class="btn-sm">인증하기</button>
                                                 </div>
+                                                <p class="form-error is-pass">휴대폰으로 전송된 인증번호를 입력해주세요.</p>
                                                 <p class="form-error is-pass">
-                                                    이메일이 수신되지 않았을 경우 스팸메일로 분류 됐을 수 있습니다.
+                                                    2분 이내에 인증문자가 수신되지 않을 경우, 이전에 입력한 휴대폰 번호를 확인해 주시기
+                                                    바랍니다.
                                                 </p>
                                             </div>
-                                            <!-- // 211017 수정 -->
                                         </div>
-
-                                        <div class="form-section">
-                                            <p class="form-title"><span>한국신용정보원 약관동의</span></p>
-                                            <div class="form-agreement">
-                                                <div class="top">
-                                                    <label class="form-checkbox">
-                                                        <input type="checkbox" name="agreement" value="Y" class="js-check-all" />
-                                                        <span class="checkbox-label">
-                                                            <span class="box"></span>
-                                                            <span>아래 항목에 모두 동의합니다.</span>
-                                                        </span>
-                                                    </label>
-                                                </div>
-                                                <label class="form-checkbox">
-                                                    <input
-                                                        type="checkbox"
-                                                        name="agreement"
-                                                        value="Y"
-                                                        aria-required="true"
-                                                        class="js-check-self"
-                                                    />
-                                                    <span class="checkbox-label">
-                                                        <span class="box"></span>
-                                                        <em class="required">[필수]</em>
-                                                        <span>서비스 이용약관</span>
-                                                    </span>
-                                                    <a href="javascript:openPopup('#mdJoinRule');" class="btn-view-terms">내용보기</a>
-                                                </label>
-                                                <label class="form-checkbox">
-                                                    <input
-                                                        type="checkbox"
-                                                        name="agreement"
-                                                        value="Y"
-                                                        aria-required="true"
-                                                        class="js-check-self"
-                                                    />
-                                                    <span class="checkbox-label">
-                                                        <span class="box"></span>
-                                                        <em class="required">[필수]</em>
-                                                        <span>개인(신용)정보 수집·이용에 대한 동의안내</span>
-                                                    </span>
-                                                    <a href="javascript:openPopup('#mdInfoUseRule');" class="btn-view-terms">내용보기</a>
-                                                </label>
-                                                <label class="form-checkbox">
-                                                    <input
-                                                        type="checkbox"
-                                                        name="agreement"
-                                                        value="Y"
-                                                        aria-required="true"
-                                                        class="js-check-self"
-                                                    />
-                                                    <span class="checkbox-label">
-                                                        <span class="box"></span>
-                                                        <em class="required">[필수]</em>
-                                                        <span>개인정보 수집, 이용 및 고유식별처리 동의</span>
-                                                    </span>
-                                                    <!-- 고유식별처리 내용을 찾을 수 없어서 주석처리 해놨습니다. -->
-                                                    <!-- <a href="#" target="_blank" class="btn-view-terms">내용보기</a> -->
-                                                </label>
-                                            </div>
-                                            <script>
-                                                /* 전체동의 체크, 체크해제 */
-                                                document.addEventListener("DOMContentLoaded", function () {
-                                                    $(".js-check-all").on("change", function () {
-                                                        var name = $(this).attr("name");
-                                                        var checked = this.checked;
-
-                                                        $('.js-check-self[name="' + name + '"]').each(function () {
-                                                            this.checked = checked;
-                                                            $(this).trigger("change");
-                                                        });
-                                                    });
-
-                                                    $(".js-check-self").on("change", function () {
-                                                        var isChecked = 0;
-                                                        var name = $(this).attr("name");
-                                                        var $all = $('.js-check-all[name="' + name + '"]');
-                                                        var $siblings = $('.js-check-self[name="' + name + '"]');
-
-                                                        console.log($siblings.length);
-
-                                                        $siblings.each(function () {
-                                                            if (this.checked) {
-                                                                isChecked++;
-                                                            }
-                                                        });
-
-                                                        if (isChecked == $siblings.length) {
-                                                            $all.get(0).checked = true;
-                                                        } else {
-                                                            $all.get(0).checked = false;
-                                                        }
-                                                    });
-                                                });
-                                            </script>
-                                        </div>
+                                        <!-- //211017 수정 -->
                                     </div>
                                     <div class="btn-wrap-easy">
-                                        <button type="submit" class="btn- btn-white">취소</button>
-                                        <button type="submit" class="btn- btn-submit">다음</button>
+                                        <button type="submit" class="btn- btn-white">메인으로</button>
+                                        <button type="submit" class="btn- btn-submit">가입하기</button>
                                     </div>
                                 </form>
                             </div>

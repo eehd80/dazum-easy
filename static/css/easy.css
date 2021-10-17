@@ -1390,6 +1390,40 @@ input[type="number"]::-webkit-inner-spin-button {
   z-index: 1;
 }
 
+.captcha-option {
+  margin-top: 0;
+}
+
+.captcha-option .captcha-code {
+  position: relative;
+  width: calc(40% - 5px);
+  padding: 0;
+}
+
+.captcha-option .captcha-code .form-text {
+  padding: 0 20px;
+  text-align: left;
+}
+
+.captcha-option label {
+  position: relative;
+  float: right;
+  width: 60%;
+}
+
+.captcha-option label .form-text {
+  letter-spacing: -1px;
+}
+
+.captcha-option .captcha-btn {
+  float: left;
+  width: 20%;
+}
+
+.captcha-option .btn {
+  width: auto;
+}
+
 .input-captcha {
   font-size: 20px;
   font-weight: bold;
