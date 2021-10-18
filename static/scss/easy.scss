@@ -1413,9 +1413,12 @@ input[type="number"]::-webkit-inner-spin-button {
             }
         }
     }
-}
-
-@media (max-width: 1074px) {
+    .captcha-option .captcha-code .form-text {
+        padding: 0 10px;
+    }
+    .input-wrap .form-text {
+        padding: 0 75px 0 10px;
+    }
     .form-selectbox3 {
         select {
             padding: 0 15px;
