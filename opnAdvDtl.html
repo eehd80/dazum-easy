@@ -1,0 +1,669 @@
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+<title>상담사례 찾기 상세 - DAZUM 다줌</title>
+
+
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="keyword" content="보험, 보상프로, 보험상담, 손해사정사">
+<meta name="description" content="보험금 청구 해결사 - 다줌">
+<meta name="format-detection" content="address=no, email=no, telephone=no">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="DAZUM 다줌">
+<meta property="og:url" content="https://www.dazum.co.kr/main/index.do">
+<meta property="og:description" content="보험금 청구 해결사 - 다줌">
+<meta property="og:image" content="/static/img/dazum_intro.png"><!-- [D]절대경로 -->
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://www.dazum.co.kr/main/index.do">
+<meta property="twitter:description" content="보험금 청구 해결사 - 다줌">
+<meta property="twitter:image" content="/static/img/dazum_intro.png"><!-- [D]절대경로 -->
+
+<meta http-equiv="Expires" content="-1">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+
+<script src="/js/jquery/jquery-3.5.1.js"></script>
+<script src="/js/jquery/jquery.form.js"></script>
+<script src="/js/jquery/jquery.fileDownload.js"></script>
+<script src="/js/jquery/jquery-ui.js"></script>
+<script src="/js/jquery/jquery.tmpl.js"></script>
+<script src="/js/slider/jquery.bxslider.js"></script>
+<script src="/js/modal/jquery.modal.js"></script>
+<script src="/js/modal/modal.js"></script>
+
+<script src="/js/common/common.js?ver=1.2"></script>
+
+<link rel="stylesheet" href="/js/jquery/jquery-ui.css">
+<link rel="stylesheet" href="/js/jquery/jquery-ui.theme.css">
+<link rel="stylesheet" href="/js/jquery/theme.css">
+
+<!-- ###################################################################### -->
+<!-- ########## 디자이너로부터 받은 디자인 관련 파일들 ########## -->
+<!-- ###################################################################### -->
+
+<!-- jquery는 위에 있기때문에 여기는 주석처리 -->
+<!-- <script src="/static/js/lib/jquery.min.js"></script> -->
+<script src="/static/js/slick.min.js"></script>
+<script src="/static/js/Chart.min.js"></script>
+<script src="/static/js/aos.js"></script>
+<script src="/static/js/main.js"></script>
+<script src="/static/js/jquery.mousewheel.js"></script>
+<script src="/static/js/jquery.scrolltabs.js"></script>
+
+<link rel="stylesheet" href="/static/css/slick.css">
+<link rel="stylesheet" href="/static/css/Chart.min.css">
+<link rel="stylesheet" href="/static/css/aos.css?after">
+<link rel="stylesheet" href="/static/css/main.css?after">
+
+<link rel="shortcut icon" href="/static/img/favicon.ico" type="image/x-icon">
+
+<!-- 간편청구 210915 추가 -->
+<link
+    rel="stylesheet"
+    href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"
+/>
+<link rel="stylesheet" href="/static/css/easy.css" />
+
+<!-- ###################################################################### -->
+<!-- ########## 디자이너로부터 받은 디자인 관련 파일들 ########## -->
+<!-- ###################################################################### -->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HBEFGGRWQT"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    
+    gtag('config', 'G-HBEFGGRWQT');
+</script>
+
+<script>
+    function goOpnAdvReg() {
+        var logInUserType = "";
+
+        if (logInUserType == '') {
+            alert("로그인이 필요한 기능입니다.");
+            //location.href = "/login/login.do";
+            return;
+        }
+        
+        if (logInUserType == 'CMPS_PRO') {
+            return;    
+        }
+
+        location.href = "/mypage/member/opnAdv/mbrOpnAdvReg.do";
+    }
+    
+    function goMyPage() {
+        var logInUserType = "";
+        
+        if (logInUserType == 'MBR') {
+            location.href = "/mypage/member/info/mbrMyPage.do";
+        } else if (logInUserType == 'CMPS_PRO') {
+            location.href = "/mypage/cmpsPro/info/cmpsProMyPage.do";
+        }
+    }
+</script>
+
+
+<script>
+
+$(document).ready(function() { 
+    $("#copyText").val(document.location.href);
+});
+
+function selectAdvCaseTop5List(orderBy) {
+    var keyword = $("#keyword").val();
+    
+    $.ajax({
+        url : "/find/advCase/selectAdvCaseTop5List.do",
+        type: "POST",
+        data : {"orderBy": orderBy},
+        dataType: "json",    
+        success : function(result) {
+            $(".relate-list").empty();
+            $("#dataRowTemplate").tmpl(result.advCaseTop5List).appendTo(".relate-list");
+        },
+        error: function(){
+            alert("오류가 발생했습니다.");
+        }
+    });
+}
+
+function goAdvCaseDtl(bsdt, mbrId, qrySeqNo) {
+    var params = "?bsdt=" + bsdt;
+    params += "&mbrId=" + mbrId;
+    params += "&qrySeqNo=" + qrySeqNo;
+
+    location.href = "/find/advCase/opnAdvDtl.do" + params;
+}
+
+function insertBkmrkOpnAdvInfo() {
+    var bsdt = "20210918";
+    var mbrId = "EA20745A0F00F3531BC68C3D1714DBD6";
+    var qrySeqNo = "1";
+    
+    $.ajax({
+        url : "/find/advCase/insertBkmrkOpnAdvInfo.do",
+        type: "POST",
+        data : {"bsdt" : bsdt, "mbrId" : mbrId, "qrySeqNo" : qrySeqNo},
+        dataType: "json",    
+        success : function(result) {
+            // 정상 처리된 경우
+            if (result.resultCode == "1") {
+                alert("즐겨찾기에 추가되었습니다.");
+            }
+        },
+        error: function(e){
+            alert(e.responseText);
+        }
+    });
+}
+
+function goCmpsProDtl(cmpsProId) {
+    var params = "?cmpsProId=" + cmpsProId;
+    
+    location.href = "/find/cmpsPro/cmpsProDtl.do" + params;
+}
+
+function goOpnAdvAsw(bsdt, mbrId, qrySeqNo) {
+    var params = "?bsdt=" + bsdt;
+    params += "&mbrId=" + mbrId;
+    params += "&qrySeqNo=" + qrySeqNo;
+    
+    location.href = "/mypage/cmpsPro/opnAdv/cmpsProOpnAdvAsw.do" + params;
+}
+
+</script>
+
+<style>
+   /* main.css에서 먹힌 a tag 끝에 화살표 제거 */
+   .relate-content-wrap .title-wrap .title a:after { 
+       background: url("") no-repeat -13px -252px; 
+       background-size: 334px auto; 
+}
+</style>
+
+</head>
+
+<body>
+    
+
+
+
+
+
+
+    
+    <!--[if lt IE 10]>
+      <p id="browser-upgrade" style="position:relative;padding:4px 1em;font-size:12px;color:#000;letter-spacing:0;background:#ffc;border-bottom:2px outset #fff;margin:0;text-align:left;z-index:99;">사용하는 브라우저에서 사이트가 정상적으로 표시되지 않습니다. 최신 브라우저로 <a href="http://outdatedbrowser.com/ko" style="color:#00f;text-decoration:underline;">업데이트</a> 하세요. Your browser is out of date! Update your browser to view this website correctly. <a href="http://outdatedbrowser.com/ko" style="padding:0 4px;color:#00f;font-weight:bold;text-decoration:underline;">Update now</a></p>
+    <![endif]-->
+
+    <a href="#content" class="skip">메뉴 건너띄기</a>
+
+    <header class="header">
+        <div class="gnb-wrap">
+            <a href="#gnb" role="button" aria-expanded="false" class="btn-open-menu js-toggle-menu"><span class="sr-text">메뉴열기</span></a>
+            <div id="gnb" class="menu-wrap">
+                <a href="#" role="button" aria-expanded="false" class="btn-close-menu js-toggle-menu"><span class="sr-text">메뉴닫기</span></a>
+        
+                <!-- mobile only -->
+                <div class="top-area">
+                    <!-- 
+                    <a href="#" class="btn-notify">
+                        <span class="sr-text">알림</span>
+                        <span class="new-dot">New</span>
+                    </a>
+                    --> 
+                    <!-- <a href="#" class="btn-setting"><span class="sr-text">설정</span></a> -->
+                    <div class="profile-wrap">
+                        
+                            
+                                <a href="#" class="profile-thumb">
+                                    <img src="/static/img/common/default_profile.png" alt="">
+                                </a>
+                                <div class="no-name">
+                                    <a href="/login/login.do" >로그인</a>
+                                    <a href="/join/certifyUser.do" >회원가입</a>
+                                </div>
+                            
+                            
+                        
+                    </div>
+                    <div class="quick-menu-list">
+                        <ul>
+                            <li><a href="/find/cmpsPro/cmpsProList.do">보상프로 찾기</a></li>
+                            <!-- <li><a href="#">보상청구</a></li> -->
+                            <li><a href="javascript:goOpnAdvReg()">무료상담신청</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- gnb 메뉴 -->
+                <nav>
+                    <ul class="top-menu">
+                        <li><a href="/find/cmpsCase/cmpsCaseList.do">보상사례 보기</a></li>
+                        <li><a href="/find/advCase/advCaseList.do">무료상담 보기</a></li>
+                        <li><a href="/find/revw/revwList.do">후기로 보는 보상프로</a></li>
+                        <li><a href="/custCntr/custCntrMain.do">고객센터</a></li>
+                    </ul>
+                    <ul class="bottom-menu">
+                        <li><a href="/custCntr/cmknwMttrList.do">공지사항</a></li>
+                        <li><a href="/cmpy/about.do?goToContact=Y">교육 문의(손해사정사 방문)</a></li>
+                        <li><a href="/custCntr/faqList.do">자주 묻는 질문</a></li>
+                        
+                            
+                        
+                        
+                        <li>
+                            <a href="/cmpy/useStpul.do?useStpulCfCd=31202">개인정보보호정책</a>
+                        </li>
+                        <li><a href="/cmpy/about.do">회사소개</a></li>
+                    </ul>
+                </nav>
+                <!-- //gnb 메뉴 -->
+        
+                <!-- mobile only -->
+                <div class="bottom-banner">
+                    <p class="headline">다줌과 함께할<br> 보상프로를 찾습니다.</p>
+                    <a href="/cmpy/aboutCmpsPro.do" class="btn-benefit">다줌 보상프로가 되면 좋은점</a>
+                </div>
+            </div>
+        </div>
+
+        <h1 class="top-logo"><a href="/main/index.do"><span class="sr-text">DAZUM</span></a></h1>
+        <!-- widescreen only -->
+        
+        
+        <div class="rt-menu">
+            <div class="member-menu">
+                
+                     <!-- Session이 없는 경우 -->
+                        <a href="/login/login.do" >로그인</a>
+                        <a href="/join/certifyUser.do" >회원가입</a>
+                    
+                    
+                
+                
+                <a href="/custCntr/custCntrMain.do" >고객센터</a>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- Content -->
+    <div id="content">
+
+        <!-- no sub-header -->
+
+        <div class="sub-body">
+            <!-- no sub-navigation -->
+
+            <div class="sub-content">
+                    
+                <div class="find-consulting-view">
+                    <div class="container">
+                        <div class="view-header">
+                            <p class="category-label">교통사고</p>
+                            <h2 class="title">중상해 교통사고 사건에 대해서 질문이 있습니다.</h2>
+                            <div class="meta-wrap">
+                                <span class="regdate">2021-09-18</span>
+                                <span class="total-view">조회수 98</span>                             
+                                
+                            </div>
+                            <a href="#" class="link-answer btn-lg">답변하기</a>
+                        </div>
+                        <div class="view-body">
+                            <div class="view-content">
+                                안녕하세요.
+<br/>고객님께서 한 달 전쯤 운전 중 오토바이를 박았고, 중상해사고가 발생했습니다.
+<br/>경찰서에서는 합의를 하라고 하고 있는데요. 
+<br/>운전자보험과 자동차보험은 가입되어져있습니다.
+<br/>어떻게 진행하는 게 좋을지 모르겠어서 문의드립니다.
+<br/>손해사정사님과 깉이 진행하는 게 좋은 걸까요? 
+                            </div>
+                            <div class="meta-wrap">
+                                <div class="action-wrap">
+                                    <!-- [D] 즐겨찾기 추가시 on 클래스 추가 -->
+                                    <button type="button" title="즐겨찾기" class="btn-fav-counter on" onclick="insertBkmrkOpnAdvInfo()">
+                                        <span class="sr-text">즐겨찾기 추가하기</span>
+                                    </button>
+                                    <a href="#mdShare" aria-haspopup="dialog" class="btn-share-dark js-open-popup"><span class="sr-text">공유하기</span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relate-content-wrap">
+                    <div class="container">
+
+                        <div class="cols-wrap">
+                            <p class="total-answer-info">총 <em>3</em>건의 보상프로 답변이 있습니다.</p>
+                            <div class="col answers">
+                                
+                                    <div class="box">
+                                        <div class="profile-wrap">
+                                            <div class="thumb-wrap">
+                                                <a href="javascript:goCmpsProDtl('D6814F1FB2E9571B7DC910B71E5C88E62ACBA2E677A6F0DD13AC56ABD745B40B')" class="profile-thumb">
+                                                    
+                                                        
+                                                            <img src="/cmpsProPhoto/e9e879fe-6551-44ba-98ee-a7bcf478db62.jpg" />
+                                                        
+                                                        
+                                                    
+                                                    
+                                                </a>
+                                                <!-- <p class="pro-badge type3"><span class="sr-text">신규프로</span></p> -->
+                                            </div>
+                                            <div class="profile-content">
+                                                <p class="name">
+                                                    <a href="javascript:goCmpsProDtl('D6814F1FB2E9571B7DC910B71E5C88E62ACBA2E677A6F0DD13AC56ABD745B40B')">
+                                                        <span>심상연 </span>
+                                                        <small>보상프로</small>
+                                                    </a>
+                                                </p>
+                                                <p class="office">
+                                                    <span>프랜즈손해사정 </span>
+                                                    
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="relate-content">
+                                            <div class="detail">
+                                                고객을 살피시는 그 마음이 잘 전달되면 좋겠습니다.
+<br/>답변 드립니다.
+<br/>
+<br/>1. 반드시 손해사정사를 선임해야 할 경우
+<br/>우리 고객의 운전자보험 보장내용 확인이 필요한 경우
+<br/>
+<br/>우리 고객 가입 운전자보험에서의 지급 담보와 한도를 알아야 할 경우
+<br/>
+<br/>우리 고객이 형사합의를 해 주는것이 갑의 입장에서 해야지, 을이 되지 않아야 합니다.
+<br/>(그 이유는 전화하면 알려드립니다.)
+<br/>
+<br/>상대방이 무리한 합의금을 요구하는 경우
+<br/>
+<br/>
+<br/>2. 그 누구의 도움도 필요치 않은 경우
+<br/>가해 운전자와 피해자간 의사가 합치되어 자연스럽게 마무리 된 경우.
+<br/>
+<br/>
+<br/>01051154972
+                                            </div>
+                                            <div class="detail-meta">
+                                                <span class="regdate">2021-09-18 15:03:27</span>
+                                                <!-- <a href="#mdShare" aria-haspopup="dialog" class="btn-share-sm js-open-popup"><span class="sr-text">공유하기</span></a> -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                
+                                    <div class="box">
+                                        <div class="profile-wrap">
+                                            <div class="thumb-wrap">
+                                                <a href="javascript:goCmpsProDtl('A8A43A3A6A5FE170E7A945E9766FD11A')" class="profile-thumb">
+                                                    
+                                                        
+                                                            <img src="/cmpsProPhoto/857efe43-d981-4207-805e-618b48e8e679.png" />
+                                                        
+                                                        
+                                                    
+                                                    
+                                                </a>
+                                                <!-- <p class="pro-badge type3"><span class="sr-text">신규프로</span></p> -->
+                                            </div>
+                                            <div class="profile-content">
+                                                <p class="name">
+                                                    <a href="javascript:goCmpsProDtl('A8A43A3A6A5FE170E7A945E9766FD11A')">
+                                                        <span>장옥춘</span>
+                                                        <small>보상프로</small>
+                                                    </a>
+                                                </p>
+                                                <p class="office">
+                                                    <span>일송손해사정</span>
+                                                    
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="relate-content">
+                                            <div class="detail">
+                                                어떤 사고인지(11대 중과실 사고인지)는 모르겠으나 교통사고 발생시 님은 민사상, 형사상, 행정상 책임을 지게 됩니다. 
+<br/>행정상 책임은 과태료와 벌점을 받게 됨을 말하며 
+<br/>민사책임은 종합보험에 가입되어 있다면 자동차보험에서 처리가 됩니다.
+<br/>형사책임의 경우 경찰관이 합의를 하라고 했다면 피해자가 중상해라서 교통사고처리특례법위반에. 따른 형사처벌의 대상이 된다는 이야기로 운전자보험을 활용하시어 형사합의를. 하셔야 합니다.  
+<br/>형사합의를 할 경우 형사처벌에 대해 일부 감면 받을 수 있습니다. 일단 피해자와 연락을 하시서 상해에 대한 사과를 하시고 형사합의금에 대해 이야기 해보시고  피해자측에서 변호사나 손해사정사 를 선임하였는지 확인하시기 바라며. 상대방이 요구하는 형사합의금을 체크하시고 운전자 보험에서 담보하는 범위인지를 체크하시기 바랍니다.  
+<br/>
+<br/>사고내용을 정확히 몰라 원론적인 답변만 드리니 참고하시고 문의사항이 있으시면 연락주세요.
+                                            </div>
+                                            <div class="detail-meta">
+                                                <span class="regdate">2021-09-18 14:56:24</span>
+                                                <!-- <a href="#mdShare" aria-haspopup="dialog" class="btn-share-sm js-open-popup"><span class="sr-text">공유하기</span></a> -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                
+                                    <div class="box">
+                                        <div class="profile-wrap">
+                                            <div class="thumb-wrap">
+                                                <a href="javascript:goCmpsProDtl('F560730E0F7451A7AA027779CC959D8EA22D8B1E29290144724944E6FFC075A9')" class="profile-thumb">
+                                                    
+                                                        
+                                                            <img src="/cmpsProPhoto/aaa8ea95-d59a-4e40-a850-072f257c4a30.jpg" />
+                                                        
+                                                        
+                                                    
+                                                    
+                                                </a>
+                                                <!-- <p class="pro-badge type3"><span class="sr-text">신규프로</span></p> -->
+                                            </div>
+                                            <div class="profile-content">
+                                                <p class="name">
+                                                    <a href="javascript:goCmpsProDtl('F560730E0F7451A7AA027779CC959D8EA22D8B1E29290144724944E6FFC075A9')">
+                                                        <span>정휘영</span>
+                                                        <small>보상프로</small>
+                                                    </a>
+                                                </p>
+                                                <p class="office">
+                                                    <span>상우손해사정</span>
+                                                    
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="relate-content">
+                                            <div class="detail">
+                                                중한 사고를 내시어 맘고생이 많으시겠네요
+<br/>중상해사고는 형사합의 대상입니다
+<br/>운전자 보험의 보상영역을 점검.체크하시고
+<br/>(벌금.방어비용.형사합의금지원등)
+<br/>피해자의 진단내용 진단주수 나이.직업등을
+<br/>고려하여 진행하시는게 좋을듯 합니다.
+<br/>
+                                            </div>
+                                            <div class="detail-meta">
+                                                <span class="regdate">2021-09-18 14:51:51</span>
+                                                <!-- <a href="#mdShare" aria-haspopup="dialog" class="btn-share-sm js-open-popup"><span class="sr-text">공유하기</span></a> -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                
+                            </div>
+                            <div class="col">
+                                <div class="box">
+                                    <div class="title-wrap">
+                                        <p class="title">
+                                            <strong>다른 상담 사례</strong> 더보기
+                                        </p>
+                                        <ul role="tablist" class="tabs">
+                                            <li class="on" onclick="selectAdvCaseTop5List('ASW_DT')">
+                                                <a href="#relConsulting1" role="tab" aria-selected="true">최신순</a>
+                                            </li>
+                                            <li onclick="selectAdvCaseTop5List('IQY_CNT')">
+                                                <a href="#relConsulting2" role="tab" aria-selected="false">조회순</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="relate-content">
+                                        <div role="tabpanel" id="relConsulting1" class="tab-panel on">
+                                            <ol class="relate-list">
+                                                
+                                                
+                                                    <li>
+                                                        <a href="javascript:goAdvCaseDtl('20210918', 'EA20745A0F00F3531BC68C3D1714DBD6', '1')">중상해 교통사고 사건에 대해서 질문이 있습니다.</a>
+                                                    </li>
+                                                
+                                                    <li>
+                                                        <a href="javascript:goAdvCaseDtl('20210527', '5ABF4A515C5945A9B60CA0997F5390CFC60DED7BCFE57F566E46186EC843F406', '3')">교통사고가 발생했을 때 진행할수 있는 합의 관련 전반적으로 알려주세요</a>
+                                                    </li>
+                                                
+                                                    <li>
+                                                        <a href="javascript:goAdvCaseDtl('20210527', '5ABF4A515C5945A9B60CA0997F5390CFC60DED7BCFE57F566E46186EC843F406', '2')">척수손상 후유장애 보상에 대해 알려주세요</a>
+                                                    </li>
+                                                
+                                                    <li>
+                                                        <a href="javascript:goAdvCaseDtl('20210528', '59C364A9C63DB7338949A7BE7E37C86EC60DED7BCFE57F566E46186EC843F406', '2')">돌아가신지 오래된 부모님의 사망보험금이 있으면 청구 할수 있나요?</a>
+                                                    </li>
+                                                
+                                                    <li>
+                                                        <a href="javascript:goAdvCaseDtl('20210827', 'F1924CF56E02D9F3E23C9F4CF895493BC60DED7BCFE57F566E46186EC843F406', '1')">3년이 지나 보상금 신청 못하나요?</a>
+                                                    </li>
+                                                
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+     <!-- 공유하기 팝업 -->
+    <div id="mdShare" class="modal-popup">
+        <div role="dialog" class="modal-container">
+            <div class="modal-header">
+                <button type="button" class="btn-close-popup js-close-popup"><span class="sr-text">창닫기</span></button>
+            </div>
+            <div class="modal-content">
+                <!-- 20210114 수정 -->
+                <div class="popup-alert">
+                    <h4 class="modal-title">공유하기</h4>
+                    <ul class="share-vendor-list">
+                        <li><a href="javascript:shareDazumUrl('kakaostory');" class="share-kakao">카카오스토리</a></li>
+                        <li><a href="javascript:shareDazumUrl('twitter');" class="share-tw">트위터</a></li>
+                        <li><a href="javascript:shareDazumUrl('facebook');" class="share-fb">페이스북</a></li>
+                    </ul>
+                    <div class="share-url">
+                        <input type="text" name="shareUrl" id="copyText" value="http://wwwdazum.co.kr/pro123213" class="url">
+                        <button type="button" onclick="copyClipboard('URL이 복사되었습니다.')" class="btn-url-copy"></button><span class="sr-text">클립보드에 복사</span></button>
+                    </div>
+                    <script>
+                        function copyClipboard(msg) {
+                            var copyText = document.getElementById("copyText");
+                            copyText.select();
+                            copyText.setSelectionRange(0, 99999);
+                            document.execCommand('copy');
+                            alert(msg);
+                        }
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>    
+    <!-- //공유하기 팝업 -->
+
+    
+
+
+
+
+
+
+
+    <!-- 보상프로 모집 안내 -->
+    <aside class="aside-footer">
+        <div class="container">
+            <p class="headline"><span>다줌과 함께할</span> 보상프로를 찾습니다.</p>
+            <p>다줌 보상프로 등록하고 의뢰인을 만나세요.</p>
+            <div class="btn-wrap">
+                <a href="/cmpy/aboutCmpsPro.do" class="btn">등록하기</a>
+                <!-- <a href="#" class="btn-benefit">다줌 보상프로가 되면 좋은점</a> -->
+            </div>
+        </div>
+    </aside>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="logo-wrap">
+                <p class="footer-logo"><span class="sr-text">DAZUM</span></p>
+            </div>
+            <div class="content-wrap">
+                <ul class="footer-menu">
+                    <li>
+                        <a href="/cmpy/about.do">회사소개</a>
+                    </li>
+                    
+                    
+                        
+                    
+                    
+                    <li>
+                        <a href="/cmpy/useStpul.do?useStpulCfCd=31202">개인정보보호정책</a>
+                    </li>
+                    <li>
+                        <a href="/custCntr/custCntrMain.do">고객센터</a>
+                    </li>
+                    <li>
+                        <a href="/cmpy/about.do?goToContact=Y">제휴 문의</a>
+                    </li>
+                </ul>
+                <div class="company-info">
+                    <p class="company-name">(주)엑사메이커스</p>
+                    <p>
+                        <span>서울특별시 강남구 테헤란로20길 18, 6층(역삼동, 부봉빌딩)</span>
+                        <span>사업자번호:769-81-01465</span>
+                        <br>
+                        <span>대표자명 : 김금동</span>
+                        <span>대표번호 : 02-569-0717</span>
+                    </p>
+                    <p class="copyright">(C) Examakers Co., Ltd. ALL RIGHTS RESERVED.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
+
+<script id="dataRowTemplate" type="text/x-jquery-tmpl">
+    <li>
+        <a href="javascript:goAdvCaseDtl('{{= bsdt}}', '{{= mbrId}}', '{{= qrySeqNo}}')">{{= advTitl}}</a>
+    </li>
+</script>

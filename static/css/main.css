@@ -203,6 +203,22 @@ ul,li,ol {list-style: none;}
 
 .btn-sm:disabled { cursor: not-allowed !important; }
 
+.btn-lg {
+    display: inline-block;
+    width: 10em;
+    margin: auto;
+    padding: 11px 6px 12px;
+    font-size: 13px;
+    color: #fff;
+    letter-spacing: -0.05em;
+    line-height: 1;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 5px;
+    border: 0;
+    background: #4a65f7;
+}
+
 @media (max-width: 1074px) { .btn-sm { font-size: 11px; } }
 
 /* Forms */
@@ -248,7 +264,7 @@ ul,li,ol {list-style: none;}
 
 .form-selectbox2 { display: inline-block; position: relative; width: 100%; vertical-align: middle; }
 
-.form-selectbox2 select { display: inline-block; position: relative; width: 100%; height: 50px; padding: 0 35px 0 20px; text-overflow: ellipsis; vertical-align: middle; -webkit-appearance: none; -moz-appearance: none; appearance: none; border-radius: 5px; border: 1px solid #E0E3E5; background: #fff; -webkit-box-shadow: none; box-shadow: none; outline: 0; }
+.form-selectbox2 select { display: inline-block; position: relative; width: 100%; height: 50px; padding: 0 35px 0 20px; text-overflow: ellipsis; vertical-align: middle; -webkit-appearance: none; -moz-appearance: none; appearance: none; border-radius: 5px; border: 1px solid #E0E3E5; background: #fff; -webkit-box-shadow: none; box-shadow: none; outline: 0; border: none; }
 
 .form-selectbox2 select:focus { border-color: #4A65F7; -webkit-box-shadow: 5px 5px 6px rgba(74, 101, 247, 0.15); box-shadow: 5px 5px 6px rgba(74, 101, 247, 0.15); z-index: 1; }
 
@@ -624,7 +640,7 @@ input[type]:checked + .radio-label2 .box { border-color: #4A65F7; background: #f
 
 .tabs-slider-wrap.lg { border: 0; border-bottom: 2px solid #000; }
 
-.tabs-slider-wrap .tabs { display: inline-block; width: auto; font-size: 0; white-space: nowrap; vertical-align: top; }
+.tabs-slider-wrap .tabs { display: inline-block; overflow-x: auto; width: calc( 100% - 140px ); font-size: 0; white-space: nowrap; vertical-align: top; }
 
 .tabs-slider-wrap .tabs.slick-initialized { display: block; overflow: visible; }
 
@@ -658,16 +674,21 @@ input[type]:checked + .radio-label2 .box { border-color: #4A65F7; background: #f
 
 .tabs-slider-wrap .slick-disabled { opacity: 0; visibility: hidden; }
 
+.tabs-slider-wrap .btn-lg { position: absolute; top: 0; right: 0;}
+
 @media (max-width: 1074px) { .tabs-slider-wrap { margin: 0 -16px; overflow: hidden; }
     .tabs-slider-wrap .tabs { margin-bottom: 16px; }
     .tabs-slider-wrap .tabs li { max-width: 172px; float: none; }
     .tabs-slider-wrap .tabs li[data-slick-index]:first-child { padding-left: 16px; }
     .tabs-slider-wrap .tabs li[data-slick-index]:last-child { padding-right: 16px; }
     .tabs-slider-wrap .tabs a { font-size: 15px; line-height: 1.4; }
-    .tabs-slider-wrap.lg { border-bottom: 0; }
+    .tabs-slider-wrap.lg { border-bottom: 0; height: 40px;}
     .tabs-slider-wrap.lg .tabs { padding: 0 16px; }
     .tabs-slider-wrap.lg .tabs a { font-size: 15px; padding: 0 0 3px; line-height: 1.4; border-width: 2px; }
-    .tabs-slider-wrap.lg .slick-initialized { padding: 0; } }
+    .tabs-slider-wrap.lg .slick-initialized { padding: 0; } 
+    .tabs-slider-wrap.lg .tabs { width: calc( 100% - 90px ); margin-top: 9px;}
+    .tabs-slider-wrap .btn-lg { right: 1rem; width: 5em;padding: 6px 6px 7px;}
+}
 
 .section-tabs { display: block; position: relative; margin: 0; padding: 20px 36px 22px; border-bottom: 1px solid #F0F0F0; }
 
@@ -3151,6 +3172,29 @@ body { display: -webkit-box; display: -ms-flexbox; display: flex; min-height: 10
     .find-consulting-wrap .result-list-wrap { width: auto; margin: 0; float: none; }
     .find-consulting-wrap .result-list-wrap .list-filter { display: none; } }
 
+/* 보상사례찾기 thumb */
+.result-list-wrap {margin-top: 50px;}
+.result-list-wrap .lst-thumb {display: flex;flex-wrap: wrap;justify-content: space-between;}
+.result-list-wrap .lst-thumb li {width: 32%;margin-bottom: 50px;}
+.result-list-wrap .lst-thumb li a {display: block;}
+.result-list-wrap .lst-thumb .thumb {display: block;position: relative;}
+.result-list-wrap .lst-thumb .thumb::after {content: '';position: absolute;top: 0;left: 0;right: 0;bottom: 0;border: 1px solid rgba(0,0,0,0.1);}
+.result-list-wrap .lst-thumb .thumb img {display: block; width: 100%; height: 343px; margin: 0;object-fit: cover;}
+.result-list-wrap .lst-thumb .tit {display: block;margin-top: 20px;font-size: 19px;font-weight: 500; color: #4d4d4d;}
+.result-list-wrap .lst-thumb .source {display: block; margin-top: 10px; font-size: 19px; font-style: normal; color: #3c4fbc;}
+.result-list-wrap .lst-thumb .pc {display: block;}
+
+@media (max-width: 1074px) { 
+    .result-list-wrap .lst-thumb li {width: 49%;}
+    .result-list-wrap .lst-thumb .thumb img { height: 343px; object-position: 50% 0;}
+    .result-list-wrap .lst-thumb .tit {font-size: 16px;}
+    .result-list-wrap .lst-thumb .source {font-size: 16px;}
+    .result-list-wrap .lst-thumb .pc {display: none;}
+}
+@media (max-width: 680px) {
+    .result-list-wrap .lst-thumb .thumb img { height: 180px;}
+}
+
 .find-consulting-wrap .listview ol { margin-top: -23px; }
 
 .find-consulting-wrap .listview .consulting-info { padding: 23px 0 20px; }
@@ -3265,7 +3309,7 @@ body { display: -webkit-box; display: -ms-flexbox; display: flex; min-height: 10
 
 .find-consulting-view { padding: 28px 0 36px; }
 
-.find-consulting-view .view-header { padding: 0 0 20px; border-bottom: 2px solid #000; }
+.find-consulting-view .view-header { position: relative; padding: 0 0 20px; border-bottom: 2px solid #000; }
 
 .find-consulting-view .view-header .title { font-size: 36px; font-weight: 700; letter-spacing: -0.05em; line-height: 1.44444; }
 
@@ -3285,13 +3329,17 @@ body { display: -webkit-box; display: -ms-flexbox; display: flex; min-height: 10
 
 .find-consulting-view .meta-wrap .action-wrap > * { margin-left: 32px; }
 
+.find-consulting-view .view-header .link-answer {position: absolute;bottom: 13px;right: 0;}
+
 @media (max-width: 1074px) { .find-consulting-view { padding: 0 0 30px; }
     .find-consulting-view .view-header { padding-bottom: 12px; }
     .find-consulting-view .view-header .title { font-size: 24px; }
     .find-consulting-view .view-header .meta-wrap { font-size: 12px; }
     .find-consulting-view .view-content { min-height: 180px; padding: 22px 10px; font-size: 14px; line-height: 2; }
     .find-consulting-view .meta-wrap .action-wrap { margin: 0 10px; }
-    .find-consulting-view .meta-wrap .action-wrap > * { margin-left: 18px; } }
+    .find-consulting-view .meta-wrap .action-wrap > * { margin-left: 18px; }
+    .find-consulting-view .view-header .link-answer {position: static; margin-top: 10px;}
+}
 
 .relate-content-wrap .total-answer-info { margin: 0 0 14px; padding: 0 0 0 15px; font-size: 16px; font-weight: 500; color: #222; letter-spacing: -0.05em; }
 

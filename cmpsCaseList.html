@@ -1,0 +1,660 @@
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+<title>보상케이스 찾기 - DAZUM 다줌</title>
+
+
+
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="keyword" content="보험, 보상프로, 보험상담, 손해사정사">
+<meta name="description" content="보험금 청구 해결사 - 다줌">
+<meta name="format-detection" content="address=no, email=no, telephone=no">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="DAZUM 다줌">
+<meta property="og:url" content="https://www.dazum.co.kr/main/index.do">
+<meta property="og:description" content="보험금 청구 해결사 - 다줌">
+<meta property="og:image" content="/static/img/dazum_intro.png"><!-- [D]절대경로 -->
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://www.dazum.co.kr/main/index.do">
+<meta property="twitter:description" content="보험금 청구 해결사 - 다줌">
+<meta property="twitter:image" content="/static/img/dazum_intro.png"><!-- [D]절대경로 -->
+
+<meta http-equiv="Expires" content="-1">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+
+<script src="/js/jquery/jquery-3.5.1.js"></script>
+<script src="/js/jquery/jquery.form.js"></script>
+<script src="/js/jquery/jquery.fileDownload.js"></script>
+<script src="/js/jquery/jquery-ui.js"></script>
+<script src="/js/jquery/jquery.tmpl.js"></script>
+<script src="/js/slider/jquery.bxslider.js"></script>
+<script src="/js/modal/jquery.modal.js"></script>
+<script src="/js/modal/modal.js"></script>
+
+<script src="/js/common/common.js?ver=1.2"></script>
+
+<link rel="stylesheet" href="/js/jquery/jquery-ui.css">
+<link rel="stylesheet" href="/js/jquery/jquery-ui.theme.css">
+<link rel="stylesheet" href="/js/jquery/theme.css">
+<link rel="stylesheet" href="./static/css/slick.css">
+
+<!-- ###################################################################### -->
+<!-- ########## 디자이너로부터 받은 디자인 관련 파일들 ########## -->
+<!-- ###################################################################### -->
+
+<!-- jquery는 위에 있기때문에 여기는 주석처리 -->
+<!-- <script src="/static/js/lib/jquery.min.js"></script> -->
+<script src="/static/js/slick.min.js"></script>
+<script src="/static/js/Chart.min.js"></script>
+<script src="/static/js/aos.js"></script>
+<script src="/static/js/main.js"></script>
+<script src="/static/js/jquery.mousewheel.js"></script>
+<script src="/static/js/jquery.scrolltabs.js"></script>
+<script src="./static/js/slick.min.js"></script>
+
+<link rel="stylesheet" href="/static/css/slick.css">
+<link rel="stylesheet" href="/static/css/Chart.min.css">
+<link rel="stylesheet" href="/static/css/aos.css?after">
+<link rel="stylesheet" href="/static/css/main.css?after">
+
+<link rel="shortcut icon" href="/static/img/favicon.ico" type="image/x-icon">
+
+<!-- 간편청구 210915 추가 -->
+<link
+    rel="stylesheet"
+    href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"
+/>
+<link rel="stylesheet" href="/static/css/easy.css" />
+
+<!-- ###################################################################### -->
+<!-- ########## 디자이너로부터 받은 디자인 관련 파일들 ########## -->
+<!-- ###################################################################### -->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HBEFGGRWQT"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    
+    gtag('config', 'G-HBEFGGRWQT');
+</script>
+
+<script>
+    function goOpnAdvReg() {
+        var logInUserType = "";
+
+        if (logInUserType == '') {
+            alert("로그인이 필요한 기능입니다.");
+            //location.href = "/login/login.do";
+            return;
+        }
+        
+        if (logInUserType == 'CMPS_PRO') {
+            return;    
+        }
+
+        location.href = "/mypage/member/opnAdv/mbrOpnAdvReg.do";
+    }
+    
+    function goMyPage() {
+        var logInUserType = "";
+        
+        if (logInUserType == 'MBR') {
+            location.href = "/mypage/member/info/mbrMyPage.do";
+        } else if (logInUserType == 'CMPS_PRO') {
+            location.href = "/mypage/cmpsPro/info/cmpsProMyPage.do";
+        }
+    }
+</script>
+
+
+<script type="text/javascript">
+
+$(document).ready(function() { 
+    
+});
+
+/*
+ * 조회 이미지를 클릭시
+ * 분류코드는 상단의 분류콤보값, keyword값으로 처리함!!!
+ */
+function selectCmpsCaseList(pageNo) {
+    $("#pageIndex").val(pageNo);
+    $("#cmpsCaseForm").attr("action", "/find/cmpsCase/cmpsCaseList.do").submit();
+}
+
+/*
+ * 1. 전체Tab 클릭시
+ *    : 상단 분류콤보가 선택된 값이 없이 '전체'이면 모든 분류, 선택된 분류가 있으면 해당분류가 전체Tab에 나와야 함.!!!
+ * 2. 전체Tab을 제외한 개별 분류 Tab 클릭시
+ *    : 상단 분류콤보를 따르지 않고 각 Tab의 분류코드값으로 처리함!!!
+ * 3. 1,2 모두 keyword파라미터는 공통
+ */
+function selectCmpsCaseTabList(tabCd, tabCdCnt) {
+    // Tab의 수치가 0인 경우는 조회하면 안됨.
+    if (tabCdCnt == 0) {
+        $("#totalRecordCount").val("0");
+        $("#dataRows").empty();
+         
+        return;
+    }
+     
+    var cmpsCaseCfCd = "";
+    var keyword = $("#keyword").val();
+     
+    // Tab 클릭시는 초기화하고 첫페이지 조회되므로 무조건 1
+    $("#pageIndex").val("1");
+    $("#curTabCd").val(tabCd);
+     
+    if (tabCd == "") {
+        // 전체 Tab인 경우
+        cmpsCaseCfCd = $("#cmpsCaseCfCd").val();
+    } else {
+        // 개별 Tab인 경우
+        cmpsCaseCfCd = tabCd;
+    }
+     
+    $.ajax({
+        url : "/find/cmpsCase/selectCmpsCaseList.do",
+        type: "POST",
+        data : {"cmpsCaseCfCd": cmpsCaseCfCd, "keyword" : keyword},
+        dataType: "json",    
+        success : function(result) {
+            // Tab클릭시는 clear처리
+            $("#dataRows").empty();
+            $("#lastPageNo").val(result.paginationInfo.lastPageNo);
+            $("#totalRecordCount").val(result.paginationInfo.totalRecordCount);
+            
+            $("#dataRowTemplate").tmpl(result.cmpsCaseList).appendTo("#dataRows");
+        },
+        error: function(){
+            alert("오류가 발생했습니다.");
+        }
+    });
+}
+
+function selectCmpsCaseMoreViewList() {
+    var tabCd = $("#curTabCd").val();
+    var totalRecordCount = $("#totalRecordCount").val();
+    
+    // 데이터가 없는 경우이므로 조회하면 안됨.
+    if (totalRecordCount == "0") {
+        alert("더 이상의 데이터가 없습니다.");
+        return;
+    }
+    
+    var cmpsCaseCfCd = "";
+    var keyword = $("#keyword").val();
+    
+    var lastPageNo = $("#lastPageNo").val();
+    var pageIndex = $("#pageIndex").val();
+    
+    if (Number(pageIndex) < Number(lastPageNo)) {
+        $("#pageIndex").val(Number(pageIndex) + 1);
+    } else {
+        alert("마지막 페이지입니다.");
+        return;
+    }
+   
+    if (tabCd == "") {
+        // 전체 Tab인 경우
+        cmpsCaseCfCd = $("#cmpsCaseCfCd").val();
+    } else {
+        // 개별 Tab인 경우
+        cmpsCaseCfCd = tabCd;
+    }
+     
+    $.ajax({
+        url : "/find/cmpsCase/selectCmpsCaseList.do",
+        type: "POST",
+        data : {"cmpsCaseCfCd": cmpsCaseCfCd, "keyword" : keyword, "pageIndex" : $("#pageIndex").val()},
+        dataType: "json",    
+        success : function(result) {
+            $("#dataRowTemplate").tmpl(result.cmpsCaseList).appendTo("#dataRows");
+        },
+        error: function(){
+            alert("오류가 발생했습니다.");
+        }
+    });
+}
+
+function goCmpsCaseDtl(bsdt, cmpsProId, seqNo) {
+    var params = "?bsdt=" + bsdt;
+    params += "&cmpsProId=" + cmpsProId;
+    params += "&seqNo=" + seqNo;
+
+    location.href = "/find/cmpsCase/cmpsCaseDtl.do" + params;
+}
+
+function goCmpsProDtl(cmpsProId) {
+    var params = "?cmpsProId=" + cmpsProId;
+    
+    location.href = "/find/cmpsPro/cmpsProDtl.do" + params;
+}
+
+function setKeyword(keyword) {
+    $("#keyword").val(keyword);
+}
+
+function goCmpsCaseReg() {
+    location.href = "/mypage/cmpsPro/cmpsCase/cmpsCaseReg.do"
+}
+
+</script>
+
+</head>
+
+<body>
+    
+        
+    
+
+
+
+
+
+
+    
+    <!--[if lt IE 10]>
+      <p id="browser-upgrade" style="position:relative;padding:4px 1em;font-size:12px;color:#000;letter-spacing:0;background:#ffc;border-bottom:2px outset #fff;margin:0;text-align:left;z-index:99;">사용하는 브라우저에서 사이트가 정상적으로 표시되지 않습니다. 최신 브라우저로 <a href="http://outdatedbrowser.com/ko" style="color:#00f;text-decoration:underline;">업데이트</a> 하세요. Your browser is out of date! Update your browser to view this website correctly. <a href="http://outdatedbrowser.com/ko" style="padding:0 4px;color:#00f;font-weight:bold;text-decoration:underline;">Update now</a></p>
+    <![endif]-->
+
+    <a href="#content" class="skip">메뉴 건너띄기</a>
+
+    <header class="header">
+        <div class="gnb-wrap">
+            <a href="#gnb" role="button" aria-expanded="false" class="btn-open-menu js-toggle-menu"><span class="sr-text">메뉴열기</span></a>
+            <div id="gnb" class="menu-wrap">
+                <a href="#" role="button" aria-expanded="false" class="btn-close-menu js-toggle-menu"><span class="sr-text">메뉴닫기</span></a>
+        
+                <!-- mobile only -->
+                <div class="top-area">
+                    <!-- 
+                    <a href="#" class="btn-notify">
+                        <span class="sr-text">알림</span>
+                        <span class="new-dot">New</span>
+                    </a>
+                    --> 
+                    <!-- <a href="#" class="btn-setting"><span class="sr-text">설정</span></a> -->
+                    <div class="profile-wrap">
+                        
+                            
+                                <a href="#" class="profile-thumb">
+                                    <img src="/static/img/common/default_profile.png" alt="">
+                                </a>
+                                <div class="no-name">
+                                    <a href="/login/login.do" >로그인</a>
+                                    <a href="/join/certifyUser.do" >회원가입</a>
+                                </div>
+                            
+                            
+                        
+                    </div>
+                    <div class="quick-menu-list">
+                        <ul>
+                            <li><a href="/find/cmpsPro/cmpsProList.do">보상프로 찾기</a></li>
+                            <!-- <li><a href="#">보상청구</a></li> -->
+                            <li><a href="javascript:goOpnAdvReg()">무료상담신청</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- gnb 메뉴 -->
+                <nav>
+                    <ul class="top-menu">
+                        <li><a href="/find/cmpsCase/cmpsCaseList.do">보상사례 보기</a></li>
+                        <li><a href="/find/advCase/advCaseList.do">무료상담 보기</a></li>
+                        <li><a href="/find/revw/revwList.do">후기로 보는 보상프로</a></li>
+                        <li><a href="/custCntr/custCntrMain.do">고객센터</a></li>
+                    </ul>
+                    <ul class="bottom-menu">
+                        <li><a href="/custCntr/cmknwMttrList.do">공지사항</a></li>
+                        <li><a href="/cmpy/about.do?goToContact=Y">교육 문의(손해사정사 방문)</a></li>
+                        <li><a href="/custCntr/faqList.do">자주 묻는 질문</a></li>
+                        
+                            
+                        
+                        
+                        <li>
+                            <a href="/cmpy/useStpul.do?useStpulCfCd=31202">개인정보보호정책</a>
+                        </li>
+                        <li><a href="/cmpy/about.do">회사소개</a></li>
+                    </ul>
+                </nav>
+                <!-- //gnb 메뉴 -->
+        
+                <!-- mobile only -->
+                <div class="bottom-banner">
+                    <p class="headline">다줌과 함께할<br> 보상프로를 찾습니다.</p>
+                    <a href="/cmpy/aboutCmpsPro.do" class="btn-benefit">다줌 보상프로가 되면 좋은점</a>
+                </div>
+            </div>
+        </div>
+
+        <h1 class="top-logo"><a href="/main/index.do"><span class="sr-text">DAZUM</span></a></h1>
+        <!-- widescreen only -->
+        
+            <p class="top-page-title">보상사례 찾기</p>
+        
+        
+        <div class="rt-menu">
+            <div class="member-menu">
+                
+                     <!-- Session이 없는 경우 -->
+                        <a href="/login/login.do" >로그인</a>
+                        <a href="/join/certifyUser.do" >회원가입</a>
+                    
+                    
+                
+                
+                <a href="/custCntr/custCntrMain.do" >고객센터</a>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- Content -->
+    <div id="content">
+
+        <div class="sub-header sub-01">
+            <div class="container">
+                <h2 class="title">보상사례 찾기</h2>
+                <p class="desc">분야별로 간편하게 보상사례를 확인 해보세요.</p>
+            </div>
+        </div>
+
+        <div class="sub-body">
+            <div class="sub-navigation">
+                <ol>
+                    <li class="home"><a href="#"><span class="sr-text">홈</span></a></li>
+                    <li class="dropdown-wrap">
+                        <a href="/find/cmpsCase/cmpsCaseList.do" class="js-toggle-dropdown">보상사례 찾기</a>
+                        <div class="dropdown">
+                            <ul class="depth-menu">
+                                <li><a href="/find/cmpsPro/cmpsProList.do">보상프로 찾기</a></li>
+                                <li><a href="/find/cmpsCase/cmpsCaseList.do">보상사례 찾기</a></li>
+                                <li><a href="/find/advCase/advCaseList.do">상담사례 찾기</a></li>
+                                <li><a href="/find/revw/revwList.do">후기로 보는 보상프로</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="sub-content">
+                    
+                <div class="find-case-wrap">
+                    
+                    <div class="sub-top-search">
+                        <div class="container">
+                            <div class="search-form">
+                                <form id="cmpsCaseForm" name="cmpsCaseForm" action="" method="post"> 
+                                    <input id="pageIndex" name="pageIndex" type="hidden" value="1">
+                                    <input id="lastPageNo" name="lastPageNo" type="hidden" value="1">
+                                    <input id="totalRecordCount" name="totalRecordCount" type="hidden" value="0">
+                                    <input id="curTabCd" name="curTabCd" type="hidden" value="">
+                                    
+                                    <label class="form-selectbox2">
+                                        <span class="sr-text">보상사례분류</span>
+                                        <select id="cmpsCaseCfCd" name="cmpsCaseCfCd">
+                                            <option value="">전체</option>
+                                            
+                                                <option value="00101"  >진단비</option>
+                                            
+                                                <option value="00102"  >후유장해</option>
+                                            
+                                                <option value="00103"  >교통사고</option>
+                                            
+                                                <option value="00104"  >배상책임</option>
+                                            
+                                                <option value="00105"  >사망보험금</option>
+                                            
+                                        </select>
+                                    </label>
+                                    <label>
+                                        <span class="sr-text">검색어 입력</span>
+                                        <input type="search" id="keyword" name="keyword" value="" placeholder="검색어를 입력하세요." class="form-text">
+                                    </label>
+                                    <button type="submit" class="btn-search" onclick="selectCmpsCaseList(1); return false;"><span class="sr-text">검색하기</span></button>
+                                </form>
+                            </div>
+                            
+                            
+                            
+                            <div class="keyword-tags" style="text-align:center">
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="result-wrap">
+                        <div class="container">
+                            <div class="tabs-slider-wrap lg">
+                                <ul class="tabs js-tabs-slider">
+                                    <li class="on" onclick="selectCmpsCaseTabList('', 0);"><a href="#">전체(<em>0</em>)</a></li>
+                                    
+                                        <li onclick="selectCmpsCaseTabList('00101', 0)"><a href="#">진단비(<em>0</em>)</a></li>
+                                    
+                                        <li onclick="selectCmpsCaseTabList('00102', 0)"><a href="#">후유장해(<em>0</em>)</a></li>
+                                    
+                                        <li onclick="selectCmpsCaseTabList('00103', 0)"><a href="#">교통사고(<em>0</em>)</a></li>
+                                    
+                                        <li onclick="selectCmpsCaseTabList('00104', 0)"><a href="#">배상책임(<em>0</em>)</a></li>
+                                    
+                                        <li onclick="selectCmpsCaseTabList('00105', 0)"><a href="#">사망보험금(<em>0</em>)</a></li>
+                                        <li onclick="selectCmpsCaseTabList('00105', 0)"><a href="#">사망보험금(<em>0</em>)</a></li>
+                                        <li onclick="selectCmpsCaseTabList('00105', 0)"><a href="#">사망보험금(<em>0</em>)</a></li>
+                                        <li onclick="selectCmpsCaseTabList('00105', 0)"><a href="#">사망보험금(<em>0</em>)</a></li>
+                                        <li onclick="selectCmpsCaseTabList('00105', 0)"><a href="#">사망보험금(<em>0</em>)</a></li>
+                                    
+                                </ul>
+                                <button class="btn-lg">보상사례추가</button>
+                            </div>
+
+                            <script>
+                                document.addEventListener('DOMContentLoaded', function () {
+                                    var $container = $('.js-tabs-slider');
+                                    var arrows = $container.outerWidth() > $container.parent().outerWidth() ? true:false;
+
+                                    var option = {
+                                        arrows: arrows,
+                                        dots: false,
+                                        slidesToShow: 4,
+                                        slidesToScroll: 4,
+                                        variableWidth: true,
+                                        infinite: false,
+                                        responsive: [
+                                            {
+                                                breakpoint: '1074',
+                                                settings: {
+                                                    arrows: false,
+                                                    slidesToShow: 3,
+                                                    slidesToScroll: 3,
+                                                }
+                                            }
+                                        ]
+                                    };
+
+                                    if (arrows) {
+                                        $container.slick(option);
+                                    }
+
+                                    $container.find('a').on('click', function (e) {
+                                        e.preventDefault();
+                                        $(this).parent().addClass('on').siblings().removeClass('on');
+
+                                        if ($container.hasClass('slick-initialized')) {
+                                            $container.slick('slickGoTo', $(this).parent().attr('data-slick-index'));
+                                        }
+                                    });
+
+                                    $(window).on('resize', function () { 
+                                        setTimeout(function () {
+                                            if ($container.hasClass('slick-initialized')) {
+                                                $container.slick('unslick');
+                                            }
+
+                                            arrows = $container.outerWidth() > $container.parent().outerWidth() ? true:false;
+
+                                            if (arrows) {
+                                                $container.slick(option);
+                                            }
+                                        }, 100);
+                                    });
+                                });
+                            </script>
+
+                            <div class="result-list-wrap">
+
+                                <div class="listview">
+                                    <ol id="dataRows">
+                                        
+                                        
+                                        
+                                            <!-- 
+                                            <li>상담사례 데이터가 없습니다.</li>
+                                            --> 
+                                        
+                                    </ol>
+                                </div>
+
+                                <div class="pagination">
+                                    <button type="button" class="btn-next-page" onclick="selectCmpsCaseMoreViewList()">더보기</button>
+                                </div>
+
+                                <!--                                 
+                                <div class="pagination">
+                                    <ul>
+                                    <span class="current"><a onClick="return false;">1</a></span>
+
+                                    </ul>
+                                </div>
+                                -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+
+
+
+
+
+
+    <!-- 보상프로 모집 안내 -->
+    <aside class="aside-footer">
+        <div class="container">
+            <p class="headline"><span>다줌과 함께할</span> 보상프로를 찾습니다.</p>
+            <p>다줌 보상프로 등록하고 의뢰인을 만나세요.</p>
+            <div class="btn-wrap">
+                <a href="/cmpy/aboutCmpsPro.do" class="btn">등록하기</a>
+                <!-- <a href="#" class="btn-benefit">다줌 보상프로가 되면 좋은점</a> -->
+            </div>
+        </div>
+    </aside>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="logo-wrap">
+                <p class="footer-logo"><span class="sr-text">DAZUM</span></p>
+            </div>
+            <div class="content-wrap">
+                <ul class="footer-menu">
+                    <li>
+                        <a href="/cmpy/about.do">회사소개</a>
+                    </li>              
+                    <li>
+                        <a href="/cmpy/useStpul.do?useStpulCfCd=31202">개인정보보호정책</a>
+                    </li>
+                    <li>
+                        <a href="/custCntr/custCntrMain.do">고객센터</a>
+                    </li>
+                    <li>
+                        <a href="/cmpy/about.do?goToContact=Y">제휴 문의</a>
+                    </li>
+                </ul>
+                <div class="company-info">
+                    <p class="company-name">(주)엑사메이커스</p>
+                    <p>
+                        <span>서울특별시 강남구 테헤란로20길 18, 6층(역삼동, 부봉빌딩)</span>
+                        <span>사업자번호:769-81-01465</span>
+                        <br>
+                        <span>대표자명 : 김금동</span>
+                        <span>대표번호 : 02-569-0717</span>
+                    </p>
+                    <p class="copyright">(C) Examakers Co., Ltd. ALL RIGHTS RESERVED.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+</body>
+</html>
+
+<!-- <script id="dataRowTemplate" type="text/x-jquery-tmpl">
+    <li>
+        <div class="case-info">
+            <div class="name-wrap">
+                <div class="profile-thumb">
+                    <a href="javascript:goCmpsProDtl('{{= cmpsProId}}')" class="profile-thumb">
+                        {{if cmpsProPhoFle }}
+                            <img src="/cmpsProPhoto/{{= cmpsProPhoFle}}" />
+                        {{else}}
+                            <img src="/static/img/common/default_profile.png" alt="">
+                        {{/if}}
+                    </a>
+                </div>
+                <p class="name">
+                    <a href="javascript:goCmpsProDtl('{{= cmpsProId}}')">{{= coNm}}</a>
+                </p>
+                <p class="regdate">{{= rgsDt}}</p>
+            </div>
+            <div class="content-wrap">
+                <div class="title-wrap">
+                    <p class="category-label"></p>
+                    <p class="title">
+                        <a href="javascript:goCmpsCaseDtl('{{= bsdt}}', '{{= cmpsProId}}', '{{= seqNo}}')">{{= cmpsCaseTitl}}</a>
+                    </p>
+                    <p class="summary">{{= cmpsCaseCtn}}</p>
+                </div>
+                <div class="thumb-wrap">
+                    <div class="thumb">
+                        {{if cmpsCaseIcoFle }}
+                            <img src="/cmpsCaseIco/{{= cmpsCaseIcoFle}}" />
+                        {{else}}
+                            <img src="/static/img/main/ic_main_cate{{= cmpsCaseCfIdx}}.png" alt="">
+                        {{/if}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+</script> -->
