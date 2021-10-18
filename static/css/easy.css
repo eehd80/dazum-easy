@@ -1116,6 +1116,12 @@ input[type="number"]::-webkit-inner-spin-button {
   border: none;
 }
 
+@media (max-width: 1074px) {
+  .join-form .form-title {
+    width: 100%;
+  }
+}
+
 .result-easy {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1421,6 +1427,12 @@ input[type="number"]::-webkit-inner-spin-button {
           flex-grow: 1;
 }
 
+@media (max-width: 1074px) {
+  .input-wrap-col2 .form-selectbox3 {
+    width: 35%;
+  }
+}
+
 .input-wrap .btn-lg {
   position: absolute;
   top: 50%;
@@ -1579,7 +1591,24 @@ input[type="number"]::-webkit-inner-spin-button {
   z-index: 1;
 }
 
+.form-email .btn-lg {
+  width: 7em;
+}
+
+.form-email .form-text-p0 {
+  padding: 0 20px;
+}
+
 @media (max-width: 1074px) {
+  .form-email .input-wrap .form-text {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 1074px) {
+  .form-selectbox3 select {
+    padding: 0 15px;
+  }
   .board-list-type2 {
     border-top: 1px solid #000;
   }
