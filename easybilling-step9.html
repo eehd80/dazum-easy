@@ -238,46 +238,26 @@
 
                                     <div class="result-wrap billing-step">
                                         <div class="form-row">
-                                            <p class="form-label">서류첨부 1</p>
-                                            <div class="input-file-wrap input-file-disabled">
-                                                <label for="file1" class="label-file">
-                                                    <input type="file" id="file1" name="file1" class="input-file2" />
-                                                </label>
-                                                <span class="input-file-name">손해사정사_자격인증.pdf</span>
-                                            </div>
-                                            <button class="btn- btn-delete">- 파일삭제</button>
-                                        </div>
-                                        <div class="form-row">
-                                            <p class="form-label">서류첨부 2</p>
                                             <div class="input-file-wrap">
-                                                <label for="file2" class="label-file">
-                                                    <input type="file" id="file2" name="file2" class="input-file2" />
-                                                </label>
-                                                <span class="input-file-name">첨부파일</span>
+                                                <p class="form-label">서류첨부 1</p>
+                                                <div class="filebox">
+                                                    <input class="inp-upload" value="첨부파일" placeholder="첨부파일" />
+                                                    <label for="file1" class="btn-sm">파일추가</label>
+                                                </div>
+                                                <input type="file" id="file1" class="inp-file" />
+                                                <button class="btn- btn-delete">- 파일삭제</button>
                                             </div>
-                                            <button class="btn- btn-delete">- 파일삭제</button>
-                                        </div>
-                                        <div class="form-row">
-                                            <p class="form-label">서류첨부 3</p>
                                             <div class="input-file-wrap">
-                                                <label for="file3" class="label-file">
-                                                    <input type="file" id="file3" name="file3" class="input-file2" />
-                                                </label>
-                                                <span class="input-file-name">첨부파일</span>
+                                                <p class="form-label">서류첨부 2</p>
+                                                <div class="filebox">
+                                                    <input class="inp-upload" value="첨부파일" placeholder="첨부파일" />
+                                                    <label for="file2" class="btn-sm">파일추가</label>
+                                                </div>
+                                                <input type="file" id="file2" class="inp-file" />
+                                                <button class="btn- btn-delete">- 파일삭제</button>
                                             </div>
-                                            <button class="btn- btn-delete">- 파일삭제</button>
                                         </div>
-                                        <div class="form-row">
-                                            <p class="form-label">서류첨부 4</p>
-                                            <div class="input-file-wrap">
-                                                <label for="file4" class="label-file">
-                                                    <input type="file" id="file4" name="file4" class="input-file2" />
-                                                </label>
-                                                <span class="input-file-name">첨부파일</span>
-                                            </div>
-                                            <button class="btn- btn-delete">- 파일삭제</button>
-                                            <button class="btn-blue">+ 서류첨부 추가</button>
-                                        </div>
+                                        <button class="btn-blue">+ 서류첨부 추가</button>
                                     </div>
 
                                     <div class="btn-wrap-easy">
@@ -384,27 +364,20 @@
         <script src="static/js/Chart.min.js"></script>
         <script src="static/js/aos.js"></script>
         <script src="static/js/main.js"></script>
-        <script src="./static/js/easy.js"></script>
+        <!-- <script src="./static/js/easy.js"></script> -->
 
         <script>
             $(".input-file-wrap").each(function () {
-                let $this = $(".input-file-wrap"),
-                    $inpFile = $this.find(".input-file2"),
-                    $fileName = $this.find(".input-file2[name='file_name']");
-
-                console.log($fileName);
+                let $this = $(this),
+                    $fileAdd = $this.find("label"),
+                    $inpFile = $this.find(".inp-file"),
+                    $inpUp = $this.find(".inp-upload");
 
                 $inpFile.on("change", function () {
-                    // if ($fileName == "") $fileName = "파일을 선택해주세요.";
-                    $(".input-file-name").text($fileName);
+                    let fileName = $(this).val();
+                    $inpUp.val(fileName);
                 });
             });
-
-            // $(document).on("change", ".input-file2", function () {
-            //     $filename = $(this).val();
-            //     if ($filename == "") $filename = "파일을 선택해주세요.";
-            //     $(".input-file-name").text($filename);
-            // });
         </script>
     </body>
 </html>
