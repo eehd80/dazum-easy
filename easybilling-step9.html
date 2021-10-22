@@ -238,12 +238,12 @@
 
                                     <div class="result-wrap billing-step">
                                         <div class="form-row">
-                                            <div class="input-file-wrap">
+                                            <div class="input-file-wrap input-file-disabled">
                                                 <p class="form-label">서류첨부 1</p>
                                                 <div class="filebox">
                                                     <input class="inp-upload" value="첨부파일" placeholder="첨부파일" />
                                                     <!-- 211020 수정 -->
-                                                    <label for="file1" class="btn-sm">파일보기</label>
+                                                    <label for="file1" class="btn-sm dark">파일변경</label>
                                                 </div>
                                                 <input type="file" id="file1" class="inp-file" />
                                                 <button class="btn- btn-delete">- 파일삭제</button>
@@ -257,6 +257,35 @@
                                                 </div>
                                                 <input type="file" id="file2" class="inp-file" />
                                                 <button class="btn- btn-delete">- 파일삭제</button>
+                                            </div>
+                                            <div class="input-file-wrap">
+                                                <p class="form-label">서류첨부 2</p>
+                                                <div class="filebox">
+                                                    <input class="inp-upload" value="첨부파일" placeholder="첨부파일" />
+                                                    <!-- 211020 수정 -->
+                                                    <label for="file3" class="btn-sm">파일보기</label>
+                                                </div>
+                                                <input type="file" id="file3" class="inp-file" />
+                                                <button class="btn- btn-delete">- 파일삭제</button>
+                                            </div>
+                                            <div id="attDocContainer" name="attDocBox" class="form-row">
+                                                <div class="input-file-wrap">
+                                                    <p class="form-label">서류첨부 5</p>
+                                                    <div class="filebox">
+                                                        <input class="inp-upload" value="첨부파일" placeholder="첨부파일" />
+                                                        <label for="file5" class="btn-sm">파일추가</label>
+                                                    </div>
+                                                    <input
+                                                        type="file"
+                                                        id="file5"
+                                                        name="attDoc"
+                                                        class="inp-file"
+                                                        accept=".gif, .jpg, .png, .bmp"
+                                                    />
+                                                    <button class="btn- btn-delete" onclick="deleteAttDocRow(this); return false;">
+                                                        - 파일삭제
+                                                    </button>
+                                                </div>
                                             </div>
                                         </div>
                                         <button class="btn-blue">+ 서류첨부 추가</button>

@@ -917,7 +917,6 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 .billing-step .input-file-wrap.input-file-disabled .label-file {
-  cursor: not-allowed;
   border: 1px solid #e0e3e5 !important;
   background: #f7f8fa !important;
 }

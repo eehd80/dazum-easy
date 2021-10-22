@@ -774,7 +774,7 @@ input[type="number"]::-webkit-inner-spin-button {
         position: relative;
         &.input-file-disabled {
             .label-file {
-                cursor: not-allowed;
+                // cursor: not-allowed 211022 수정;
                 border: 1px solid #e0e3e5 !important;
                 background: #f7f8fa !important;
                 &::after {
