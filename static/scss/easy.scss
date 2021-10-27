@@ -972,6 +972,7 @@ input[type="number"]::-webkit-inner-spin-button {
 .result-easy {
     display: flex;
     flex-wrap: wrap;
+    margin-bottom: 20px;
     dt {
         width: 40%;
         color: #3c4fbc;
@@ -1001,7 +1002,7 @@ input[type="number"]::-webkit-inner-spin-button {
     display: flex;
     align-items: center;
     height: 50px;
-    margin-top: 20px;
+    margin-bottom: 10px;
     padding: 0 20px;
     border: 1px solid #e0e3e5;
     background: #f7f8fa;
