@@ -1272,20 +1272,34 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 .captcha-option {
-    margin-top: 0;
+    margin: 0 0 10px;
     .captcha-code {
+        display: flex;
+        justify-content: space-between;
         position: relative;
-        width: calc(40% - 5px);
+        width: 100%;
+        // width: calc(40% - 5px);
         padding: 0;
         .form-text {
+            display: flex;
+            align-items: center;
+            width: calc(100% - 80px);
+            min-height: 80px;
             padding: 0 20px;
+            font-size: 40px;
             text-align: left;
+        }
+        .btn-sm {
+            width: 74px;
+            height: 100%;
+            min-height: 80px;
+            margin: 0 0 0 10px;
         }
     }
     label {
         position: relative;
         float: right;
-        width: 60%;
+        width: 100%;
         .form-text {
             letter-spacing: -1px;
         }

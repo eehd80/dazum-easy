@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <title>보험금 청구를 위한 필수 약관 동의 - DAZUM 다줌</title>
+        <title>간편청구안내 - DAZUM 다줌</title>
         <meta name="keyword" content="보험, 보상프로, 보험상담, 손해사정사" />
         <meta name="description" content="청구에서 보상까지! 어렵고 번거로운 보험 서비스 다줌 보상프로가 해결해드립니다." />
         <meta name="format-detection" content="address=no, email=no, telephone=no" />
@@ -31,11 +31,6 @@
         <link rel="stylesheet" href="static/css/Chart.min.css" />
         <link rel="stylesheet" href="static/css/aos.css" />
         <link rel="stylesheet" href="static/css/main.css" />
-        <!-- 간편청구 210915 추가 -->
-        <link
-            rel="stylesheet"
-            href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"
-        />
         <link rel="stylesheet" href="static/css/easy.css" />
     </head>
 
@@ -67,7 +62,8 @@
 
         <a href="#content" class="skip">메뉴 건너띄기</a>
 
-        <header class="header">
+        <!-- 마이페이지일때 is-transparent is-mypage 클래스 추가 -->
+        <header class="header is-transparent is-mypage">
             <div class="gnb-wrap">
                 <a href="#gnb" role="button" aria-expanded="false" class="btn-open-menu js-toggle-menu"
                     ><span class="sr-text">메뉴열기</span></a
@@ -144,7 +140,7 @@
             </h1>
 
             <!-- widescreen only -->
-            <p class="top-page-title">간편청구</p>
+            <p class="top-page-title">마이페이지 <small>내 정보를 한눈에 확인해보세요</small></p>
 
             <div class="rt-menu">
                 <!-- <div class="total-search-wrap">
@@ -184,10 +180,8 @@
                 </div>
             </div> -->
 
-                <!-- 20210205 수정 -->
                 <div class="member-menu">
                     <!-- 로그인 전 -->
-                    <a href="https://dazum.co.kr/find/cmpsPro/cmpsProList.do" class="btn- bg-blue c-white">보상프로 찾기</a>
                     <a href="#">로그인</a>
                     <a href="#">회원가입</a>
                     <a href="#">고객센터</a>
@@ -206,92 +200,123 @@
                 </div>
                 <a href="#">고객센터</a> -->
                 </div>
-                <!-- //20210205 수정 -->
             </div>
         </header>
 
         <!-- Content -->
         <div id="content">
-            <div class="sub-header sub-01">
-                <div class="container">
-                    <h2 class="title">한국신용정보원 회원가입</h2>
-                </div>
-            </div>
+            <!-- no sub-header -->
 
             <div class="sub-body">
-                <div class="sub-content billing-content">
-                    <div class="find-billing-wrap">
-                        <!-- 간편청구 -->
-                        <section class="section">
+                <!-- no-sub-navigation -->
+
+                <div class="sub-content">
+                    <div class="mypage-wrap">
+                        <div class="mypage-header">
                             <div class="container">
-                                <form action="/" method="POST" onchange="confirmRequiredForm(event);">
-                                    <div class="tit-wrap">
-                                        <h3 class="primary-title-t2">본인인증</h3>
+                                <div class="profile-wrap">
+                                    <div class="thumb-wrap">
+                                        <div class="profile-thumb"><img src="static/img/common/default_profile.png" alt="" /></div>
                                     </div>
-                                    <div class="join-form billing-step">
-                                        <div class="form-section">
-                                            <p class="form-title"><span>한국신용정보원 본인인증</span></p>
-
-                                            <!-- 211017 수정 -->
-                                            <div class="form-row">
-                                                <p class="form-label">자동입력방지문자</p>
-                                                <div class="captcha-option">
-                                                    <div class="captcha-code">
-                                                        <em class="form-text">2589</em>
-
-                                                        <button class="btn-sm dark">새로고침</button>
-                                                    </div>
-                                                </div>
-
-                                                <div class="captcha-option input-wrap">
-                                                    <label>
-                                                        <span class="sr-text">자동입력방지 문자</span>
-                                                        <input
-                                                            type="tel"
-                                                            name="captchaCode"
-                                                            aria-required="true"
-                                                            maxlength="4"
-                                                            placeholder="자동입력방지 문자 입력"
-                                                            class="form-text"
-                                                        />
-                                                        <button type="button" class="btn-sm">인증하기</button>
-                                                    </label>
-                                                </div>
-                                            </div>
-
-                                            <div class="form-row verify-option2">
-                                                <p class="form-label">SMS 인증 문자 입력</p>
-                                                <div class="input-wrap">
-                                                    <label>
-                                                        <span class="sr-text">인증번호</span>
-                                                        <input
-                                                            type="number"
-                                                            name="authCode"
-                                                            placeholder="인증번호 6자리 입력"
-                                                            maxlength="6"
-                                                            class="form-text"
-                                                        />
-                                                    </label>
-                                                    <button type="button" class="btn-sm">인증하기</button>
-                                                </div>
-                                                <p class="form-error is-pass">휴대폰으로 전송된 인증번호를 입력해주세요.</p>
-                                                <p class="form-error is-pass">
-                                                    2분 이내에 인증문자가 수신되지 않을 경우, 이전에 입력한 휴대폰 번호를 확인해 주시기
-                                                    바랍니다.
-                                                </p>
-                                            </div>
+                                    <div class="name-wrap">
+                                        <div class="name">
+                                            <span>홍길동</span>
                                         </div>
-                                        <!-- //211017 수정 -->
+                                        <p class="email">leejonghwa0330@gmail.com</p>
                                     </div>
-                                    <div class="btn-wrap-easy">
-                                        <button type="submit" class="btn- btn-white">메인으로</button>
-                                        <button type="submit" class="btn- btn-submit">가입하기</button>
-                                    </div>
-                                </form>
+                                </div>
+                                <ul class="tabs">
+                                    <li>
+                                        <a href="#">내정보</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">전화상담 관리</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">온라인상담 관리</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">이용후기 관리</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">즐겨찾기 관리</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">회원정보 관리</a>
+                                    </li>
+                                    <li class="on">
+                                        <a href="mypage.easybilling.html">간편청구내역</a>
+                                    </li>
+                                    <li>
+                                        <a href="mypage.easybilling.loss.html">실손보장지급내역</a>
+                                    </li>
+                                </ul>
                             </div>
-                        </section>
-                        <!-- 간편청구 -->
+                        </div>
+                        <div class="mypage-content">
+                            <div class="container">
+                                <div class="section">
+                                    <div class="mypage-leave">
+                                        <h3 class="secondary-title">
+                                            간편청구내역 <em class="secondary-title-option">지급내역 <span>0</span> 건</em>
+                                        </h3>
+
+                                        <div class="board-list-top">
+                                            <p class="list-total">회원님께 최근 1년간 지급된 간편청구내역입니다.</p>
+                                        </div>
+                                        <div class="listview">
+                                            <!-- 빈목록 -->
+                                            <div class="empty">
+                                                <div class="ico"><img src="static/img/common/ic_empty_list.png" alt="" /></div>
+                                                <p>나의 간편청구 내역이 없습니다.</p>
+                                            </div>
+                                            <!-- //빈목록 -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 병원비 돌려받기 팝업 -->
+        <div id="mdReviewDetail" class="modal-popup">
+            <!-- 간편청구 로그인 -->
+            <div role="dialog" class="modal-container">
+                <div class="modal-header">
+                    <h3 class="tit-">청구상세</h3>
+                    <p class="txt-">청구일 : YYYY.MM.DD</p>
+                    <button type="button" class="btn-close-popup js-close-popup"><span class="sr-text">창닫기</span></button>
+                </div>
+                <div class="modal-content">
+                    <div class="popup-view">
+                        <div class="view-body">
+                            <dl class="result-easy">
+                                <dt>보험사</dt>
+                                <dd>보험사명</dd>
+                                <dt>청구인</dt>
+                                <dd>홍길동</dd>
+                                <dt>피보험자</dt>
+                                <dd>홍길동</dd>
+                                <dt>진단명</dt>
+                                <dd>진단명</dd>
+                                <dt>보험금 수령 은행</dt>
+                                <dd>IBK기업</dd>
+                                <dt>계좌번호</dt>
+                                <dd>01088061978</dd>
+                            </dl>
+                            <div class="result-easy-graybox">
+                                <dl>첨부파일</dl>
+                                <dd>손해사정사_자격인증.pdf</dd>
+                            </div>
+                            <p class="result-easy-txt">병원비 돌려받기는 회원님이 작성/제출한 청구정보를 확인하실 수 있습니다.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="popup-action">
+                    <a href="#mdReviewWrite" aria-haspopup="dialog" class="btn-cancel js-close-popup js-open-popup">닫기</a>
                 </div>
             </div>
         </div>
@@ -342,11 +367,10 @@
             </div>
         </footer>
         <!-- Script -->
-        <script src="./static/js/lib/jquery.min.js"></script>
-        <script src="./static/js/slick.min.js"></script>
-        <script src="./static/js/Chart.min.js"></script>
-        <script src="./static/js/aos.js"></script>
-        <script src="./static/js/main.js"></script>
-        <script src="./static/js/easy.js"></script>
+        <script src="static/js/lib/jquery.min.js"></script>
+        <script src="static/js/slick.min.js"></script>
+        <script src="static/js/Chart.min.js"></script>
+        <script src="static/js/aos.js"></script>
+        <script src="static/js/main.js"></script>
     </body>
 </html>
