@@ -1747,4 +1747,34 @@ input[type="number"]::-webkit-inner-spin-button {
 #content.sign-cont .btn-wrap-easy .btn- {
   margin-top: 10px;
 }
+
+.wrap-loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #fff;
+  text-align: center;
+}
+
+.wrap-loading .img-loading {
+  display: block;
+  margin: 0 auto 30px;
+}
 /*# sourceMappingURL=easy.css.map */
