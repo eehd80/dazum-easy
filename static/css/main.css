@@ -640,7 +640,10 @@ input[type]:checked + .radio-label2 .box { border-color: #4A65F7; background: #f
 
 .tabs-slider-wrap.lg { border: 0; border-bottom: 2px solid #000; }
 
-.tabs-slider-wrap .tabs { display: inline-block; overflow-x: auto; width: calc( 100% - 140px ); font-size: 0; white-space: nowrap; vertical-align: top; }
+.tabs-slider-wrap .tabs { display: inline-block; overflow-x: auto; width: calc( 100% - 40px ); font-size: 0; white-space: nowrap; vertical-align: top; }
+.tabs-slider-wrap .tabs-btn { width: calc( 100% - 140px );}
+
+
 
 .tabs-slider-wrap .tabs.slick-initialized { display: block; overflow: visible; }
 
