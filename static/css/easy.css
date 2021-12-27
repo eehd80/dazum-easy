@@ -1139,9 +1139,10 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 .result-easy dt {
-  width: 40%;
+  width: 50%;
   color: #3c4fbc;
   padding: 12px 0;
+  letter-spacing: -1px;
 }
 
 .result-easy dt::before {
@@ -1155,7 +1156,7 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 .result-easy dd {
-  width: 60%;
+  width: 50%;
   padding: 12px 0;
 }
 
@@ -1341,6 +1342,7 @@ input[type="number"]::-webkit-inner-spin-button {
   background-color: #4a65f7;
   font-size: 13px;
   color: #fff;
+  text-align: center;
 }
 
 .board-list-type2 .btn-view:hover {

@@ -979,9 +979,10 @@ input[type="number"]::-webkit-inner-spin-button {
     flex-wrap: wrap;
     margin-bottom: 20px;
     dt {
-        width: 40%;
+        width: 50%;
         color: #3c4fbc;
         padding: 12px 0;
+        letter-spacing: -1px;
         &::before {
             content: "";
             display: inline-block;
@@ -993,7 +994,7 @@ input[type="number"]::-webkit-inner-spin-button {
         }
     }
     dd {
-        width: 60%;
+        width: 50%;
         padding: 12px 0;
         &::before {
             content: ":";
@@ -1159,6 +1160,7 @@ input[type="number"]::-webkit-inner-spin-button {
         background-color: #4a65f7;
         font-size: 13px;
         color: $w;
+        text-align: center;
         &:hover {
             text-decoration: none;
         }
